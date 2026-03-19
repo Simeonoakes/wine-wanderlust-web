@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const links = ["Expeditions", "Regions", "The Journal", "Contact"];
+const links = ["Experiences", "The Terroir", "Your Guide", "Contact"];
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-8 flex items-center justify-between h-16">
-        <a href="/" className="font-display text-xl tracking-tight">
-          Terroir & Vine
+        <a href="/" className="font-display text-xl tracking-tight text-primary">
+          In Vino Veritas
         </a>
 
         <div className="hidden md:flex items-center gap-8">
@@ -18,7 +18,7 @@ const Navbar = () => {
             <a
               key={link}
               href={`#${link.toLowerCase().replace(/\s/g, "-")}`}
-              className="text-xs uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors duration-200"
+              className="text-xs uppercase tracking-[0.12em] text-muted-foreground hover:text-primary transition-colors duration-200"
             >
               {link}
             </a>
