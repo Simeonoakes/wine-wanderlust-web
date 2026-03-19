@@ -3,30 +3,30 @@ import burgundyImg from "@/assets/region-burgundy.jpg";
 import tuscanyImg from "@/assets/region-tuscany.jpg";
 import piedmontImg from "@/assets/region-piedmont.jpg";
 
-const regions = [
+const highlights = [
   {
-    name: "Piedmont",
-    subtitle: "Barolo & Barbaresco",
+    name: "The Vineyards",
+    subtitle: "Heart of the Corbières",
     image: piedmontImg,
-    elevation: "450m",
-    soil: "Calcareous Marl",
-    yield: "45 hl/ha",
+    detail: "Ancient Vines",
+    soil: "Limestone & Schist",
+    character: "Bold & Elegant",
   },
   {
-    name: "Burgundy",
-    subtitle: "Côte de Nuits",
+    name: "The Landscape",
+    subtitle: "Garrigue & Mountains",
     image: burgundyImg,
-    elevation: "280m",
-    soil: "Limestone & Clay",
-    yield: "35 hl/ha",
+    detail: "Cathar Castles",
+    soil: "Wild Mediterranean",
+    character: "Untamed Beauty",
   },
   {
-    name: "Tuscany",
-    subtitle: "Brunello di Montalcino",
+    name: "The Culture",
+    subtitle: "Centuries of Savoir-Faire",
     image: tuscanyImg,
-    elevation: "350m",
-    soil: "Galestro & Albarese",
-    yield: "52 hl/ha",
+    detail: "Local Artisans",
+    soil: "Languedoc Cuisine",
+    character: "Living Heritage",
   },
 ];
 
@@ -39,47 +39,47 @@ const fadeUp = {
 
 const RegionsSection = () => {
   return (
-    <section id="regions" className="py-[15vh]">
+    <section id="the-terroir" className="py-[15vh]">
       <div className="max-w-7xl mx-auto px-8">
         <motion.div {...fadeUp} className="grid grid-cols-12 gap-4 mb-16">
           <div className="col-span-12 md:col-start-2 md:col-end-7">
             <span className="text-xs uppercase tracking-[0.12em] text-muted-foreground">
-              01 — Regions
+              01 — The Terroir
             </span>
             <h2 className="mt-4 text-4xl md:text-5xl font-light italic tracking-tight">
-              The Terroirs
+              The Wild Corbières
             </h2>
           </div>
           <div className="col-span-12 md:col-start-8 md:col-end-12 flex items-end">
             <p className="text-muted-foreground text-sm leading-relaxed font-body">
-              Each expedition is rooted in a specific appellation—its geology, microclimate, and winemaking philosophy.
+              Nestled between the Pyrenees and the Mediterranean, the Corbières is one of France's most dramatic and unspoilt wine regions — a land of ancient vines, rugged beauty, and fiercely independent winemakers.
             </p>
           </div>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {regions.map((region, i) => (
+          {highlights.map((item, i) => (
             <motion.article
-              key={region.name}
+              key={item.name}
               {...fadeUp}
               transition={{ ...fadeUp.transition, delay: i * 0.15 }}
               className="group cursor-pointer"
             >
               <div className="relative overflow-hidden aspect-[3/4]">
                 <img
-                  src={region.image}
-                  alt={`${region.name} vineyard landscape`}
-                  className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105 group-hover:grayscale-[0.2]"
+                  src={item.image}
+                  alt={`${item.name} — ${item.subtitle}`}
+                  className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-foreground/10 group-hover:bg-foreground/20 transition-colors duration-500" />
+                <div className="absolute inset-0 bg-background/30 group-hover:bg-background/10 transition-colors duration-500" />
               </div>
               <div className="mt-5">
-                <h3 className="text-2xl font-light tracking-tight">{region.name}</h3>
-                <p className="text-muted-foreground text-sm mt-1 font-body">{region.subtitle}</p>
-                <div className="mt-4 pt-4 border-t border-border flex gap-6 text-xs text-muted-foreground font-body text-tabular">
-                  <span>Elev. {region.elevation}</span>
-                  <span>{region.soil}</span>
-                  <span>{region.yield}</span>
+                <h3 className="text-2xl font-light tracking-tight">{item.name}</h3>
+                <p className="text-muted-foreground text-sm mt-1 font-body">{item.subtitle}</p>
+                <div className="mt-4 pt-4 border-t border-border flex gap-6 text-xs text-muted-foreground font-body">
+                  <span>{item.detail}</span>
+                  <span>{item.soil}</span>
+                  <span>{item.character}</span>
                 </div>
               </div>
             </motion.article>
