@@ -51,9 +51,6 @@ const PhilosophySection = () => {
               With the helping hand of my retired vine-growing father and my vigneron brother, 
               let me take you on a sensorial journey of discovery here in the wild Corbières.
             </p>
-            <p className="text-sm text-primary font-body mt-6 uppercase tracking-[0.1em]">
-              Wine Education · Tourism · Events
-            </p>
           </motion.div>
         </div>
       </div>

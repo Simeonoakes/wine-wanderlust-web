@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo.png";
 import heroBg from "@/assets/vineyard-castle.jpg";
 
 const Hero = () => {
