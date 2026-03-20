@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
-import burgundyImg from "@/assets/region-burgundy.jpg";
-import tuscanyImg from "@/assets/region-tuscany.jpg";
-import piedmontImg from "@/assets/region-piedmont.jpg";
+import grapeHarvestImg from "@/assets/grape-harvest.jpg";
+import village2cvImg from "@/assets/village-2cv.jpg";
+import fitouSignImg from "@/assets/fitou-sign.jpg";
 
 const highlights = [
   {
     name: "The Vineyards",
     subtitle: "Heart of the Corbières",
-    image: piedmontImg,
+    image: grapeHarvestImg,
     detail: "Ancient Vines",
     soil: "Limestone & Schist",
     character: "Bold & Elegant",
@@ -15,7 +15,7 @@ const highlights = [
   {
     name: "The Landscape",
     subtitle: "Garrigue & Mountains",
-    image: burgundyImg,
+    image: village2cvImg,
     detail: "Cathar Castles",
     soil: "Wild Mediterranean",
     character: "Untamed Beauty",
@@ -23,7 +23,7 @@ const highlights = [
   {
     name: "The Culture",
     subtitle: "Centuries of Savoir-Faire",
-    image: tuscanyImg,
+    image: fitouSignImg,
     detail: "Local Artisans",
     soil: "Languedoc Cuisine",
     character: "Living Heritage",
