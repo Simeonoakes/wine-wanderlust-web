@@ -6,6 +6,9 @@ import roseOlivesImg from "@/assets/rose-olives.jpg";
 import cafeCroissantImg from "@/assets/cafe-croissant.jpg";
 import winemakingImg from "@/assets/winemaking.jpg";
 import vineyardCastleImg from "@/assets/vineyard-castle.jpg";
+import fitouSignImg from "@/assets/fitou-sign.jpg";
+import grapeHarvestImg from "@/assets/grape-harvest.jpg";
+import village2cvImg from "@/assets/village-2cv.jpg";
 
 const experiences = [
   {
