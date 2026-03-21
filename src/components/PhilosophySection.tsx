@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import roseOlivesImg from "@/assets/rose-olives.jpg";
+import guidePortraitImg from "@/assets/guide-portrait.jpg";
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
