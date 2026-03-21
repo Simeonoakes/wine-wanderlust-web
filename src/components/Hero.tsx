@@ -34,24 +34,12 @@ const Hero = () => {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
         className="relative mt-10 text-center max-w-xl px-8"
       >
-        <p className="font-display text-2xl md:text-3xl tracking-wide text-primary">
+        <p className="font-display text-2xl md:text-3xl tracking-wide text-primary italic">
           Truly Tasting Terroir
         </p>
-        <p className="mt-4 font-body text-sm md:text-base tracking-[0.08em] uppercase text-foreground/50">
+        <p className="mt-4 font-display text-sm md:text-base tracking-[0.12em] italic text-foreground/60">
           Bespoke wine experiences in the South of France
         </p>
-      </motion.div>
-
-      <motion.div
-        className="absolute bottom-12 flex flex-col items-center"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.4, duration: 0.6 }}
-      >
-        <span className="text-foreground/30 text-xs uppercase tracking-[0.15em]">
-          Scroll
-        </span>
-        <div className="mt-3 w-px h-12 bg-foreground/15" />
       </motion.div>
     </section>
   );
