@@ -3,13 +3,12 @@ import logo from "@/assets/logo.png";
 import heroBg from "@/assets/vineyard-castle.jpg";
 
 const Hero = () => {
-  // Animation timeline delays (seconds)
-  const TRULY_DELAY = 0.6;
-  const TASTING_DELAY = 1.4;
-  const TERROIR_DELAY = 2.2;
-  const PHOTO_DELAY = 3.2;
-  const LOGO_DELAY = 3.6;
-  const TAGLINE_DELAY = 4.6;
+  const LOGO_DELAY = 0.4;
+  const TRULY_DELAY = 2.0;
+  const TASTING_DELAY = 2.8;
+  const TERROIR_DELAY = 3.6;
+  const PHOTO_DELAY = 4.4;
+  const TAGLINE_DELAY = 5.6;
 
   const wordVariant = {
     hidden: { opacity: 0, y: 30, filter: "blur(8px)" },
@@ -41,14 +40,28 @@ const Hero = () => {
         <img
           src={heroBg}
           alt=""
-          className="w-full h-full object-cover opacity-50 brightness-110"
+          className="w-full h-full object-cover opacity-50 brightness-110 scale-90"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/30 to-background" />
       </motion.div>
 
-      {/* "Truly Tasting Terroir" words appearing one by one */}
+      {/* Content */}
       <div className="relative z-20 flex flex-col items-center">
-        <div className="flex gap-3 md:gap-5 mb-8">
+        {/* Logo appears first */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.85 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.6, delay: LOGO_DELAY, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <img
+            src={logo}
+            alt="In Vino Veritas logo"
+            className="w-[22rem] h-[22rem] sm:w-[30rem] sm:h-[30rem] md:w-[36rem] md:h-[36rem] lg:w-[42rem] lg:h-[42rem] object-contain"
+          />
+        </motion.div>
+
+        {/* Words appear below logo */}
+        <div className="flex gap-3 md:gap-5 mt-2">
           {[
             { word: "Truly", delay: TRULY_DELAY },
             { word: "Tasting", delay: TASTING_DELAY },
@@ -66,19 +79,6 @@ const Hero = () => {
             </motion.span>
           ))}
         </div>
-
-        {/* Logo appears after photo */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.88 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.6, delay: LOGO_DELAY, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <img
-            src={logo}
-            alt="In Vino Veritas logo"
-            className="w-80 h-80 sm:w-[26rem] sm:h-[26rem] md:w-[32rem] md:h-[32rem] lg:w-[38rem] lg:h-[38rem] object-contain"
-          />
-        </motion.div>
 
         {/* Tagline appears last */}
         <motion.p
