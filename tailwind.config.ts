@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"Playfair Display"', 'Georgia', 'serif'],
-        body: ['"Raleway"', 'sans-serif'],
+        display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        body: ['"Montserrat"', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

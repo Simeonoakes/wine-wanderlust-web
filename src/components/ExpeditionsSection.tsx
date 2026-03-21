@@ -6,6 +6,9 @@ import roseOlivesImg from "@/assets/rose-olives.jpg";
 import cafeCroissantImg from "@/assets/cafe-croissant.jpg";
 import winemakingImg from "@/assets/winemaking.jpg";
 import vineyardCastleImg from "@/assets/vineyard-castle.jpg";
+import fitouSignImg from "@/assets/fitou-sign.jpg";
+import grapeHarvestImg from "@/assets/grape-harvest.jpg";
+import village2cvImg from "@/assets/village-2cv.jpg";
 
 const experiences = [
   {
@@ -22,7 +25,7 @@ const experiences = [
     highlight: "Vineyard to Table",
     description:
       "Savour the cuisine of the Languedoc — from intimate vineyard lunches paired with the estate's cuvées to curated dinners at the region's most distinguished restaurants.",
-    image: cafeCroissantImg,
+    image: roseOlivesImg,
   },
   {
     id: "03",
@@ -118,7 +121,7 @@ const ExpeditionsSection = () => {
 
         {/* Photo strip */}
         <motion.div {...fadeUp} className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-16">
-          {[roseOlivesImg, wineBarrelImg, winemakingImg, cafeCroissantImg].map((img, i) => (
+          {[cafeCroissantImg, fitouSignImg, village2cvImg, grapeHarvestImg].map((img, i) => (
             <div key={i} className="relative overflow-hidden aspect-square group">
               <img
                 src={img}
