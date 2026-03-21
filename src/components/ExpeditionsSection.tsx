@@ -25,7 +25,7 @@ const experiences = [
     highlight: "Vineyard to Table",
     description:
       "Savour the cuisine of the Languedoc — from intimate vineyard lunches paired with the estate's cuvées to curated dinners at the region's most distinguished restaurants.",
-    image: cafeCroissantImg,
+    image: roseOlivesImg,
   },
   {
     id: "03",
