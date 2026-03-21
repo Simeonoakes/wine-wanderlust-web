@@ -10,9 +10,9 @@ const Hero = () => {
         <img
           src={heroBg}
           alt=""
-          className="w-full h-full object-cover opacity-15"
+          className="w-full h-full object-cover opacity-40"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/40 to-background" />
       </div>
 
       <motion.div
