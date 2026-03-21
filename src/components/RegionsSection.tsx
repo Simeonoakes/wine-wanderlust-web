@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import grapeHarvestImg from "@/assets/grape-harvest.jpg";
 import village2cvImg from "@/assets/village-2cv.jpg";
-import fitouSignImg from "@/assets/fitou-sign.jpg";
+import vineyardCastleImg from "@/assets/vineyard-castle.jpg";
 
 const highlights = [
   {
@@ -15,7 +15,7 @@ const highlights = [
   {
     name: "The Landscape",
     subtitle: "Garrigue & Mountains",
-    image: village2cvImg,
+    image: vineyardCastleImg,
     detail: "Cathar Castles",
     soil: "Wild Mediterranean",
     character: "Untamed Beauty",
@@ -23,7 +23,7 @@ const highlights = [
   {
     name: "The Culture",
     subtitle: "Centuries of Savoir-Faire",
-    image: fitouSignImg,
+    image: village2cvImg,
     detail: "Local Artisans",
     soil: "Languedoc Cuisine",
     character: "Living Heritage",

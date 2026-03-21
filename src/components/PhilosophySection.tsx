@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import roseOlivesImg from "@/assets/rose-olives.jpg";
+import guidePortraitImg from "@/assets/guide-portrait.jpg";
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
@@ -18,8 +18,8 @@ const PhilosophySection = () => {
         >
           <div className="relative overflow-hidden aspect-[3/4]">
             <img
-              src={roseOlivesImg}
-              alt="Rosé wine and olives on a barrel"
+              src={guidePortraitImg}
+              alt="Your guide — In Vino Veritas"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-background/20" />
