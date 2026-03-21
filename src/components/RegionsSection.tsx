@@ -15,7 +15,7 @@ const highlights = [
   {
     name: "The Landscape",
     subtitle: "Garrigue & Mountains",
-    image: village2cvImg,
+    image: vineyardCastleImg,
     detail: "Cathar Castles",
     soil: "Wild Mediterranean",
     character: "Untamed Beauty",
@@ -23,7 +23,7 @@ const highlights = [
   {
     name: "The Culture",
     subtitle: "Centuries of Savoir-Faire",
-    image: fitouSignImg,
+    image: village2cvImg,
     detail: "Local Artisans",
     soil: "Languedoc Cuisine",
     character: "Living Heritage",
