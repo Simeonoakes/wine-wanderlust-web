@@ -3,12 +3,13 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import wineBarrelImg from "@/assets/wine-barrel.jpg";
 import roseOlivesImg from "@/assets/rose-olives.jpg";
-import cafeCroissantImg from "@/assets/cafe-croissant.jpg";
 import winemakingImg from "@/assets/winemaking.jpg";
-import vineyardCastleImg from "@/assets/vineyard-castle.jpg";
-import fitouSignImg from "@/assets/fitou-sign.jpg";
-import grapeHarvestImg from "@/assets/grape-harvest.jpg";
-import village2cvImg from "@/assets/village-2cv.jpg";
+import autumnLandscapeImg from "@/assets/autumn-landscape-new.jpg";
+import wineTastingTableImg from "@/assets/wine-tasting-table.jpg";
+import cellarPortraitImg from "@/assets/cellar-portrait.jpg";
+import tractorSelfieImg from "@/assets/tractor-selfie.jpg";
+import vineyardHarvestImg from "@/assets/vineyard-harvest.jpg";
+import extraSceneImg from "@/assets/extra-scene.jpg";
 
 const experiences = [
   {
