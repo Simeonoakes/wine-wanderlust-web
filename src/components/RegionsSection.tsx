@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import grapeHarvestImg from "@/assets/grape-harvest.jpg";
 import village2cvImg from "@/assets/village-2cv.jpg";
-import vineyardCastleImg from "@/assets/vineyard-castle.jpg";
+import landscapeGarrigueImg from "@/assets/landscape-garrigue.jpg";
 
 const highlights = [
   {
