@@ -39,7 +39,7 @@ const Hero = () => {
         <img
           src={heroBg}
           alt=""
-          className="w-full h-full object-cover opacity-50 brightness-110 scale-[0.33]"
+          className="w-full h-full object-cover opacity-50 brightness-110"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/30 to-background" />
       </motion.div>
@@ -60,7 +60,7 @@ const Hero = () => {
         </motion.div>
 
         {/* Words appear below logo */}
-        <div className="flex gap-3 md:gap-5 -mt-4">
+        <div className="flex gap-3 md:gap-5 -mt-12 md:-mt-16">
           {[
             { word: "Truly", delay: TRULY_DELAY },
             { word: "Tasting", delay: TASTING_DELAY },

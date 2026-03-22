@@ -54,6 +54,9 @@ const PhilosophySection = () => {
               With the helping hand of my retired vine-growing father and my vigneron brother, 
               let me take you on a sensorial journey of discovery here in the wild Corbières.
             </p>
+            <p className="mt-8 font-display text-2xl md:text-3xl italic text-primary/80 tracking-wide" style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic", fontWeight: 300 }}>
+              Simeon
+            </p>
           </motion.div>
         </div>
       </div>
