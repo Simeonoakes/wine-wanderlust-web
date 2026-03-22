@@ -60,7 +60,7 @@ const Hero = () => {
         </motion.div>
 
         {/* Words appear below logo */}
-        <div className="flex gap-3 md:gap-5 mt-2">
+        <div className="flex gap-3 md:gap-5 -mt-4">
           {[
             { word: "Truly", delay: TRULY_DELAY },
             { word: "Tasting", delay: TASTING_DELAY },
