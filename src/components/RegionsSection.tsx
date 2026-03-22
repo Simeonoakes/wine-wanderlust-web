@@ -15,7 +15,7 @@ const highlights = [
   {
     name: "The Landscape",
     subtitle: "Garrigue & Mountains",
-    image: vineyardCastleImg,
+    image: landscapeGarrigueImg,
     detail: "Cathar Castles",
     soil: "Wild Mediterranean",
     character: "Untamed Beauty",

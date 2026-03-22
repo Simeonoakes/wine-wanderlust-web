@@ -3,8 +3,8 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import wineBarrelImg from "@/assets/wine-barrel.jpg";
 import roseOlivesImg from "@/assets/rose-olives.jpg";
-import winemakingImg from "@/assets/winemaking.jpg";
-import autumnLandscapeImg from "@/assets/autumn-landscape-new.jpg";
+import handsOnImg from "@/assets/hands-on-winemaking.jpg";
+import landscapeGarrigueImg from "@/assets/landscape-garrigue.jpg";
 import wineTastingTableImg from "@/assets/wine-tasting-table.jpg";
 import cellarPortraitImg from "@/assets/cellar-portrait.jpg";
 import tractorSelfieImg from "@/assets/tractor-selfie.jpg";
@@ -17,7 +17,7 @@ const experiences = [
     title: "Winery Visits & Tastings",
     highlight: "Meet the Makers",
     description:
-      "Step behind the cellar doors of the Corbières' finest domaines. Meet the vignerons, hear their stories, taste directly from barrel and bottle — guided by someone who grew up among the vines.",
+      "Step behind the cellar doors of the region's finest hand-picked domaines. Meet the magic makers whose hands and hearts forge the precious nectar. Hear their stories first hand, taste directly from barrel and bottle, as always, guided by someone who grew up among the vines.",
     image: wineBarrelImg,
   },
   {
@@ -25,24 +25,24 @@ const experiences = [
     title: "Gastronomic Discovery",
     highlight: "Vineyard to Table",
     description:
-      "Savour the cuisine of the Languedoc — from intimate vineyard lunches paired with the estate's cuvées to curated dinners at the region's most distinguished restaurants.",
+      "From intimate vineyard lunches with the estate's cuvées to 4 course meals in the best local restaurant as well as traditional rustic barbecues cooked on old vine wood with aromatic herbs in the very vineyard they come from.",
     image: roseOlivesImg,
   },
   {
     id: "03",
-    title: "Terroir & Landscape",
+    title: "Terroir, Landscape & History",
     highlight: "The Wild Corbières",
     description:
-      "Explore the dramatic landscapes of one of France's most untamed wine regions. Ancient villages, rugged garrigue, Cathar castles, and panoramas that stretch to the Pyrenees and the Mediterranean.",
-    image: autumnLandscapeImg,
+      "Picturesque villages, rugged garrigue, Cathar castles, medieval abbeys and fortified towns set in dramatic panoramas nestled between the snow-capped Pyrenees and the glistening Mediterranean.",
+    image: landscapeGarrigueImg,
   },
   {
     id: "04",
     title: "Hands-On Experiences",
     highlight: "Become a Vigneron",
     description:
-      "Roll up your sleeves. Join a harvest, try your hand at blending, learn to prune — real winemaking, guided by a family of three generations of vine growers.",
-    image: winemakingImg,
+      "Guided by the vinegrowers themselves, in the wine cellar or in the vineyards. Watch, listen and take part in the beauty of the process at every stage, depending on the season.",
+    image: handsOnImg,
   },
 ];
 
