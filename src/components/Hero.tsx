@@ -55,7 +55,7 @@ const Hero = () => {
           <img
             src={logo}
             alt="In Vino Veritas logo"
-            className="w-[22rem] h-[22rem] sm:w-[30rem] sm:h-[30rem] md:w-[36rem] md:h-[36rem] lg:w-[42rem] lg:h-[42rem] object-contain"
+            className="w-[26rem] h-[26rem] sm:w-[34rem] sm:h-[34rem] md:w-[42rem] md:h-[42rem] lg:w-[50rem] lg:h-[50rem] object-contain"
           />
         </motion.div>
 
