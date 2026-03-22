@@ -3,12 +3,13 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import wineBarrelImg from "@/assets/wine-barrel.jpg";
 import roseOlivesImg from "@/assets/rose-olives.jpg";
-import cafeCroissantImg from "@/assets/cafe-croissant.jpg";
 import winemakingImg from "@/assets/winemaking.jpg";
-import vineyardCastleImg from "@/assets/vineyard-castle.jpg";
-import fitouSignImg from "@/assets/fitou-sign.jpg";
-import grapeHarvestImg from "@/assets/grape-harvest.jpg";
-import village2cvImg from "@/assets/village-2cv.jpg";
+import autumnLandscapeImg from "@/assets/autumn-landscape-new.jpg";
+import wineTastingTableImg from "@/assets/wine-tasting-table.jpg";
+import cellarPortraitImg from "@/assets/cellar-portrait.jpg";
+import tractorSelfieImg from "@/assets/tractor-selfie.jpg";
+import vineyardHarvestImg from "@/assets/vineyard-harvest.jpg";
+import extraSceneImg from "@/assets/extra-scene.jpg";
 
 const experiences = [
   {
@@ -33,7 +34,7 @@ const experiences = [
     highlight: "The Wild Corbières",
     description:
       "Explore the dramatic landscapes of one of France's most untamed wine regions. Ancient villages, rugged garrigue, Cathar castles, and panoramas that stretch to the Pyrenees and the Mediterranean.",
-    image: vineyardCastleImg,
+    image: autumnLandscapeImg,
   },
   {
     id: "04",
@@ -120,8 +121,8 @@ const ExpeditionsSection = () => {
         </motion.div>
 
         {/* Photo strip */}
-        <motion.div {...fadeUp} className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-16">
-          {[cafeCroissantImg, fitouSignImg, village2cvImg, grapeHarvestImg].map((img, i) => (
+        <motion.div {...fadeUp} className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-16">
+          {[wineTastingTableImg, cellarPortraitImg, tractorSelfieImg, vineyardHarvestImg, extraSceneImg].map((img, i) => (
             <div key={i} className="relative overflow-hidden aspect-square group">
               <img
                 src={img}

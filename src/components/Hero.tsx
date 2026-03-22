@@ -11,10 +11,9 @@ const Hero = () => {
   const TAGLINE_DELAY = 5.6;
 
   const wordVariant = {
-    hidden: { opacity: 0, y: 30, filter: "blur(8px)" },
+    hidden: { opacity: 0, filter: "blur(8px)" },
     visible: (delay: number) => ({
       opacity: 1,
-      y: 0,
       filter: "blur(0px)",
       transition: { duration: 0.9, delay, ease: [0.16, 1, 0.3, 1] },
     }),
@@ -40,7 +39,7 @@ const Hero = () => {
         <img
           src={heroBg}
           alt=""
-          className="w-full h-full object-cover opacity-50 brightness-110 scale-90"
+          className="w-full h-full object-cover opacity-50 brightness-110 scale-[0.33]"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/30 to-background" />
       </motion.div>
@@ -56,12 +55,12 @@ const Hero = () => {
           <img
             src={logo}
             alt="In Vino Veritas logo"
-            className="w-[22rem] h-[22rem] sm:w-[30rem] sm:h-[30rem] md:w-[36rem] md:h-[36rem] lg:w-[42rem] lg:h-[42rem] object-contain"
+            className="w-[26rem] h-[26rem] sm:w-[34rem] sm:h-[34rem] md:w-[42rem] md:h-[42rem] lg:w-[50rem] lg:h-[50rem] object-contain"
           />
         </motion.div>
 
         {/* Words appear below logo */}
-        <div className="flex gap-3 md:gap-5 mt-2">
+        <div className="flex gap-3 md:gap-5 -mt-4">
           {[
             { word: "Truly", delay: TRULY_DELAY },
             { word: "Tasting", delay: TASTING_DELAY },
@@ -82,8 +81,8 @@ const Hero = () => {
 
         {/* Tagline appears last */}
         <motion.p
-          initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          initial={{ opacity: 0, filter: "blur(4px)" }}
+          animate={{ opacity: 1, filter: "blur(0px)" }}
           transition={{ duration: 1, delay: TAGLINE_DELAY, ease: [0.16, 1, 0.3, 1] }}
           className="mt-6 font-display text-sm md:text-lg tracking-[0.14em] italic text-foreground/70"
         >
