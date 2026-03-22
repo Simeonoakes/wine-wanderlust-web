@@ -121,8 +121,8 @@ const ExpeditionsSection = () => {
         </motion.div>
 
         {/* Photo strip */}
-        <motion.div {...fadeUp} className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-16">
-          {[cafeCroissantImg, fitouSignImg, village2cvImg, grapeHarvestImg].map((img, i) => (
+        <motion.div {...fadeUp} className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-16">
+          {[wineTastingTableImg, cellarPortraitImg, tractorSelfieImg, vineyardHarvestImg, extraSceneImg].map((img, i) => (
             <div key={i} className="relative overflow-hidden aspect-square group">
               <img
                 src={img}
