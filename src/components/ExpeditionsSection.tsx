@@ -34,7 +34,7 @@ const experiences = [
     highlight: "The Wild Corbières",
     description:
       "Explore the dramatic landscapes of one of France's most untamed wine regions. Ancient villages, rugged garrigue, Cathar castles, and panoramas that stretch to the Pyrenees and the Mediterranean.",
-    image: vineyardCastleImg,
+    image: autumnLandscapeImg,
   },
   {
     id: "04",
