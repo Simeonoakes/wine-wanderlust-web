@@ -11,10 +11,9 @@ const Hero = () => {
   const TAGLINE_DELAY = 5.6;
 
   const wordVariant = {
-    hidden: { opacity: 0, y: 30, filter: "blur(8px)" },
+    hidden: { opacity: 0, filter: "blur(8px)" },
     visible: (delay: number) => ({
       opacity: 1,
-      y: 0,
       filter: "blur(0px)",
       transition: { duration: 0.9, delay, ease: [0.16, 1, 0.3, 1] },
     }),
