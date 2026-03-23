@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import WineStainFrame from "@/components/WineStainFrame";
 import wineBarrelImg from "@/assets/wine-barrel.jpg";
 import roseOlivesImg from "@/assets/rose-olives.jpg";
 import handsOnImg from "@/assets/hands-on-winemaking.jpg";
@@ -89,17 +90,19 @@ const ExpeditionsSection = () => {
 
           {/* Tab content */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div className="relative overflow-hidden aspect-[4/3]">
-              <motion.img
+            <div className="flex justify-center">
+              <motion.div
                 key={activeTab}
-                initial={{ opacity: 0, scale: 1.05 }}
+                initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, ease: [0.2, 0, 0, 1] }}
-                src={experiences[activeTab].image}
-                alt={experiences[activeTab].title}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-background/20" />
+              >
+                <WineStainFrame
+                  src={experiences[activeTab].image}
+                  alt={experiences[activeTab].title}
+                  className="w-72 h-72 md:w-96 md:h-96"
+                />
+              </motion.div>
             </div>
             <motion.div
               key={`text-${activeTab}`}

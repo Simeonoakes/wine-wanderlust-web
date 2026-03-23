@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import WineStainFrame from "@/components/WineStainFrame";
 import grapeHarvestImg from "@/assets/grape-harvest.jpg";
 import village2cvImg from "@/assets/village-2cv.jpg";
 import landscapeGarrigueImg from "@/assets/landscape-garrigue.jpg";
@@ -57,26 +58,23 @@ const RegionsSection = () => {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {highlights.map((item, i) => (
             <motion.article
               key={item.name}
               {...fadeUp}
               transition={{ ...fadeUp.transition, delay: i * 0.15 }}
-              className="group cursor-pointer"
+              className="group cursor-pointer flex flex-col items-center text-center"
             >
-              <div className="relative overflow-hidden aspect-[3/4]">
-                <img
-                  src={item.image}
-                  alt={`${item.name} — ${item.subtitle}`}
-                  className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-background/30 group-hover:bg-background/10 transition-colors duration-500" />
-              </div>
-              <div className="mt-5">
+              <WineStainFrame
+                src={item.image}
+                alt={`${item.name} — ${item.subtitle}`}
+                className="w-64 h-64 md:w-72 md:h-72"
+              />
+              <div className="mt-6">
                 <h3 className="text-2xl font-light tracking-tight">{item.name}</h3>
                 <p className="text-muted-foreground text-sm mt-1 font-body">{item.subtitle}</p>
-                <div className="mt-4 pt-4 border-t border-border flex gap-6 text-xs text-muted-foreground font-body">
+                <div className="mt-4 pt-4 border-t border-border flex justify-center gap-6 text-xs text-muted-foreground font-body">
                   <span>{item.detail}</span>
                   <span>{item.soil}</span>
                   <span>{item.character}</span>
