@@ -72,7 +72,7 @@ const Hero = () => {
               initial="hidden"
               animate="visible"
               variants={wordVariant}
-              className="font-display text-3xl md:text-5xl lg:text-6xl tracking-wide text-primary italic"
+              className="font-caption text-3xl md:text-5xl lg:text-6xl tracking-wide text-primary italic"
             >
               {word}
             </motion.span>

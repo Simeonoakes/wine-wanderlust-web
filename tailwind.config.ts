@@ -16,6 +16,8 @@ export default {
       fontFamily: {
         display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
         body: ['"Montserrat"', 'sans-serif'],
+        caption: ['"Playfair Display"', 'Georgia', 'serif'],
+        signature: ['"Dancing Script"', 'cursive'],
       },
       colors: {
         border: "hsl(var(--border))",
