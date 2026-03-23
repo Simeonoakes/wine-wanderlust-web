@@ -39,7 +39,7 @@ const Hero = () => {
         <img
           src={heroBg}
           alt=""
-          className="w-full h-full object-cover object-bottom opacity-50 brightness-110"
+          className="w-full h-full object-cover object-[center_60%] brightness-110"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/30 to-background" />
       </motion.div>
@@ -72,7 +72,7 @@ const Hero = () => {
               initial="hidden"
               animate="visible"
               variants={wordVariant}
-              className="font-display text-3xl md:text-5xl lg:text-6xl tracking-wide text-primary italic"
+              className="font-caption text-3xl md:text-5xl lg:text-6xl tracking-wide text-primary italic"
             >
               {word}
             </motion.span>
