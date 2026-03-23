@@ -39,7 +39,7 @@ const Hero = () => {
         <img
           src={heroBg}
           alt=""
-          className="w-full h-full object-cover object-[center_60%] brightness-110"
+          className="w-full h-full object-cover object-[center_60%] brightness-110 opacity-80"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/30 to-background" />
       </motion.div>
