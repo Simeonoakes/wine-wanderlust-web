@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import WineStainFrame from "@/components/WineStainFrame";
 import guidePortraitImg from "@/assets/guide-portrait.jpg";
 
 const fadeUp = {
@@ -14,16 +15,13 @@ const PhilosophySection = () => {
       <div className="max-w-7xl mx-auto px-8 grid grid-cols-12 gap-8">
         <motion.div
           {...fadeUp}
-          className="col-span-12 md:col-span-5 md:col-start-2"
+          className="col-span-12 md:col-span-5 md:col-start-2 flex justify-center items-center"
         >
-          <div className="relative overflow-hidden aspect-[3/4]">
-            <img
-              src={guidePortraitImg}
-              alt="Your guide — In Vino Veritas"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-background/20" />
-          </div>
+          <WineStainFrame
+            src={guidePortraitImg}
+            alt="Your guide — In Vino Veritas"
+            className="w-72 h-72 md:w-96 md:h-96"
+          />
         </motion.div>
 
         <div className="col-span-12 md:col-span-5 md:col-start-7 flex flex-col justify-center">
