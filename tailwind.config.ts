@@ -16,7 +16,7 @@ export default {
       fontFamily: {
         display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
         body: ['"Montserrat"', 'sans-serif'],
-        caption: ['"Playfair Display"', 'Georgia', 'serif'],
+        caption: ['"Cinzel Decorative"', 'Georgia', 'serif'],
         signature: ['"Mrs Saint Delafield"', 'cursive'],
       },
       colors: {
