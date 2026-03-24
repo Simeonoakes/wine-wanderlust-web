@@ -13,10 +13,10 @@ const WineStainFrame = ({ src, alt, className = "" }: WineStainFrameProps) => {
       <img
         src={wineStainRing}
         alt=""
-        className="absolute inset-[-8%] w-[116%] h-[116%] object-contain z-10 pointer-events-none"
+        className="absolute inset-[-10%] w-[120%] h-[120%] object-contain z-10 pointer-events-none"
       />
       {/* Circular photo clipped inside */}
-      <div className="w-full h-full rounded-full overflow-hidden p-[12%]">
+      <div className="w-full h-full rounded-full overflow-hidden p-[8%]">
         <img
           src={src}
           alt={alt}
