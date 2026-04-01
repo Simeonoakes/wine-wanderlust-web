@@ -94,9 +94,9 @@ const ExpeditionsSection = () => {
             ))}
           </div>
 
-          {/* Tab content */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div className="overflow-hidden">
+          {/* Tab content — banner image on top, text below */}
+          <div>
+            <div className="w-full overflow-hidden">
               <motion.img
                 key={activeTab}
                 initial={{ opacity: 0, scale: 1.02 }}
@@ -104,7 +104,7 @@ const ExpeditionsSection = () => {
                 transition={{ duration: 0.6, ease: [0.2, 0, 0, 1] }}
                 src={experiences[activeTab].image}
                 alt={experiences[activeTab].title}
-                className="w-full aspect-[4/3] object-cover"
+                className="w-full h-[40vh] md:h-[50vh] object-cover"
               />
             </div>
             <motion.div
@@ -112,6 +112,7 @@ const ExpeditionsSection = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
+              className="mt-8 max-w-3xl"
             >
               <span className="text-xs text-primary font-body uppercase tracking-[0.1em]">
                 {experiences[activeTab].highlight}
