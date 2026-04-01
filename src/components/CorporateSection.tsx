@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import corporateBanner from "@/assets/wine-tasting-table.jpg";
 
 const offerings = [
   {
@@ -28,6 +29,15 @@ const fadeUp = {
 const CorporateSection = () => {
   return (
     <section id="corporate-and-consulting" className="py-[15vh] border-t border-border">
+      {/* Banner photo */}
+      <motion.div {...fadeUp} className="w-full mb-16 overflow-hidden">
+        <img
+          src={corporateBanner}
+          alt="Wine tasting corporate event"
+          className="w-full h-[40vh] md:h-[50vh] object-cover object-center"
+        />
+      </motion.div>
+
       <div className="max-w-7xl mx-auto px-8">
         <motion.div {...fadeUp} className="mb-16">
           <span className="text-xs uppercase tracking-[0.12em] text-muted-foreground">
