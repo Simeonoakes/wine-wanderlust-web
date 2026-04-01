@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import WineStainFrame from "@/components/WineStainFrame";
 import grapeHarvestImg from "@/assets/grape-harvest.jpg";
 import village2cvImg from "@/assets/village-2cv.jpg";
 import landscapeGarrigueImg from "@/assets/landscape-garrigue.jpg";
@@ -58,6 +57,19 @@ const RegionsSection = () => {
           </div>
         </motion.div>
 
+        {/* Terroir description text */}
+        <motion.div {...fadeUp} className="max-w-4xl mx-auto mb-16">
+          <p className="text-sm text-muted-foreground leading-relaxed font-body">
+            Wonderfully untranslatable, the word 'terroir' is as rich and complex as the concept it illustrates.
+          </p>
+          <p className="text-sm text-muted-foreground leading-relaxed font-body mt-4">
+            Almost exclusively used in viticulture, it reflects all the naturally occurring external factors (climate, elements, soil type, flora) that come into action to intrinsically affect, nurture and forge a vine, its grapes and therefore, ultimately the wine.
+          </p>
+          <p className="text-sm text-muted-foreground leading-relaxed font-body mt-4">
+            Naturally, the human who guides, tends and transforms at every stage for the first seed to the final glass, is indissociable from the science and the magic.
+          </p>
+        </motion.div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {highlights.map((item, i) => (
             <motion.article
@@ -66,11 +78,14 @@ const RegionsSection = () => {
               transition={{ ...fadeUp.transition, delay: i * 0.15 }}
               className="group cursor-pointer flex flex-col items-center text-center"
             >
-              <WineStainFrame
-                src={item.image}
-                alt={`${item.name} — ${item.subtitle}`}
-                className="w-64 h-64 md:w-72 md:h-72"
-              />
+              {/* Full-width rectangular banner image */}
+              <div className="w-full aspect-[3/2] overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={`${item.name} — ${item.subtitle}`}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
               <div className="mt-6">
                 <h3 className="text-2xl font-light tracking-tight">{item.name}</h3>
                 <p className="text-muted-foreground text-sm mt-1 font-body">{item.subtitle}</p>
