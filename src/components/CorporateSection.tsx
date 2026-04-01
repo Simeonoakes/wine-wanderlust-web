@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import corporateBanner from "@/assets/wine-tasting-table.jpg";
 
 const offerings = [
   {
