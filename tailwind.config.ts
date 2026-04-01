@@ -17,7 +17,7 @@ export default {
         display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
         body: ['"Montserrat"', 'sans-serif'],
         caption: ['"Cinzel Decorative"', 'Georgia', 'serif'],
-        signature: ['"Mrs Saint Delafield"', 'cursive'],
+        signature: ['"Dancing Script"', 'cursive'],
       },
       colors: {
         border: "hsl(var(--border))",

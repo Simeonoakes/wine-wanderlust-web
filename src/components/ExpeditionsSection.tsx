@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import WineStainFrame from "@/components/WineStainFrame";
 import wineBarrelImg from "@/assets/wine-barrel.jpg";
 import roseOlivesImg from "@/assets/rose-olives.jpg";
 import handsOnImg from "@/assets/hands-on-winemaking.jpg";
@@ -39,12 +38,18 @@ const experiences = [
   },
   {
     id: "04",
-    title: "Hands-On Experiences",
+    title: "Hands-On",
     highlight: "Become a Vigneron",
     description:
       "Guided by the vinegrowers themselves, in the wine cellar or in the vineyards. Watch, listen and take part in the beauty of the process at every stage, depending on the season.",
     image: handsOnImg,
   },
+];
+
+const durations = [
+  { label: "1 Day Taster", description: "A curated introduction — perfect for curious travellers passing through the region." },
+  { label: "2-Day Intensive", description: "A deeper dive into the terroir, with extended winery visits, meals and hands-on sessions." },
+  { label: "Week-Long Relaxed", description: "The full immersion — live the Corbières at your own pace, with daily discoveries and plenty of downtime." },
 ];
 
 const fadeUp = {
@@ -56,6 +61,7 @@ const fadeUp = {
 
 const ExpeditionsSection = () => {
   const [activeTab, setActiveTab] = useState(0);
+  const [activeDuration, setActiveDuration] = useState(0);
 
   return (
     <section id="experiences" className="py-[15vh] border-t border-border">
@@ -71,13 +77,13 @@ const ExpeditionsSection = () => {
 
         {/* Tabbed experience showcase */}
         <motion.div {...fadeUp} className="mb-16">
-          {/* Tab buttons */}
-          <div className="flex flex-wrap gap-2 mb-8 border-b border-border">
+          {/* Tab buttons - all on one line */}
+          <div className="flex gap-2 mb-8 border-b border-border overflow-x-auto">
             {experiences.map((exp, i) => (
               <button
                 key={exp.id}
                 onClick={() => setActiveTab(i)}
-                className={`px-5 py-3 text-xs uppercase tracking-[0.1em] font-body transition-colors duration-300 border-b-2 -mb-px ${
+                className={`px-4 py-3 text-xs uppercase tracking-[0.1em] font-body transition-colors duration-300 border-b-2 -mb-px whitespace-nowrap flex-shrink-0 ${
                   activeTab === i
                     ? "border-primary text-primary"
                     : "border-transparent text-muted-foreground hover:text-foreground"
@@ -90,19 +96,16 @@ const ExpeditionsSection = () => {
 
           {/* Tab content */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div className="flex justify-center">
-              <motion.div
+            <div className="overflow-hidden">
+              <motion.img
                 key={activeTab}
-                initial={{ opacity: 0, scale: 0.95 }}
+                initial={{ opacity: 0, scale: 1.02 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, ease: [0.2, 0, 0, 1] }}
-              >
-                <WineStainFrame
-                  src={experiences[activeTab].image}
-                  alt={experiences[activeTab].title}
-                  className="w-72 h-72 md:w-96 md:h-96"
-                />
-              </motion.div>
+                src={experiences[activeTab].image}
+                alt={experiences[activeTab].title}
+                className="w-full aspect-[4/3] object-cover"
+              />
             </div>
             <motion.div
               key={`text-${activeTab}`}
@@ -121,6 +124,34 @@ const ExpeditionsSection = () => {
               </p>
             </motion.div>
           </div>
+        </motion.div>
+
+        {/* Duration sub-tabs */}
+        <motion.div {...fadeUp} className="mb-16">
+          <div className="flex gap-2 mb-6 border-b border-border">
+            {durations.map((dur, i) => (
+              <button
+                key={dur.label}
+                onClick={() => setActiveDuration(i)}
+                className={`px-5 py-3 text-xs uppercase tracking-[0.1em] font-body transition-colors duration-300 border-b-2 -mb-px whitespace-nowrap ${
+                  activeDuration === i
+                    ? "border-primary text-primary"
+                    : "border-transparent text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {dur.label}
+              </button>
+            ))}
+          </div>
+          <motion.p
+            key={activeDuration}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4 }}
+            className="text-sm text-muted-foreground leading-relaxed font-body max-w-2xl"
+          >
+            {durations[activeDuration].description}
+          </motion.p>
         </motion.div>
 
         {/* Photo strip */}

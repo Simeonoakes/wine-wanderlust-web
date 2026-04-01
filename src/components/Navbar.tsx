@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const links = ["Experiences", "The Terroir", "Your Guide", "Contact"];
+const links = ["Experiences", "The Terroir", "Your Guide", "Corporate & Consulting", "Contact"];
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -17,7 +17,7 @@ const Navbar = () => {
           {links.map((link) => (
             <a
               key={link}
-              href={`#${link.toLowerCase().replace(/\s/g, "-")}`}
+              href={`#${link.toLowerCase().replace(/\s&\s/g, "-and-").replace(/\s/g, "-")}`}
               className="text-xs uppercase tracking-[0.12em] text-muted-foreground hover:text-primary transition-colors duration-200"
             >
               {link}
@@ -49,7 +49,7 @@ const Navbar = () => {
               {links.map((link) => (
                 <a
                   key={link}
-                  href={`#${link.toLowerCase().replace(/\s/g, "-")}`}
+                  href={`#${link.toLowerCase().replace(/\s&\s/g, "-and-").replace(/\s/g, "-")}`}
                   onClick={() => setMobileOpen(false)}
                   className="text-sm uppercase tracking-[0.1em] text-muted-foreground"
                 >
