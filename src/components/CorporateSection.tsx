@@ -1,21 +1,26 @@
 import { motion } from "framer-motion";
-import corporateBanner from "@/assets/wine-tasting-table.jpg";
+import roseOlivesImg from "@/assets/rose-olives.jpg";
+import wineTastingTableImg from "@/assets/wine-tasting-table.jpg";
+import cellarPortraitImg from "@/assets/cellar-portrait.jpg";
 
 const offerings = [
   {
     title: "Food & Wine Pairing Meals",
     description:
       "Curated multi-course dining experiences that marry local cuisine with exceptional wines, tailored for your team or clients.",
+    image: roseOlivesImg,
   },
   {
     title: "Tasting Masterclasses",
     description:
       "Led by an experienced guide, these sessions sharpen palates and deepen appreciation — from introductory to advanced levels.",
+    image: cellarPortraitImg,
   },
   {
     title: "Corporate Events",
     description:
       "In the heart of the Corbières or brought to you worldwide — unforgettable wine-centred events for team-building, client entertainment, or product launches.",
+    image: wineTastingTableImg,
   },
 ];
 
@@ -29,15 +34,6 @@ const fadeUp = {
 const CorporateSection = () => {
   return (
     <section id="corporate-and-consulting" className="py-[15vh] border-t border-border">
-      {/* Banner photo */}
-      <motion.div {...fadeUp} className="w-full mb-16 overflow-hidden">
-        <img
-          src={corporateBanner}
-          alt="Wine tasting corporate event"
-          className="w-full h-[40vh] md:h-[50vh] object-cover object-center"
-        />
-      </motion.div>
-
       <div className="max-w-7xl mx-auto px-8">
         <motion.div {...fadeUp} className="mb-16">
           <span className="text-xs uppercase tracking-[0.12em] text-muted-foreground">
@@ -54,12 +50,21 @@ const CorporateSection = () => {
               key={item.title}
               {...fadeUp}
               transition={{ ...fadeUp.transition, delay: i * 0.15 }}
-              className="border border-border p-8"
+              className="border border-border overflow-hidden"
             >
-              <h3 className="text-xl font-light italic tracking-tight">{item.title}</h3>
-              <p className="mt-4 text-sm text-muted-foreground leading-relaxed font-body">
-                {item.description}
-              </p>
+              <div className="w-full aspect-[3/2] overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
+              <div className="p-8">
+                <h3 className="text-xl font-light italic tracking-tight">{item.title}</h3>
+                <p className="mt-4 text-sm text-muted-foreground leading-relaxed font-body">
+                  {item.description}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>

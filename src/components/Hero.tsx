@@ -4,17 +4,17 @@ import heroBg from "@/assets/vineyard-castle.jpg";
 
 const Hero = () => {
   const TRULY_DELAY = 1.2;
-  const TASTING_DELAY = 2.2;
-  const TERROIR_DELAY = 3.2;
-  const PHOTO_DELAY = 4.2;
-  const TAGLINE_DELAY = 5.8;
+  const TASTING_DELAY = 2.4;
+  const TERROIR_DELAY = 3.6;
+  const PHOTO_DELAY = 4.8;
+  const TAGLINE_DELAY = 6.4;
 
   const wordVariant = {
     hidden: { opacity: 0, filter: "blur(8px)" },
     visible: (delay: number) => ({
       opacity: 1,
       filter: "blur(0px)",
-      transition: { duration: 1.4, delay, ease: [0.16, 1, 0.3, 1] },
+      transition: { duration: 1.8, delay, ease: [0.16, 1, 0.3, 1] },
     }),
   };
 
@@ -38,14 +38,14 @@ const Hero = () => {
         <img
           src={heroBg}
           alt=""
-          className="w-full h-full object-cover object-[center_60%] brightness-110 opacity-70"
+          className="w-full h-full object-cover object-[center_60%] brightness-[1.15] opacity-60"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/30 to-background" />
       </motion.div>
 
       {/* Content */}
-      <div className="relative z-20 flex flex-col items-center">
-        {/* Logo appears instantly — no fade */}
+      <div className="relative z-20 flex flex-col items-center text-center">
+        {/* Logo appears instantly */}
         <div>
           <img
             src={logo}
@@ -54,8 +54,8 @@ const Hero = () => {
           />
         </div>
 
-        {/* Words appear close to logo */}
-        <div className="flex gap-3 md:gap-5 -mt-16 md:-mt-24">
+        {/* Words centered below logo */}
+        <div className="flex gap-3 md:gap-5 -mt-16 md:-mt-24 justify-center">
           {[
             { word: "Truly", delay: TRULY_DELAY },
             { word: "Tasting", delay: TASTING_DELAY },
@@ -74,7 +74,7 @@ const Hero = () => {
           ))}
         </div>
 
-        {/* Tagline appears last */}
+        {/* Tagline centered */}
         <motion.p
           initial={{ opacity: 0, filter: "blur(4px)" }}
           animate={{ opacity: 1, filter: "blur(0px)" }}
