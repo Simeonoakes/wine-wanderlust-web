@@ -60,13 +60,13 @@ const RegionsSection = () => {
         {/* Terroir description text */}
         <motion.div {...fadeUp} className="max-w-4xl mx-auto mb-16">
           <p className="text-sm text-muted-foreground leading-relaxed font-body">
-            Wonderfully untranslatable, the word 'terroir' is as rich and complex as the concept it illustrates.
+            Wonderfully untranslatable, the word <span className="font-display italic text-foreground text-base">terroir</span> is as rich and complex as the concept it illustrates.
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed font-body mt-4">
             Almost exclusively used in viticulture, it reflects all the naturally occurring external factors (climate, elements, soil type, flora) that come into action to intrinsically affect, nurture and forge a vine, its grapes and therefore, ultimately the wine.
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed font-body mt-4">
-            Naturally, the human who guides, tends and transforms at every stage for the first seed to the final glass, is indissociable from the science and the magic.
+            Naturally, the human who guides, tends and transforms at every stage from the first seed to the final glass, is indissociable from the science and the magic.
           </p>
         </motion.div>
 
@@ -78,7 +78,6 @@ const RegionsSection = () => {
               transition={{ ...fadeUp.transition, delay: i * 0.15 }}
               className="group cursor-pointer flex flex-col items-center text-center"
             >
-              {/* Full-width rectangular banner image */}
               <div className="w-full aspect-[3/2] overflow-hidden">
                 <img
                   src={item.image}

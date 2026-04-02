@@ -38,18 +38,12 @@ const experiences = [
   },
   {
     id: "04",
-    title: "Hands-On",
+    title: "Hands-On Experiences",
     highlight: "Become a Vigneron",
     description:
       "Guided by the vinegrowers themselves, in the wine cellar or in the vineyards. Watch, listen and take part in the beauty of the process at every stage, depending on the season.",
     image: handsOnImg,
   },
-];
-
-const durations = [
-  { label: "1 Day Taster", description: "A curated introduction — perfect for curious travellers passing through the region." },
-  { label: "2-Day Intensive", description: "A deeper dive into the terroir, with extended winery visits, meals and hands-on sessions." },
-  { label: "Week-Long Relaxed", description: "The full immersion — live the Corbières at your own pace, with daily discoveries and plenty of downtime." },
 ];
 
 const fadeUp = {
@@ -58,6 +52,210 @@ const fadeUp = {
   viewport: { once: true, margin: "-10%" },
   transition: { duration: 0.8, ease: [0.2, 0, 0, 1] },
 };
+
+const OneDayContent = () => (
+  <div className="space-y-8">
+    <p className="text-sm text-muted-foreground leading-relaxed font-body italic">
+      A curated introduction — perfect for curious travellers passing through the region, or as an exclusive activity to include into your holiday in the area.
+    </p>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {[
+        { time: "Morning", icon: "☀️", items: [
+          "Start with French breakfast in the vineyards, drink in the stunning views while sipping on coffee and a croissant from the local boulangerie.",
+          "Visit 1 winery including a tasting and a tour of the winery or part of the estate."
+        ]},
+        { time: "Afternoon", icon: "🍷", items: [
+          "Lunch at a local restaurant.",
+          "Visit another two wineries offering different products in order to showcase the rich palette and variety of wines and winemaking techniques of the area."
+        ]},
+        { time: "Evening", icon: "🌅", items: [
+          "End with an aperitif at the local bar."
+        ]},
+      ].map((block) => (
+        <div key={block.time} className="border border-border p-6">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-lg">{block.icon}</span>
+            <h4 className="text-xs uppercase tracking-[0.12em] text-primary font-body">{block.time}</h4>
+          </div>
+          <ul className="space-y-3">
+            {block.items.map((item, i) => (
+              <li key={i} className="text-sm text-muted-foreground leading-relaxed font-body pl-4 border-l border-primary/30">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
+const TwoDayContent = () => (
+  <div className="space-y-8">
+    <p className="text-sm text-muted-foreground leading-relaxed font-body italic">
+      A deeper dive into the terroir. Includes accommodation for either 2 or 3 nights.
+    </p>
+    {[
+      { day: "Day 1", activities: [
+        { time: "Morning", items: [
+          "Meet for French breakfast in your accommodation — local patisseries and delicacies.",
+          "Visit 1 winery including a tasting and a tour of the winery or part of the estate."
+        ]},
+        { time: "Midday", items: [
+          "Luxury picnic lunch in the heart of the landscape. Breathtaking views, the sounds and scents of the garrigue, local, curated food paired with a local wine."
+        ]},
+        { time: "Afternoon", items: [
+          "Visit a winery with tasting focussing on the appellations of the area."
+        ]},
+        { time: "Evening", items: [
+          "Dinner at a local restaurant."
+        ]},
+      ]},
+      { day: "Day 2", activities: [
+        { time: "Morning", items: [
+          "Breakfast in the vineyard overlooking the stunning Corbières landscapes. Drink in the views while sipping on coffee and a croissant from the local boulangerie.",
+          "Meet the producer: try your hand at pruning, harvesting or blending depending on the season (and the weather)."
+        ]},
+        { time: "Midday", items: [
+          "Visit another winery offering different products in order to showcase the rich palette and variety of wines and winemaking techniques of the area.",
+          "Lunch at a local restaurant."
+        ]},
+        { time: "Afternoon", items: [
+          "Guided tour of a Cathar Castle — immerse yourself in the rich history of the Corbières."
+        ]},
+        { time: "Evening", items: [
+          "Take an aperitif in the vineyards. Sip on a chilled rosé, a crisp dry white or a local sweet wine with speciality bites.",
+          "Food and wine pairing supper in your accommodation."
+        ]},
+      ]},
+    ].map((day) => (
+      <div key={day.day} className="border border-border p-6">
+        <h4 className="text-lg font-display italic text-primary mb-6">{day.day}</h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {day.activities.map((block) => (
+            <div key={block.time}>
+              <span className="text-xs uppercase tracking-[0.12em] text-primary/70 font-body">{block.time}</span>
+              <ul className="mt-2 space-y-2">
+                {block.items.map((item, i) => (
+                  <li key={i} className="text-sm text-muted-foreground leading-relaxed font-body pl-4 border-l border-primary/30">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+    <div className="border-t border-border pt-6 space-y-2">
+      <p className="text-sm text-muted-foreground font-body italic">
+        All is included, all is taken care of. All you need to do is book your transport to and from the area and we will take it from there.
+      </p>
+      <p className="text-sm text-muted-foreground font-body italic">
+        At every stage you will be encouraged to use as much or as little French as you know or fancy!
+      </p>
+    </div>
+  </div>
+);
+
+const WeekContent = () => (
+  <div className="space-y-8">
+    <p className="text-sm text-muted-foreground leading-relaxed font-body italic">
+      Live the Corbières to its fullest. 5 days of total immersion — you'll leave practically as a local. Includes all meals and accommodation for either 4 or 5 nights.
+    </p>
+    {[
+      { day: "Day 1", activities: [
+        { time: "Morning", items: [
+          "Meet for French breakfast in your accommodation — local patisseries and delicacies.",
+          "Visit 1 winery including a tasting and a tour of the winery or part of the estate."
+        ]},
+        { time: "Midday", items: [
+          "Luxury picnic lunch in the heart of the landscape. Breathtaking views, the sounds and scents of the garrigue, local, curated food paired with a local wine."
+        ]},
+        { time: "Afternoon", items: ["Visit a winery with tasting focussing on the appellations of the area."]},
+        { time: "Evening", items: ["Dinner at a local restaurant."]},
+      ]},
+      { day: "Day 2", activities: [
+        { time: "Morning", items: [
+          "Breakfast in the vineyard overlooking the stunning Corbières landscapes. Drink in the views while sipping on coffee and a croissant from the local boulangerie.",
+          "Meet the vigneron: try your hand at pruning, harvesting, ploughing or any other specific job in the vineyards depending on the season."
+        ]},
+        { time: "Midday", items: [
+          "Visit another winery offering different products in order to showcase the rich palette and variety of wines and winemaking techniques of the area.",
+          "Lunch at a local restaurant."
+        ]},
+        { time: "Afternoon", items: ["Guided tour of a Cathar Castle — immerse yourself in the rich history of the Corbières."]},
+        { time: "Evening", items: ["Cook your own local supper! With the guiding hand of a local expert."]},
+      ]},
+      { day: "Day 3", activities: [
+        { time: "Morning", items: [
+          "Vigneron breakfast — do it as the vignerons do: pâté, saucisson, fresh bread and, if you're up for it, a glass of red!",
+          "Guided walk through the garrigue punctuated with botanical, historical and cultural anecdotes."
+        ]},
+        { time: "Midday", items: [
+          "Barbecue in the vineyard, fresh produce, grilled on old vine clippings, seasoned with the thyme and rosemary you picked on the walk."
+        ]},
+        { time: "Afternoon", items: ["Visit a new winery — back to business with yet more delicious and original local wines."]},
+        { time: "Evening", items: [
+          "Enjoy an aperitif in the local café, chill in the sun with a glass of muscat or something a little more risqué.",
+          "Supper at a local restaurant."
+        ]},
+      ]},
+      { day: "Day 4", activities: [
+        { time: "Morning", items: [
+          "Visit a historical site slightly further afield (the Unesco Heritage site of Carcassonne, Fontfroide Abbey or the medieval town of Lagrasse) and grab breakfast on the way."
+        ]},
+        { time: "Midday", items: ["Lunch in a restaurant on site."]},
+        { time: "Afternoon", items: ["Visit a winery near Limoux, the place where Champagne was invented, long before it was ever called Champagne…"]},
+        { time: "Evening", items: ["Food and wine pairing supper in your accommodation."]},
+      ]},
+      { day: "Day 5", activities: [
+        { time: "Morning", items: [
+          "Breakfast in your accommodation.",
+          "Meet a winemaker directly in the winery, who will guide you through a winemaking technique, depending on the season."
+        ]},
+        { time: "Midday", items: ["Lunch in a local restaurant."]},
+        { time: "Afternoon", items: ["Visit your final winery, taste more exceptional wines and visit the winery or part of the estate."]},
+        { time: "Evening", items: [
+          "Take an aperitif in the vineyards. Sip on a chilled rosé, a crisp dry white or a local sweet wine with speciality bites.",
+          "Supper in a local restaurant."
+        ]},
+      ]},
+    ].map((day) => (
+      <div key={day.day} className="border border-border p-6">
+        <h4 className="text-lg font-display italic text-primary mb-6">{day.day}</h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {day.activities.map((block) => (
+            <div key={block.time}>
+              <span className="text-xs uppercase tracking-[0.12em] text-primary/70 font-body">{block.time}</span>
+              <ul className="mt-2 space-y-2">
+                {block.items.map((item, i) => (
+                  <li key={i} className="text-sm text-muted-foreground leading-relaxed font-body pl-4 border-l border-primary/30">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+    <div className="border-t border-border pt-6 space-y-2">
+      <p className="text-sm text-muted-foreground font-body italic">
+        All is included, all is taken care of. All you need to do is book your transport to and from the area and we will take it from there.
+      </p>
+      <p className="text-sm text-muted-foreground font-body italic">
+        At every stage you will be encouraged to use as much or as little French as you know or fancy!
+      </p>
+    </div>
+  </div>
+);
+
+const durations = [
+  { label: "1 Day Taster", content: <OneDayContent /> },
+  { label: "2-Day Intensive", content: <TwoDayContent /> },
+  { label: "1 Week Full Immersion", content: <WeekContent /> },
+];
 
 const ExpeditionsSection = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -77,7 +275,6 @@ const ExpeditionsSection = () => {
 
         {/* Tabbed experience showcase */}
         <motion.div {...fadeUp} className="mb-16">
-          {/* Tab buttons - all on one line */}
           <div className="flex gap-2 mb-8 border-b border-border overflow-x-auto">
             {experiences.map((exp, i) => (
               <button
@@ -94,7 +291,6 @@ const ExpeditionsSection = () => {
             ))}
           </div>
 
-          {/* Tab content — banner image on top, text below */}
           <div>
             <div className="w-full overflow-hidden">
               <motion.img
@@ -104,7 +300,7 @@ const ExpeditionsSection = () => {
                 transition={{ duration: 0.6, ease: [0.2, 0, 0, 1] }}
                 src={experiences[activeTab].image}
                 alt={experiences[activeTab].title}
-                className="w-full h-[40vh] md:h-[50vh] object-cover"
+                className="w-full h-[40vh] md:h-[50vh] object-cover object-center"
               />
             </div>
             <motion.div
@@ -129,7 +325,7 @@ const ExpeditionsSection = () => {
 
         {/* Duration sub-tabs */}
         <motion.div {...fadeUp} className="mb-16">
-          <div className="flex gap-2 mb-6 border-b border-border">
+          <div className="flex gap-2 mb-8 border-b border-border">
             {durations.map((dur, i) => (
               <button
                 key={dur.label}
@@ -144,15 +340,14 @@ const ExpeditionsSection = () => {
               </button>
             ))}
           </div>
-          <motion.p
+          <motion.div
             key={activeDuration}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4 }}
-            className="text-sm text-muted-foreground leading-relaxed font-body max-w-2xl"
           >
-            {durations[activeDuration].description}
-          </motion.p>
+            {durations[activeDuration].content}
+          </motion.div>
         </motion.div>
 
         {/* Photo strip */}
@@ -162,7 +357,7 @@ const ExpeditionsSection = () => {
               <img
                 src={img}
                 alt=""
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-background/30 group-hover:bg-background/10 transition-colors duration-500" />
             </div>

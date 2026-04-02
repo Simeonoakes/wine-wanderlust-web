@@ -50,7 +50,7 @@ const PhilosophySection = () => {
                 With the helping hand of my retired vine-growing father and my vigneron brother, 
                 let me take you on a sensorial journey of discovery here in the wild Corbières.
               </p>
-              <p className="mt-8 font-signature text-3xl md:text-4xl text-primary/80 tracking-wide">
+              <p className="mt-8 font-signature text-4xl md:text-5xl text-primary/80">
                 Simeon
               </p>
             </motion.div>
