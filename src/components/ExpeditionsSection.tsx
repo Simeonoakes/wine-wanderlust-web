@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import BookingDialog from "@/components/BookingDialog";
+import menuPaperImg from "@/assets/menu-paper.jpg";
 import wineBarrelImg from "@/assets/wine-barrel.jpg";
 import roseOlivesImg from "@/assets/rose-olives.jpg";
 import handsOnImg from "@/assets/hands-on-winemaking.jpg";
@@ -17,7 +19,7 @@ const experiences = [
   {
     id: "01",
     title: "Winery Visits & Tastings",
-    highlight: "Meet the Makers",
+    highlight: "Where the Magic Happens",
     description:
       "Step behind the cellar doors of the region's finest hand-picked domaines. Meet the magic makers whose hands and hearts forge the precious nectar. Hear their stories first hand, taste directly from barrel and bottle, as always, guided by someone who grew up among the vines.",
     image: wineBarrelImg,
@@ -49,44 +51,57 @@ const experiences = [
 ];
 
 const fadeUp = {
-  initial: { opacity: 0, y: 20 },
+  initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-10%" },
-  transition: { duration: 0.8, ease: [0.2, 0, 0, 1] },
+  viewport: { once: true, margin: "-5%" },
+  transition: { duration: 1, ease: [0.2, 0, 0, 1] },
 };
 
-/* ── Shared menu-style day renderer ── */
+/* ── Menu-style day renderer on parchment ── */
 interface DayData {
   day: string;
   courses: { course: string; items: string[] }[];
 }
 
 const MenuDay = ({ day }: { day: DayData }) => (
-  <div className="border border-border p-8 md:p-10">
-    <h4 className="text-xl font-display italic text-primary mb-8 text-center">{day.day}</h4>
-    <div className="space-y-8">
-      {day.courses.map((course) => (
-        <div key={course.course} className="text-center">
-          <span className="text-xs uppercase tracking-[0.2em] text-primary font-body block mb-4">
-            {course.course}
-          </span>
-          <div className="w-12 h-px bg-primary/30 mx-auto mb-4" />
-          {course.items.map((item, i) => (
-            <p key={i} className="text-sm text-muted-foreground leading-relaxed font-body mb-2 max-w-xl mx-auto">
-              {item}
-            </p>
-          ))}
-        </div>
-      ))}
+  <div
+    className="relative p-10 md:p-14 shadow-card"
+    style={{
+      backgroundImage: `url(${menuPaperImg})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+    }}
+  >
+    {/* Subtle dark overlay for readability */}
+    <div className="absolute inset-0 bg-black/5" />
+    <div className="relative z-10">
+      <h4 className="text-2xl md:text-3xl font-display italic text-amber-900 mb-10 text-center">
+        {day.day}
+      </h4>
+      <div className="w-16 h-px bg-amber-800/40 mx-auto mb-10" />
+      <div className="space-y-10">
+        {day.courses.map((course) => (
+          <div key={course.course} className="text-center">
+            <span className="text-xs uppercase tracking-[0.25em] text-amber-800 font-body block mb-5">
+              {course.course}
+            </span>
+            <div className="w-10 h-px bg-amber-800/30 mx-auto mb-5" />
+            {course.items.map((item, i) => (
+              <p key={i} className="text-sm text-amber-950/80 leading-relaxed font-body mb-2 max-w-xl mx-auto">
+                {item}
+              </p>
+            ))}
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 );
 
-const OneDayContent = () => (
+const OneDayContent = ({ onBook }: { onBook: () => void }) => (
   <div className="space-y-8">
-    {/* Banner photo */}
     <div className="w-full overflow-hidden">
-      <img src={cafeCroissantImg} alt="A day in the Corbières" className="w-full h-[35vh] md:h-[45vh] object-cover object-center" />
+      <img src={cafeCroissantImg} alt="A day in the Corbières" className="w-full h-[35vh] md:h-[50vh] object-cover object-center" loading="lazy" />
     </div>
 
     <div className="text-center space-y-2">
@@ -114,25 +129,24 @@ const OneDayContent = () => (
       ]
     }} />
 
-    <div className="text-center pt-4">
+    <div className="text-center pt-4 space-y-3">
       <p className="text-xs uppercase tracking-[0.2em] text-primary font-body">
         At every stage you will be encouraged to use as much or as little French as you know or fancy!
       </p>
     </div>
 
     <div className="text-center pt-4">
-      <Button variant="expedition" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-sm px-10 py-5">
+      <Button onClick={onBook} variant="expedition" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-sm px-10 py-5">
         Book Your Taster Journey
       </Button>
     </div>
   </div>
 );
 
-const TwoDayContent = () => (
+const TwoDayContent = ({ onBook }: { onBook: () => void }) => (
   <div className="space-y-8">
-    {/* Banner photo */}
     <div className="w-full overflow-hidden">
-      <img src={roseOlivesImg} alt="Two days in the Corbières" className="w-full h-[35vh] md:h-[45vh] object-cover object-center" />
+      <img src={roseOlivesImg} alt="Two days in the Corbières" className="w-full h-[35vh] md:h-[50vh] object-cover object-center" loading="lazy" />
     </div>
 
     <div className="text-center space-y-2">
@@ -188,21 +202,23 @@ const TwoDayContent = () => (
       <p className="text-xs uppercase tracking-[0.2em] text-primary font-body">
         At every stage you will be encouraged to use as much or as little French as you know or fancy!
       </p>
+      <p className="text-xs text-muted-foreground/60 font-body italic mt-6">
+        * Vegetarian and vegan alternatives available on request
+      </p>
     </div>
 
     <div className="text-center pt-4">
-      <Button variant="expedition" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-sm px-10 py-5">
+      <Button onClick={onBook} variant="expedition" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-sm px-10 py-5">
         Book Your Intensive Journey
       </Button>
     </div>
   </div>
 );
 
-const WeekContent = () => (
+const WeekContent = ({ onBook }: { onBook: () => void }) => (
   <div className="space-y-8">
-    {/* Banner photo */}
     <div className="w-full overflow-hidden">
-      <img src={landscapeGarrigueImg} alt="A week in the Corbières" className="w-full h-[35vh] md:h-[45vh] object-cover object-center" />
+      <img src={landscapeGarrigueImg} alt="A week in the Corbières" className="w-full h-[35vh] md:h-[50vh] object-cover object-center" loading="lazy" />
     </div>
 
     <div className="text-center space-y-2">
@@ -240,7 +256,7 @@ const WeekContent = () => (
       ]},
       { day: "Day 3", courses: [
         { course: "Morning", items: [
-          "Vigneron breakfast — do it as the vignerons do: pâté, saucisson, fresh bread and, if you're up for it, a glass of red!",
+          "Vigneron breakfast — do it as the vignerons do: pâté*, saucisson*, fresh bread and, if you're up for it, a glass of red!",
           "Guided walk through the garrigue punctuated with botanical, historical and cultural anecdotes."
         ]},
         { course: "Midday", items: [
@@ -269,7 +285,7 @@ const WeekContent = () => (
         { course: "Afternoon", items: ["Visit your final winery, taste more exceptional wines and visit the winery or part of the estate."]},
         { course: "Evening", items: [
           "Take an aperitif in the vineyards. Sip on a chilled rosé, a crisp dry white or a local sweet wine with speciality bites.",
-          "Supper in a local restaurant."
+          "Supper at a local restaurant."
         ]},
       ]},
     ].map((day) => (
@@ -283,32 +299,42 @@ const WeekContent = () => (
       <p className="text-xs uppercase tracking-[0.2em] text-primary font-body">
         At every stage you will be encouraged to use as much or as little French as you know or fancy!
       </p>
+      <p className="text-xs text-muted-foreground/60 font-body italic mt-6">
+        * Vegetarian and vegan alternatives available on request
+      </p>
     </div>
 
     <div className="text-center pt-4">
-      <Button variant="expedition" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-sm px-10 py-5">
+      <Button onClick={onBook} variant="expedition" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-sm px-10 py-5">
         Book Your Full Immersion Journey
       </Button>
     </div>
   </div>
 );
 
-const durations = [
-  { label: "1 Day Taster", content: <OneDayContent /> },
-  { label: "2-Day Intensive", content: <TwoDayContent /> },
-  { label: "1 Week Full Immersion", content: <WeekContent /> },
-];
-
 const ExpeditionsSection = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [activeDuration, setActiveDuration] = useState(0);
+  const [bookingOpen, setBookingOpen] = useState(false);
+  const [journeyType, setJourneyType] = useState("");
+
+  const openBooking = (type: string) => {
+    setJourneyType(type);
+    setBookingOpen(true);
+  };
+
+  const durations = [
+    { label: "1 Day Taster", content: <OneDayContent onBook={() => openBooking("Taster Journey")} /> },
+    { label: "2-Day Intensive", content: <TwoDayContent onBook={() => openBooking("Intensive Journey")} /> },
+    { label: "1 Week Full Immersion", content: <WeekContent onBook={() => openBooking("Full Immersion Journey")} /> },
+  ];
 
   return (
     <section id="experiences" className="py-[15vh] border-t border-border">
       <div className="max-w-7xl mx-auto px-8">
         <motion.div {...fadeUp} className="mb-16">
           <span className="text-xs uppercase tracking-[0.12em] text-muted-foreground">
-            02 — Experiences
+            03 — Experiences
           </span>
           <h2 className="mt-4 text-4xl md:text-5xl font-light italic tracking-tight">
             What Awaits You
@@ -342,9 +368,7 @@ const ExpeditionsSection = () => {
                 transition={{ duration: 0.6, ease: [0.2, 0, 0, 1] }}
                 src={experiences[activeTab].image}
                 alt={experiences[activeTab].title}
-                className={`w-full h-[40vh] md:h-[50vh] object-cover ${
-                  activeTab === 3 ? "object-[center_30%]" : "object-center"
-                }`}
+                className="w-full h-[40vh] md:h-[55vh] object-cover object-center"
               />
             </div>
             <motion.div
@@ -401,6 +425,7 @@ const ExpeditionsSection = () => {
               <img
                 src={img}
                 alt=""
+                loading="lazy"
                 className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-background/30 group-hover:bg-background/10 transition-colors duration-500" />
@@ -409,11 +434,17 @@ const ExpeditionsSection = () => {
         </motion.div>
 
         <motion.div {...fadeUp} className="text-center">
-          <Button variant="expedition" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+          <Button
+            onClick={() => openBooking("Bespoke Experience")}
+            variant="expedition"
+            className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+          >
             Enquire About a Bespoke Experience
           </Button>
         </motion.div>
       </div>
+
+      <BookingDialog open={bookingOpen} onOpenChange={setBookingOpen} journeyType={journeyType} />
     </section>
   );
 };

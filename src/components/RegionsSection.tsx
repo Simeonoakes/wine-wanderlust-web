@@ -1,40 +1,32 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import grapeHarvestImg from "@/assets/grape-harvest.jpg";
 import village2cvImg from "@/assets/village-2cv.jpg";
 import landscapeGarrigueImg from "@/assets/landscape-garrigue.jpg";
 
 const highlights = [
   {
-    name: "The Vineyards",
-    subtitle: "Heart of the Corbières",
+    name: "Ancient Vines",
     image: grapeHarvestImg,
-    detail: "Ancient Vines",
-    soil: "Limestone & Schist",
-    character: "Bold & Elegant",
+    link: "/the-vineyards",
   },
   {
     name: "The Landscape",
-    subtitle: "Garrigue & Mountains",
     image: landscapeGarrigueImg,
-    detail: "Cathar Castles",
-    soil: "Wild Mediterranean",
-    character: "Untamed Beauty",
+    link: "/the-landscape",
   },
   {
     name: "The Culture",
-    subtitle: "Centuries of Savoir-Faire",
     image: village2cvImg,
-    detail: "Local Artisans",
-    soil: "Languedoc Cuisine",
-    character: "Living Heritage",
+    link: "/the-culture",
   },
 ];
 
 const fadeUp = {
-  initial: { opacity: 0, y: 20 },
+  initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-10%" },
-  transition: { duration: 0.8, ease: [0.2, 0, 0, 1] },
+  viewport: { once: true, margin: "-5%" },
+  transition: { duration: 1, ease: [0.2, 0, 0, 1] },
 };
 
 const RegionsSection = () => {
@@ -58,15 +50,22 @@ const RegionsSection = () => {
         </motion.div>
 
         {/* Terroir description text */}
-        <motion.div {...fadeUp} className="max-w-4xl mx-auto mb-16">
+        <motion.div {...fadeUp} className="max-w-4xl mx-auto mb-10">
           <p className="text-sm text-muted-foreground leading-relaxed font-body">
-            Wonderfully untranslatable, the word <span className="font-display italic text-foreground text-base">terroir</span> is as rich and complex as the concept it illustrates.
+            Wonderfully untranslatable, the word <span className="font-display italic text-foreground text-xl">terroir</span> is as rich and complex as the concept it illustrates.
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed font-body mt-4">
             Almost exclusively used in viticulture, it reflects all the naturally occurring external factors (climate, elements, soil type, flora) that come into action to intrinsically affect, nurture and forge a vine, its grapes and therefore, ultimately the wine.
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed font-body mt-4">
             Naturally, the human who guides, tends and transforms at every stage from the first seed to the final glass, is indissociable from the science and the magic.
+          </p>
+        </motion.div>
+
+        {/* Transition text */}
+        <motion.div {...fadeUp} className="text-center mb-16">
+          <p className="text-base md:text-lg font-display italic text-primary/90 tracking-wide">
+            This is what awaits you on your journey of discovery — Where the story begins and never ends:
           </p>
         </motion.div>
 
@@ -78,22 +77,21 @@ const RegionsSection = () => {
               transition={{ ...fadeUp.transition, delay: i * 0.15 }}
               className="group cursor-pointer flex flex-col items-center text-center"
             >
-              <div className="w-full aspect-[3/2] overflow-hidden">
-                <img
-                  src={item.image}
-                  alt={`${item.name} — ${item.subtitle}`}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <div className="mt-6">
-                <h3 className="text-2xl font-light tracking-tight">{item.name}</h3>
-                <p className="text-muted-foreground text-sm mt-1 font-body">{item.subtitle}</p>
-                <div className="mt-4 pt-4 border-t border-border flex justify-center gap-6 text-xs text-muted-foreground font-body">
-                  <span>{item.detail}</span>
-                  <span>{item.soil}</span>
-                  <span>{item.character}</span>
+              <Link to={item.link} className="w-full">
+                <div className="w-full aspect-[3/2] overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
                 </div>
-              </div>
+                <div className="mt-6">
+                  <h3 className="text-2xl font-light tracking-tight group-hover:text-primary transition-colors">
+                    {item.name}
+                  </h3>
+                </div>
+              </Link>
             </motion.article>
           ))}
         </div>

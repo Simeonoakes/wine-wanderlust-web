@@ -1,4 +1,7 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import BookingDialog from "@/components/BookingDialog";
 import roseOlivesImg from "@/assets/rose-olives.jpg";
 import wineTastingTableImg from "@/assets/wine-tasting-table.jpg";
 import cellarPortraitImg from "@/assets/cellar-portrait.jpg";
@@ -25,23 +28,31 @@ const offerings = [
 ];
 
 const fadeUp = {
-  initial: { opacity: 0, y: 20 },
+  initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-10%" },
-  transition: { duration: 0.8, ease: [0.2, 0, 0, 1] },
+  viewport: { once: true, margin: "-5%" },
+  transition: { duration: 1, ease: [0.2, 0, 0, 1] },
 };
 
 const CorporateSection = () => {
+  const [bookingOpen, setBookingOpen] = useState(false);
+
   return (
     <section id="corporate-and-consulting" className="py-[15vh] border-t border-border">
       <div className="max-w-7xl mx-auto px-8">
-        <motion.div {...fadeUp} className="mb-16">
+        <motion.div {...fadeUp} className="mb-10">
           <span className="text-xs uppercase tracking-[0.12em] text-muted-foreground">
             04 — Corporate & Consulting
           </span>
           <h2 className="mt-4 text-4xl md:text-5xl font-light italic tracking-tight">
             For Business & Beyond
           </h2>
+        </motion.div>
+
+        <motion.div {...fadeUp} className="max-w-3xl mb-16">
+          <p className="text-sm text-muted-foreground leading-relaxed font-body">
+            Whether you're looking for an unforgettable team-building experience in the vineyards, an exclusive corporate event to impress clients, or expert bespoke consulting services tailored to your business — we bring the world of wine to your doorstep. From intimate private tastings to large-scale events, every detail is crafted to inspire, connect, and leave a lasting impression.
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -56,6 +67,7 @@ const CorporateSection = () => {
                 <img
                   src={item.image}
                   alt={item.title}
+                  loading="lazy"
                   className="w-full h-full object-cover object-center"
                 />
               </div>
@@ -68,7 +80,19 @@ const CorporateSection = () => {
             </motion.div>
           ))}
         </div>
+
+        <motion.div {...fadeUp} className="text-center mt-12">
+          <Button
+            onClick={() => setBookingOpen(true)}
+            variant="expedition"
+            className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+          >
+            Enquire About Corporate Services
+          </Button>
+        </motion.div>
       </div>
+
+      <BookingDialog open={bookingOpen} onOpenChange={setBookingOpen} journeyType="Corporate Experience" />
     </section>
   );
 };
