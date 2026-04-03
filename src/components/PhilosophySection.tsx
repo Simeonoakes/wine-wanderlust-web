@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import guidePortraitImg from "@/assets/guide-portrait.jpg";
 
 const fadeUp = {
-  initial: { opacity: 0, y: 20 },
+  initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-10%" },
-  transition: { duration: 0.8, ease: [0.2, 0, 0, 1] },
+  viewport: { once: true, margin: "-5%" },
+  transition: { duration: 1, ease: [0.2, 0, 0, 1] },
 };
 
 const PhilosophySection = () => {
@@ -25,7 +25,7 @@ const PhilosophySection = () => {
           <div className="col-span-12 md:col-span-8 md:col-start-3 flex flex-col justify-center">
             <motion.div {...fadeUp}>
               <span className="text-xs uppercase tracking-[0.12em] text-muted-foreground">
-                03 — Your Guide
+                02 — Your Guide
               </span>
               <blockquote className="mt-8">
                 <p className="text-[clamp(1.2rem,2.5vw,1.8rem)] font-light italic leading-[1.4] tracking-tight">
