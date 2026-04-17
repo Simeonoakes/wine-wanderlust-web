@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const links = ["Experiences", "The Terroir", "Your Guide", "Corporate & Consulting", "Contact"];
+const links: { label: string; href: string }[] = [
+  { label: "Experiences", href: "/#experiences" },
+  { label: "The Terroir", href: "/#the-terroir" },
+  { label: "Your Guide", href: "/#your-guide" },
+  { label: "Corporate & Consulting", href: "/#corporate-and-consulting" },
+  { label: "Contact", href: "/contact" },
+];
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);

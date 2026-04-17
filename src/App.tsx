@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound.tsx";
 import TheVineyards from "./pages/TheVineyards.tsx";
 import TheLandscape from "./pages/TheLandscape.tsx";
 import TheCulture from "./pages/TheCulture.tsx";
+import Contact from "./pages/Contact.tsx";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/the-vineyards" element={<TheVineyards />} />
           <Route path="/the-landscape" element={<TheLandscape />} />
           <Route path="/the-culture" element={<TheCulture />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
