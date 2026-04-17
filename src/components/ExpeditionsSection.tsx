@@ -111,7 +111,7 @@ const OneDayContent = ({ onBook }: { onBook: () => void }) => (
 
     <div className="text-center space-y-2">
       <p className="text-sm text-muted-foreground leading-relaxed font-body italic max-w-2xl mx-auto">
-        A curated introduction — perfect for curious travellers passing through the region, or as an exclusive activity to include into your holiday in the area.
+        A curated introduction : perfect for curious travellers passing through the region, or as an exclusive activity to include into your holiday in the area.
       </p>
     </div>
 
@@ -166,7 +166,7 @@ const TwoDayContent = ({ onBook }: { onBook: () => void }) => (
     {[
       { day: "Day 1", courses: [
         { course: "Morning", items: [
-          "Meet for French breakfast in your accommodation — local patisseries and delicacies.",
+          "Meet for French breakfast in your accommodation : local patisseries and delicacies.",
           "Visit 1 winery including a tasting and a tour of the winery or part of the estate."
         ]},
         { course: "Midday", items: [
@@ -189,7 +189,7 @@ const TwoDayContent = ({ onBook }: { onBook: () => void }) => (
           "Lunch at a local restaurant."
         ]},
         { course: "Afternoon", items: [
-          "Guided tour of a Cathar Castle — immerse yourself in the rich history of the Corbières."
+          "Guided tour of a Cathar Castle : immerse yourself in the rich history of the Corbières."
         ]},
         { course: "Evening", items: [
           "Take an aperitif in the vineyards. Sip on a chilled rosé, a crisp dry white or a local sweet wine with speciality bites.",
@@ -228,7 +228,7 @@ const WeekContent = ({ onBook }: { onBook: () => void }) => (
 
     <div className="text-center space-y-2">
       <p className="text-sm text-muted-foreground leading-relaxed font-body italic max-w-2xl mx-auto">
-        Live the Corbières to its fullest. 5 days of total immersion — you'll leave practically as a local.
+        Live the Corbières to its fullest. 5 days of total immersion : you'll leave practically as a local.
       </p>
       <p className="text-sm text-primary leading-relaxed font-body">
         Includes all meals and accommodation for either 4 or 5 nights
@@ -238,7 +238,7 @@ const WeekContent = ({ onBook }: { onBook: () => void }) => (
     {[
       { day: "Day 1", courses: [
         { course: "Morning", items: [
-          "Meet for French breakfast in your accommodation — local patisseries and delicacies.",
+          "Meet for French breakfast in your accommodation : local patisseries and delicacies.",
           "Visit 1 winery including a tasting and a tour of the winery or part of the estate."
         ]},
         { course: "Midday", items: [
@@ -256,18 +256,18 @@ const WeekContent = ({ onBook }: { onBook: () => void }) => (
           "Visit another winery offering different products in order to showcase the rich palette and variety of wines and winemaking techniques of the area.",
           "Lunch at a local restaurant."
         ]},
-        { course: "Afternoon", items: ["Guided tour of a Cathar Castle — immerse yourself in the rich history of the Corbières."]},
+        { course: "Afternoon", items: ["Guided tour of a Cathar Castle : immerse yourself in the rich history of the Corbières."]},
         { course: "Evening", items: ["Cook your own local supper! With the guiding hand of a local expert."]},
       ]},
       { day: "Day 3", courses: [
         { course: "Morning", items: [
-          "Vigneron breakfast — do it as the vignerons do: pâté*, saucisson*, fresh bread and, if you're up for it, a glass of red!",
+          "Vigneron breakfast : do it as the vignerons do: pâté*, saucisson*, fresh bread and, if you're up for it, a glass of red!",
           "Guided walk through the garrigue punctuated with botanical, historical and cultural anecdotes."
         ]},
         { course: "Midday", items: [
           "Barbecue in the vineyard, fresh produce, grilled on old vine clippings, seasoned with the thyme and rosemary you picked on the walk."
         ]},
-        { course: "Afternoon", items: ["Visit a new winery — back to business with yet more delicious and original local wines."]},
+        { course: "Afternoon", items: ["Visit a new winery : back to business with yet more delicious and original local wines."]},
         { course: "Evening", items: [
           "Enjoy an aperitif in the local café, chill in the sun with a glass of muscat or something a little more risqué.",
           "Supper at a local restaurant."
@@ -339,7 +339,7 @@ const ExpeditionsSection = () => {
       <div className="max-w-7xl mx-auto px-8">
         <motion.div {...fadeUp} className="mb-16">
           <span className="text-xs uppercase tracking-[0.12em] text-muted-foreground">
-            03 — Experiences
+            03 : Experiences
           </span>
           <h2 className="mt-4 text-4xl md:text-5xl font-light italic tracking-tight">
             What Awaits You
