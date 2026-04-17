@@ -14,10 +14,14 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        display: ['"Marcellus"', '"Cormorant Garamond"', 'Georgia', 'serif'],
+        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
         body: ['"Montserrat"', 'sans-serif'],
-        caption: ['"Cinzel Decorative"', 'Georgia', 'serif'],
+        caption: ['"Cinzel"', 'Georgia', 'serif'],
+        decorative: ['"Cinzel Decorative"', 'Georgia', 'serif'],
         signature: ['"Mrs Saint Delafield"', 'cursive'],
+        script: ['"Italianno"', '"Tangerine"', 'cursive'],
+        menu: ['"Tangerine"', '"Italianno"', 'cursive'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -54,6 +58,14 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         wine: "hsl(var(--wine-red))",
+        burgundy: {
+          DEFAULT: "hsl(var(--burgundy))",
+          light: "hsl(var(--burgundy-light))",
+        },
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          light: "hsl(var(--gold-light))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
