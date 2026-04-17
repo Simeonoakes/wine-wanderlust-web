@@ -16,13 +16,13 @@ const offerings = [
   {
     title: "Tasting Masterclasses",
     description:
-      "Led by an experienced guide, these sessions sharpen palates and deepen appreciation — from introductory to advanced levels.",
+      "Led by an experienced guide, these sessions sharpen palates and deepen appreciation, from introductory to advanced levels.",
     image: cellarPortraitImg,
   },
   {
     title: "Corporate Events",
     description:
-      "In the heart of the Corbières or brought to you worldwide — unforgettable wine-centred events for team-building, client entertainment, or product launches.",
+      "In the heart of the Corbières or brought to you worldwide: unforgettable wine-centred events for team-building, client entertainment, or product launches.",
     image: wineTastingTableImg,
   },
 ];
@@ -42,16 +42,16 @@ const CorporateSection = () => {
       <div className="max-w-7xl mx-auto px-8">
         <motion.div {...fadeUp} className="mb-10">
           <span className="text-xs uppercase tracking-[0.12em] text-muted-foreground">
-            04 — Corporate & Consulting
+            04 / Corporate &amp; Consulting
           </span>
-          <h2 className="mt-4 text-4xl md:text-5xl font-light italic tracking-tight">
-            For Business & Beyond
+          <h2 className="mt-4 text-4xl md:text-5xl font-display text-primary tracking-tight">
+            For Business &amp; Beyond
           </h2>
         </motion.div>
 
         <motion.div {...fadeUp} className="max-w-3xl mb-16">
           <p className="text-sm text-muted-foreground leading-relaxed font-body">
-            Whether you're looking for an unforgettable team-building experience in the vineyards, an exclusive corporate event to impress clients, or expert bespoke consulting services tailored to your business — we bring the world of wine to your doorstep. From intimate private tastings to large-scale events, every detail is crafted to inspire, connect, and leave a lasting impression.
+            Whether you're looking for an unforgettable team-building experience in the vineyards, an exclusive corporate event to impress clients, or expert bespoke consulting services tailored to your business, we bring the world of wine to your doorstep. From intimate private tastings to large-scale events, every detail is crafted to inspire, connect, and leave a lasting impression.
           </p>
         </motion.div>
 
@@ -72,7 +72,7 @@ const CorporateSection = () => {
                 />
               </div>
               <div className="p-8">
-                <h3 className="text-xl font-light italic tracking-tight">{item.title}</h3>
+                <h3 className="text-2xl font-script text-primary leading-tight">{item.title}</h3>
                 <p className="mt-4 text-sm text-muted-foreground leading-relaxed font-body">
                   {item.description}
                 </p>

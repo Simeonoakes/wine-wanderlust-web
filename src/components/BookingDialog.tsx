@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { format } from "date-fns";
+import { CalendarIcon } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -10,6 +12,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Calendar } from "@/components/ui/calendar";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import {
   Select,
   SelectContent,
@@ -17,6 +25,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 
 interface BookingDialogProps {
@@ -31,16 +40,17 @@ const BookingDialog = ({ open, onOpenChange, journeyType }: BookingDialogProps) 
     email: "",
     phone: "",
     partySize: "",
-    preferredDates: "",
     dietary: "",
     airport: "",
   });
+  const [preferredDate, setPreferredDate] = useState<Date | undefined>();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast.success("Thank you for your enquiry! We'll be in touch shortly.");
     onOpenChange(false);
-    setFormData({ name: "", email: "", phone: "", partySize: "", preferredDates: "", dietary: "", airport: "" });
+    setFormData({ name: "", email: "", phone: "", partySize: "", dietary: "", airport: "" });
+    setPreferredDate(undefined);
   };
 
   return (
@@ -51,7 +61,7 @@ const BookingDialog = ({ open, onOpenChange, journeyType }: BookingDialogProps) 
             {journeyType ? `Book Your ${journeyType}` : "Booking Enquiry"}
           </DialogTitle>
           <DialogDescription className="text-muted-foreground font-body text-sm">
-            Fill in your details and we'll get back to you to arrange your bespoke experience.
+            Fill in your details and we'll get back to you to arrange your experience.
           </DialogDescription>
         </DialogHeader>
 
@@ -109,16 +119,32 @@ const BookingDialog = ({ open, onOpenChange, journeyType }: BookingDialogProps) 
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="preferredDates" className="text-xs uppercase tracking-[0.1em] font-body text-muted-foreground">Preferred Dates</Label>
-              <Input
-                id="preferredDates"
-                required
-                maxLength={100}
-                placeholder="e.g. June 2026"
-                value={formData.preferredDates}
-                onChange={(e) => setFormData({ ...formData, preferredDates: e.target.value })}
-                className="bg-secondary border-border"
-              />
+              <Label className="text-xs uppercase tracking-[0.1em] font-body text-muted-foreground">Preferred Dates</Label>
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    className={cn(
+                      "w-full justify-start text-left font-normal bg-secondary border-border hover:bg-secondary/80",
+                      !preferredDate && "text-muted-foreground"
+                    )}
+                  >
+                    <CalendarIcon className="mr-2 h-4 w-4" />
+                    {preferredDate ? format(preferredDate, "PPP") : <span>Pick a date</span>}
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-auto p-0 bg-card border-border" align="start">
+                  <Calendar
+                    mode="single"
+                    selected={preferredDate}
+                    onSelect={setPreferredDate}
+                    disabled={(date) => date < new Date(new Date().setHours(0, 0, 0, 0))}
+                    initialFocus
+                    className={cn("p-3 pointer-events-auto")}
+                  />
+                </PopoverContent>
+              </Popover>
             </div>
           </div>
 
@@ -127,7 +153,7 @@ const BookingDialog = ({ open, onOpenChange, journeyType }: BookingDialogProps) 
             <Textarea
               id="dietary"
               maxLength={500}
-              placeholder="Any allergies or dietary preferences…"
+              placeholder="Any allergies or dietary requirements…"
               value={formData.dietary}
               onChange={(e) => setFormData({ ...formData, dietary: e.target.value })}
               className="bg-secondary border-border resize-none"

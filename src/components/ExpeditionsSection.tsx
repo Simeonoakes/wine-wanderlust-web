@@ -65,29 +65,34 @@ interface DayData {
 
 const MenuDay = ({ day }: { day: DayData }) => (
   <div
-    className="relative p-10 md:p-14 shadow-card"
+    className="menu-paper relative px-8 py-12 md:px-16 md:py-16 mx-auto max-w-3xl"
     style={{
       backgroundImage: `url(${menuPaperImg})`,
       backgroundSize: "cover",
       backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
     }}
   >
-    {/* Subtle dark overlay for readability */}
-    <div className="absolute inset-0 bg-black/5" />
+    {/* Subtle inner shadow + tint for paper depth */}
+    <div className="absolute inset-0 pointer-events-none" style={{ boxShadow: "inset 0 0 80px rgba(120,80,30,0.18)" }} />
     <div className="relative z-10">
-      <h4 className="text-2xl md:text-3xl font-display italic text-amber-900 mb-10 text-center">
+      <h4 className="font-menu text-burgundy text-6xl md:text-7xl text-center leading-none mb-8" style={{ color: "hsl(350 60% 30%)" }}>
         {day.day}
       </h4>
-      <div className="w-16 h-px bg-amber-800/40 mx-auto mb-10" />
+      <div className="flex items-center justify-center gap-3 mb-12">
+        <span className="block w-12 h-px" style={{ background: "hsl(350 50% 30% / 0.4)" }} />
+        <span className="text-[10px] tracking-[0.4em]" style={{ color: "hsl(350 50% 30% / 0.6)" }}>✦</span>
+        <span className="block w-12 h-px" style={{ background: "hsl(350 50% 30% / 0.4)" }} />
+      </div>
       <div className="space-y-10">
         {day.courses.map((course) => (
           <div key={course.course} className="text-center">
-            <span className="text-xs uppercase tracking-[0.25em] text-amber-800 font-body block mb-5">
+            <span className="font-caption text-xs uppercase tracking-[0.35em] block mb-5" style={{ color: "hsl(350 60% 30%)" }}>
               {course.course}
             </span>
-            <div className="w-10 h-px bg-amber-800/30 mx-auto mb-5" />
+            <div className="w-8 h-px mx-auto mb-5" style={{ background: "hsl(40 50% 30% / 0.4)" }} />
             {course.items.map((item, i) => (
-              <p key={i} className="text-sm text-amber-950/80 leading-relaxed font-body mb-2 max-w-xl mx-auto">
+              <p key={i} className="font-serif italic text-base leading-relaxed mb-3 max-w-xl mx-auto" style={{ color: "hsl(30 30% 20%)" }}>
                 {item}
               </p>
             ))}
@@ -106,7 +111,7 @@ const OneDayContent = ({ onBook }: { onBook: () => void }) => (
 
     <div className="text-center space-y-2">
       <p className="text-sm text-muted-foreground leading-relaxed font-body italic max-w-2xl mx-auto">
-        A curated introduction — perfect for curious travellers passing through the region, or as an exclusive activity to include into your holiday in the area.
+        A curated introduction : perfect for curious travellers passing through the region, or as an exclusive activity to include into your holiday in the area.
       </p>
     </div>
 
@@ -161,7 +166,7 @@ const TwoDayContent = ({ onBook }: { onBook: () => void }) => (
     {[
       { day: "Day 1", courses: [
         { course: "Morning", items: [
-          "Meet for French breakfast in your accommodation — local patisseries and delicacies.",
+          "Meet for French breakfast in your accommodation : local patisseries and delicacies.",
           "Visit 1 winery including a tasting and a tour of the winery or part of the estate."
         ]},
         { course: "Midday", items: [
@@ -184,7 +189,7 @@ const TwoDayContent = ({ onBook }: { onBook: () => void }) => (
           "Lunch at a local restaurant."
         ]},
         { course: "Afternoon", items: [
-          "Guided tour of a Cathar Castle — immerse yourself in the rich history of the Corbières."
+          "Guided tour of a Cathar Castle : immerse yourself in the rich history of the Corbières."
         ]},
         { course: "Evening", items: [
           "Take an aperitif in the vineyards. Sip on a chilled rosé, a crisp dry white or a local sweet wine with speciality bites.",
@@ -223,7 +228,7 @@ const WeekContent = ({ onBook }: { onBook: () => void }) => (
 
     <div className="text-center space-y-2">
       <p className="text-sm text-muted-foreground leading-relaxed font-body italic max-w-2xl mx-auto">
-        Live the Corbières to its fullest. 5 days of total immersion — you'll leave practically as a local.
+        Live the Corbières to its fullest. 5 days of total immersion : you'll leave practically as a local.
       </p>
       <p className="text-sm text-primary leading-relaxed font-body">
         Includes all meals and accommodation for either 4 or 5 nights
@@ -233,7 +238,7 @@ const WeekContent = ({ onBook }: { onBook: () => void }) => (
     {[
       { day: "Day 1", courses: [
         { course: "Morning", items: [
-          "Meet for French breakfast in your accommodation — local patisseries and delicacies.",
+          "Meet for French breakfast in your accommodation : local patisseries and delicacies.",
           "Visit 1 winery including a tasting and a tour of the winery or part of the estate."
         ]},
         { course: "Midday", items: [
@@ -251,18 +256,18 @@ const WeekContent = ({ onBook }: { onBook: () => void }) => (
           "Visit another winery offering different products in order to showcase the rich palette and variety of wines and winemaking techniques of the area.",
           "Lunch at a local restaurant."
         ]},
-        { course: "Afternoon", items: ["Guided tour of a Cathar Castle — immerse yourself in the rich history of the Corbières."]},
+        { course: "Afternoon", items: ["Guided tour of a Cathar Castle : immerse yourself in the rich history of the Corbières."]},
         { course: "Evening", items: ["Cook your own local supper! With the guiding hand of a local expert."]},
       ]},
       { day: "Day 3", courses: [
         { course: "Morning", items: [
-          "Vigneron breakfast — do it as the vignerons do: pâté*, saucisson*, fresh bread and, if you're up for it, a glass of red!",
+          "Vigneron breakfast : do it as the vignerons do: pâté*, saucisson*, fresh bread and, if you're up for it, a glass of red!",
           "Guided walk through the garrigue punctuated with botanical, historical and cultural anecdotes."
         ]},
         { course: "Midday", items: [
           "Barbecue in the vineyard, fresh produce, grilled on old vine clippings, seasoned with the thyme and rosemary you picked on the walk."
         ]},
-        { course: "Afternoon", items: ["Visit a new winery — back to business with yet more delicious and original local wines."]},
+        { course: "Afternoon", items: ["Visit a new winery : back to business with yet more delicious and original local wines."]},
         { course: "Evening", items: [
           "Enjoy an aperitif in the local café, chill in the sun with a glass of muscat or something a little more risqué.",
           "Supper at a local restaurant."
@@ -334,9 +339,9 @@ const ExpeditionsSection = () => {
       <div className="max-w-7xl mx-auto px-8">
         <motion.div {...fadeUp} className="mb-16">
           <span className="text-xs uppercase tracking-[0.12em] text-muted-foreground">
-            03 — Experiences
+            03 / Experiences
           </span>
-          <h2 className="mt-4 text-4xl md:text-5xl font-light italic tracking-tight">
+          <h2 className="mt-4 text-4xl md:text-5xl font-display text-primary tracking-tight">
             What Awaits You
           </h2>
         </motion.div>
