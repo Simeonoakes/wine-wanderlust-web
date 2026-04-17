@@ -4,6 +4,7 @@ import RegionsSection from "@/components/RegionsSection";
 import PhilosophySection from "@/components/PhilosophySection";
 import ExpeditionsSection from "@/components/ExpeditionsSection";
 import CorporateSection from "@/components/CorporateSection";
+import SimsSamplesSection from "@/components/SimsSamplesSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -15,6 +16,7 @@ const Index = () => {
       <PhilosophySection />
       <ExpeditionsSection />
       <CorporateSection />
+      <SimsSamplesSection />
       <Footer />
     </div>
   );
