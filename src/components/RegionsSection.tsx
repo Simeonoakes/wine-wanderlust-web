@@ -36,15 +36,15 @@ const RegionsSection = () => {
         <motion.div {...fadeUp} className="grid grid-cols-12 gap-4 mb-16">
           <div className="col-span-12 md:col-start-2 md:col-end-7">
             <span className="text-xs uppercase tracking-[0.12em] text-muted-foreground">
-              01 — The Terroir
+              01 / The Terroir
             </span>
-            <h2 className="mt-4 text-4xl md:text-5xl font-light italic tracking-tight">
+            <h2 className="mt-4 text-4xl md:text-5xl font-display text-primary tracking-tight">
               The Wild Corbières
             </h2>
           </div>
           <div className="col-span-12 md:col-start-8 md:col-end-12 flex items-end">
             <p className="text-muted-foreground text-sm leading-relaxed font-body">
-              Nestled between the Pyrenees and the Mediterranean, the Corbières is one of France's most dramatic and unspoilt wine regions — a land of ancient vines, rugged beauty, and fiercely independent winemakers.
+              Nestled between the Pyrenees and the Mediterranean, the Corbières is one of France's most dramatic and unspoilt wine regions: a land of ancient vines, rugged beauty, and fiercely independent winemakers.
             </p>
           </div>
         </motion.div>
@@ -52,7 +52,7 @@ const RegionsSection = () => {
         {/* Terroir description text */}
         <motion.div {...fadeUp} className="max-w-4xl mx-auto mb-10">
           <p className="text-sm text-muted-foreground leading-relaxed font-body">
-            Wonderfully untranslatable, the word <span className="font-display italic text-foreground text-xl">terroir</span> is as rich and complex as the concept it illustrates.
+            Wonderfully untranslatable, the word <span className="font-display italic text-primary text-2xl">terroir</span> is as rich and complex as the concept it illustrates.
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed font-body mt-4">
             Almost exclusively used in viticulture, it reflects all the naturally occurring external factors (climate, elements, soil type, flora) that come into action to intrinsically affect, nurture and forge a vine, its grapes and therefore, ultimately the wine.
@@ -65,7 +65,7 @@ const RegionsSection = () => {
         {/* Transition text */}
         <motion.div {...fadeUp} className="text-center mb-16">
           <p className="text-base md:text-lg font-display italic text-primary/90 tracking-wide">
-            This is what awaits you on your journey of discovery — Where the story begins and never ends:
+            This is what awaits you on your journey of discovery: where the story begins and never ends.
           </p>
         </motion.div>
 
@@ -87,7 +87,7 @@ const RegionsSection = () => {
                   />
                 </div>
                 <div className="mt-6">
-                  <h3 className="text-2xl font-light tracking-tight group-hover:text-primary transition-colors">
+                  <h3 className="text-3xl md:text-4xl font-script text-primary group-hover:text-burgundy-light transition-colors leading-tight">
                     {item.name}
                   </h3>
                 </div>

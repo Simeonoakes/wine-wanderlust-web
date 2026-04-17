@@ -38,9 +38,9 @@ const Hero = () => {
         <img
           src={heroBg}
           alt=""
-          className="w-full h-full object-cover object-[center_60%] brightness-[1.3] opacity-60"
+          className="w-full h-full object-cover object-[center_60%] brightness-[1.45] opacity-65"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/30 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/5 via-background/25 to-background" />
       </motion.div>
 
       {/* Content */}
@@ -67,7 +67,7 @@ const Hero = () => {
               initial="hidden"
               animate="visible"
               variants={wordVariant}
-              className="font-display text-3xl md:text-5xl lg:text-6xl tracking-[0.06em] italic text-primary"
+              className="font-display text-4xl md:text-6xl lg:text-7xl tracking-[0.04em] text-primary"
             >
               {word}
             </motion.span>
@@ -79,7 +79,7 @@ const Hero = () => {
           initial={{ opacity: 0, filter: "blur(4px)" }}
           animate={{ opacity: 1, filter: "blur(0px)" }}
           transition={{ duration: 1, delay: TAGLINE_DELAY, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-6 font-display text-sm md:text-lg tracking-[0.14em] italic text-foreground/70"
+          className="mt-6 font-display text-sm md:text-lg tracking-[0.18em] italic text-foreground/70"
         >
           Bespoke wine experiences in the South of France
         </motion.p>
