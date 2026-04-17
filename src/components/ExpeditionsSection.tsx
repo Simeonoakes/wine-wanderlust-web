@@ -65,29 +65,34 @@ interface DayData {
 
 const MenuDay = ({ day }: { day: DayData }) => (
   <div
-    className="relative p-10 md:p-14 shadow-card"
+    className="menu-paper relative px-8 py-12 md:px-16 md:py-16 mx-auto max-w-3xl"
     style={{
       backgroundImage: `url(${menuPaperImg})`,
       backgroundSize: "cover",
       backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
     }}
   >
-    {/* Subtle dark overlay for readability */}
-    <div className="absolute inset-0 bg-black/5" />
+    {/* Subtle inner shadow + tint for paper depth */}
+    <div className="absolute inset-0 pointer-events-none" style={{ boxShadow: "inset 0 0 80px rgba(120,80,30,0.18)" }} />
     <div className="relative z-10">
-      <h4 className="text-2xl md:text-3xl font-display italic text-amber-900 mb-10 text-center">
+      <h4 className="font-menu text-burgundy text-6xl md:text-7xl text-center leading-none mb-8" style={{ color: "hsl(350 60% 30%)" }}>
         {day.day}
       </h4>
-      <div className="w-16 h-px bg-amber-800/40 mx-auto mb-10" />
+      <div className="flex items-center justify-center gap-3 mb-12">
+        <span className="block w-12 h-px" style={{ background: "hsl(350 50% 30% / 0.4)" }} />
+        <span className="text-[10px] tracking-[0.4em]" style={{ color: "hsl(350 50% 30% / 0.6)" }}>✦</span>
+        <span className="block w-12 h-px" style={{ background: "hsl(350 50% 30% / 0.4)" }} />
+      </div>
       <div className="space-y-10">
         {day.courses.map((course) => (
           <div key={course.course} className="text-center">
-            <span className="text-xs uppercase tracking-[0.25em] text-amber-800 font-body block mb-5">
+            <span className="font-caption text-xs uppercase tracking-[0.35em] block mb-5" style={{ color: "hsl(350 60% 30%)" }}>
               {course.course}
             </span>
-            <div className="w-10 h-px bg-amber-800/30 mx-auto mb-5" />
+            <div className="w-8 h-px mx-auto mb-5" style={{ background: "hsl(40 50% 30% / 0.4)" }} />
             {course.items.map((item, i) => (
-              <p key={i} className="text-sm text-amber-950/80 leading-relaxed font-body mb-2 max-w-xl mx-auto">
+              <p key={i} className="font-serif italic text-base leading-relaxed mb-3 max-w-xl mx-auto" style={{ color: "hsl(30 30% 20%)" }}>
                 {item}
               </p>
             ))}
