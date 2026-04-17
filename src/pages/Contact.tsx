@@ -46,13 +46,13 @@ const Contact = () => (
             <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-body mb-3">
               Phone
             </span>
-            <a href="tel:+33600000000" className="text-sm font-body hover:text-primary transition-colors">
+            <a href="tel:+33766678973" className="text-sm font-body hover:text-primary transition-colors">
               <span className="block text-xs text-muted-foreground/70 mb-1">France</span>
-              +33 6 00 00 00 00
+              0033 7 66 67 89 73
             </a>
-            <a href="tel:+447000000000" className="mt-3 text-sm font-body hover:text-primary transition-colors">
+            <a href="tel:+447706809331" className="mt-3 text-sm font-body hover:text-primary transition-colors">
               <span className="block text-xs text-muted-foreground/70 mb-1">United Kingdom</span>
-              +44 7000 000 000
+              0044 7706 809 331
             </a>
           </div>
 
