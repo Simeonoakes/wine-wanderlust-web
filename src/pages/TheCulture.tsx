@@ -24,7 +24,7 @@ const TheCulture = () => (
           ← Back to The Terroir
         </Link>
         <h1 className="mt-8 text-5xl md:text-6xl font-script text-primary tracking-tight leading-none">
-          The Culture
+          Language, Cuisine and Character
         </h1>
       </motion.div>
 
@@ -48,9 +48,9 @@ const TheCulture = () => (
           The Corbières doesn't reveal itself to those who rush through. It opens up to those who sit down, share a glass, and listen to the stories.
         </p>
 
-        <p className="pt-6 text-center font-script text-3xl md:text-4xl text-burgundy-light not-italic leading-tight">
+        <Link to="/#experiences" className="block pt-6 text-center font-script text-3xl md:text-4xl text-burgundy-light not-italic leading-tight hover:text-primary transition-colors">
           Dance to these beats, relish this pace, feast on these joys.
-        </p>
+        </Link>
       </motion.div>
     </div>
     <Footer />
