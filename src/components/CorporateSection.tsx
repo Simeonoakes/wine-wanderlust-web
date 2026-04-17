@@ -16,7 +16,7 @@ const offerings = [
   {
     title: "Tasting Masterclasses",
     description:
-      "Led by an experienced guide, these sessions sharpen palates and deepen appreciation — from introductory to advanced levels.",
+      "Led by an experienced guide, these sessions sharpen palates and deepen appreciation, from introductory to advanced levels.",
     image: cellarPortraitImg,
   },
   {

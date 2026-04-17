@@ -15,7 +15,7 @@ const PhilosophySection = () => {
       <motion.div {...fadeUp} className="w-full aspect-[3/1] overflow-hidden mb-16">
         <img
           src={guidePortraitImg}
-          alt="Your guide — In Vino Veritas"
+          alt="Your guide, In Vino Veritas"
           className="w-full h-full object-cover object-center"
         />
       </motion.div>
