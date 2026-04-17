@@ -42,7 +42,7 @@ const TheLandscape = () => (
           The medieval village of <span className="text-foreground font-medium">Lagrasse</span>, officially one of the most beautiful villages in France, straddles the Orbieu river with its stone bridges, cobbled streets and the magnificent Benedictine abbey that has stood watch since the 8th and which a congregation of monks still call home today.
         </p>
         <p>
-          Beyond these landmarks, the landscape itself is the attraction: rolling hills covered in low shrubland called <span className="italic">garrigue</span> giving way to dramatic gorges and hidden valleys. Rocky outcrops catch the golden light of sunset, turning the entire terrain into a canvas of amber, ochre and olive. Every season reshapes and reinvents the landscape and illuminates this glorious natural canvas with the full palette of colors from liquid gold to turquoise via scarlet, vibrant yellow and iridescent green.
+          Beyond these landmarks, the landscape itself is the attraction: rolling hills covered in low shrubland called <span className="italic">garrigue</span> giving way to dramatic gorges and hidden valleys. Rocky outcrops catch the golden light of sunset, turning the entire terrain into a canvas of amber, ochre and olive. Every season reshapes and reinvents the landscape and illuminates this glorious natural canvas with the full palette of colours from liquid gold to turquoise via scarlet, vibrant yellow and iridescent green.
         </p>
         <p>
           It is a place where you can walk for hours and encounter nothing but the sound of the wind through the pines and the distant call of a buzzard, or the timeless intoxicating sound of cicadas in the summer months.

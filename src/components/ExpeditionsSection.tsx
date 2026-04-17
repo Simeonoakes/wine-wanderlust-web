@@ -173,7 +173,7 @@ const TwoDayContent = ({ onBook }: { onBook: () => void }) => (
           "Luxury picnic lunch in the heart of the landscape. Breathtaking views, the sounds and scents of the garrigue, local, curated food paired with a local wine."
         ]},
         { course: "Afternoon", items: [
-          "Visit a winery with tasting focussing on the appellations of the area."
+          "Visit a winery with tasting focusing on the appellations of the area."
         ]},
         { course: "Evening", items: [
           "Dinner at a local restaurant."
@@ -244,7 +244,7 @@ const WeekContent = ({ onBook }: { onBook: () => void }) => (
         { course: "Midday", items: [
           "Luxury picnic lunch in the heart of the landscape. Breathtaking views, the sounds and scents of the garrigue, local, curated food paired with a local wine."
         ]},
-        { course: "Afternoon", items: ["Visit a winery with tasting focussing on the appellations of the area."]},
+        { course: "Afternoon", items: ["Visit a winery with tasting focusing on the appellations of the area."]},
         { course: "Evening", items: ["Dinner at a local restaurant."]},
       ]},
       { day: "Day 2", courses: [
