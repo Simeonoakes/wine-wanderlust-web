@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
-const links: { label: string; href: string }[] = [
+const links: { label: string; href: string; external?: boolean }[] = [
   { label: "Experiences", href: "/#experiences" },
   { label: "The Terroir", href: "/#the-terroir" },
   { label: "Your Guide", href: "/#your-guide" },
@@ -15,19 +16,19 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-8 flex items-center justify-between h-16">
-        <a href="/" className="font-display text-xl tracking-tight text-primary">
+        <Link to="/" className="font-display text-xl tracking-tight text-primary">
           In Vino Veritas
-        </a>
+        </Link>
 
         <div className="hidden md:flex items-center gap-8">
           {links.map((link) => (
-            <a
-              key={link}
-              href={`#${link.toLowerCase().replace(/\s&\s/g, "-and-").replace(/\s/g, "-")}`}
+            <Link
+              key={link.label}
+              to={link.href}
               className="text-xs uppercase tracking-[0.12em] text-muted-foreground hover:text-primary transition-colors duration-200"
             >
-              {link}
-            </a>
+              {link.label}
+            </Link>
           ))}
         </div>
 
@@ -53,14 +54,14 @@ const Navbar = () => {
           >
             <div className="px-8 py-6 flex flex-col gap-4">
               {links.map((link) => (
-                <a
-                  key={link}
-                  href={`#${link.toLowerCase().replace(/\s&\s/g, "-and-").replace(/\s/g, "-")}`}
+                <Link
+                  key={link.label}
+                  to={link.href}
                   onClick={() => setMobileOpen(false)}
                   className="text-sm uppercase tracking-[0.1em] text-muted-foreground"
                 >
-                  {link}
-                </a>
+                  {link.label}
+                </Link>
               ))}
             </div>
           </motion.div>
