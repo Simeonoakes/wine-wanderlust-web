@@ -64,6 +64,10 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground font-body antialiased;
   }
@@ -72,6 +76,14 @@
     @apply font-display;
     text-wrap: balance;
   }
+
+  /* Global burgundy hover for any clickable element */
+  a:hover,
+  button:not(:disabled):hover,
+  [role="button"]:not([aria-disabled="true"]):hover {
+    color: hsl(var(--burgundy-light));
+    transition: color 200ms ease;
+  }
 }
 
 @layer utilities {
@@ -79,31 +91,9 @@
     font-variant-numeric: tabular-nums;
   }
 
-  /* Dog-eared menu paper effect */
+  /* Textured paper for menus (no dog-ears, no burn marks) */
   .menu-paper {
     box-shadow: var(--shadow-paper);
     position: relative;
-  }
-  .menu-paper::before,
-  .menu-paper::after {
-    content: "";
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, transparent 50%, rgba(0,0,0,0.18) 50%, rgba(0,0,0,0.05) 70%, transparent 100%);
-    pointer-events: none;
-  }
-  .menu-paper::before {
-    top: 0;
-    right: 0;
-    transform: rotate(0deg);
-    background: linear-gradient(225deg, #f0e4cf 45%, rgba(0,0,0,0.25) 50%, transparent 55%);
-    clip-path: polygon(100% 0, 100% 100%, 0 0);
-  }
-  .menu-paper::after {
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(45deg, #f0e4cf 45%, rgba(0,0,0,0.25) 50%, transparent 55%);
-    clip-path: polygon(0 100%, 100% 100%, 0 0);
   }
 }
