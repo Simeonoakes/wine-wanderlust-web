@@ -72,7 +72,7 @@ const CorporateSection = () => {
                 />
               </div>
               <div className="p-8">
-                <h3 className="text-2xl font-script text-primary leading-tight">{item.title}</h3>
+                <h3 className="text-2xl font-display text-primary leading-tight tracking-tight">{item.title}</h3>
                 <p className="mt-4 text-sm text-muted-foreground leading-relaxed font-body">
                   {item.description}
                 </p>

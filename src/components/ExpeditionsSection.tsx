@@ -63,7 +63,7 @@ interface DayData {
   courses: { course: string; items: string[] }[];
 }
 
-const MenuDay = ({ day }: { day: DayData }) => (
+const MenuDay = ({ day, footnote }: { day: DayData; footnote?: string }) => (
   <div
     className="menu-paper relative px-8 py-12 md:px-16 md:py-16 mx-auto max-w-3xl"
     style={{
@@ -99,6 +99,11 @@ const MenuDay = ({ day }: { day: DayData }) => (
           </div>
         ))}
       </div>
+      {footnote && (
+        <p className="mt-12 text-center text-xs italic font-serif" style={{ color: "hsl(30 30% 30% / 0.75)" }}>
+          {footnote}
+        </p>
+      )}
     </div>
   </div>
 );
@@ -173,7 +178,7 @@ const TwoDayContent = ({ onBook }: { onBook: () => void }) => (
           "Luxury picnic lunch in the heart of the landscape. Breathtaking views, the sounds and scents of the garrigue, local, curated food paired with a local wine."
         ]},
         { course: "Afternoon", items: [
-          "Visit a winery with tasting focussing on the appellations of the area."
+          "Visit a winery with tasting focusing on the appellations of the area."
         ]},
         { course: "Evening", items: [
           "Dinner at a local restaurant."
@@ -196,8 +201,12 @@ const TwoDayContent = ({ onBook }: { onBook: () => void }) => (
           "Food and wine pairing supper in your accommodation."
         ]},
       ]},
-    ].map((day) => (
-      <MenuDay key={day.day} day={day} />
+    ].map((day, idx, arr) => (
+      <MenuDay
+        key={day.day}
+        day={day}
+        footnote={idx === arr.length - 1 ? "* Vegetarian and vegan alternatives available on request" : undefined}
+      />
     ))}
 
     <div className="text-center space-y-3 pt-4">
@@ -206,9 +215,6 @@ const TwoDayContent = ({ onBook }: { onBook: () => void }) => (
       </p>
       <p className="text-xs uppercase tracking-[0.2em] text-primary font-body">
         At every stage you will be encouraged to use as much or as little French as you know or fancy!
-      </p>
-      <p className="text-xs text-muted-foreground/60 font-body italic mt-6">
-        * Vegetarian and vegan alternatives available on request
       </p>
     </div>
 
@@ -244,7 +250,7 @@ const WeekContent = ({ onBook }: { onBook: () => void }) => (
         { course: "Midday", items: [
           "Luxury picnic lunch in the heart of the landscape. Breathtaking views, the sounds and scents of the garrigue, local, curated food paired with a local wine."
         ]},
-        { course: "Afternoon", items: ["Visit a winery with tasting focussing on the appellations of the area."]},
+        { course: "Afternoon", items: ["Visit a winery with tasting focusing on the appellations of the area."]},
         { course: "Evening", items: ["Dinner at a local restaurant."]},
       ]},
       { day: "Day 2", courses: [
@@ -293,8 +299,12 @@ const WeekContent = ({ onBook }: { onBook: () => void }) => (
           "Supper at a local restaurant."
         ]},
       ]},
-    ].map((day) => (
-      <MenuDay key={day.day} day={day} />
+    ].map((day, idx, arr) => (
+      <MenuDay
+        key={day.day}
+        day={day}
+        footnote={idx === arr.length - 1 ? "* Vegetarian and vegan alternatives available on request" : undefined}
+      />
     ))}
 
     <div className="text-center space-y-3 pt-4">
@@ -303,9 +313,6 @@ const WeekContent = ({ onBook }: { onBook: () => void }) => (
       </p>
       <p className="text-xs uppercase tracking-[0.2em] text-primary font-body">
         At every stage you will be encouraged to use as much or as little French as you know or fancy!
-      </p>
-      <p className="text-xs text-muted-foreground/60 font-body italic mt-6">
-        * Vegetarian and vegan alternatives available on request
       </p>
     </div>
 

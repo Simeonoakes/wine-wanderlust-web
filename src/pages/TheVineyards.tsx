@@ -25,7 +25,7 @@ const TheVineyards = () => (
           ← Back to The Terroir
         </Link>
         <h1 className="mt-8 text-5xl md:text-6xl font-script text-primary tracking-tight leading-none">
-          Ancient Vines
+          Centuries of Savoir Faire
         </h1>
       </motion.div>
 
@@ -49,9 +49,9 @@ const TheVineyards = () => (
           Walking among these ancient vines, you feel the weight of centuries. They have seen wars and revolutions, booms and busts, the rise and fall and resurrection of cooperatives. And still they stand, twisted, proud, producing some of the most soulful wines in all of France.
         </p>
 
-        <p className="pt-6 text-center font-script text-3xl md:text-4xl text-burgundy-light not-italic leading-tight">
+        <Link to="/#experiences" className="block pt-6 text-center font-script text-3xl md:text-4xl text-burgundy-light not-italic leading-tight hover:text-primary transition-colors">
           Tread these soils, meet these people, taste this history.
-        </p>
+        </Link>
       </motion.div>
     </div>
     <Footer />

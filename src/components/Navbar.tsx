@@ -3,10 +3,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const links: { label: string; href: string; external?: boolean }[] = [
-  { label: "Experiences", href: "/#experiences" },
   { label: "The Terroir", href: "/#the-terroir" },
   { label: "Your Guide", href: "/#your-guide" },
+  { label: "Experiences", href: "/#experiences" },
   { label: "Corporate & Consulting", href: "/#corporate-and-consulting" },
+  { label: "Sim's Samples", href: "/#sims-samples" },
   { label: "Contact", href: "/contact" },
 ];
 

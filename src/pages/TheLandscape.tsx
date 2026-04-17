@@ -42,7 +42,7 @@ const TheLandscape = () => (
           The medieval village of <span className="text-foreground font-medium">Lagrasse</span>, officially one of the most beautiful villages in France, straddles the Orbieu river with its stone bridges, cobbled streets and the magnificent Benedictine abbey that has stood watch since the 8th and which a congregation of monks still call home today.
         </p>
         <p>
-          Beyond these landmarks, the landscape itself is the attraction: rolling hills covered in low shrubland called <span className="italic">garrigue</span> giving way to dramatic gorges and hidden valleys. Rocky outcrops catch the golden light of sunset, turning the entire terrain into a canvas of amber, ochre and olive. Every season reshapes and reinvents the landscape and illuminates this glorious natural canvas with the full palette of colors from liquid gold to turquoise via scarlet, vibrant yellow and iridescent green.
+          Beyond these landmarks, the landscape itself is the attraction: rolling hills covered in low shrubland called <span className="italic">garrigue</span> giving way to dramatic gorges and hidden valleys. Rocky outcrops catch the golden light of sunset, turning the entire terrain into a canvas of amber, ochre and olive. Every season reshapes and reinvents the landscape and illuminates this glorious natural canvas with the full palette of colours from liquid gold to turquoise via scarlet, vibrant yellow and iridescent green.
         </p>
         <p>
           It is a place where you can walk for hours and encounter nothing but the sound of the wind through the pines and the distant call of a buzzard, or the timeless intoxicating sound of cicadas in the summer months.
@@ -51,9 +51,9 @@ const TheLandscape = () => (
           This is land that has been shaped by the elements and by history in equal measure: a landscape of extraordinary beauty that reveals itself slowly, rewarding those who take the time to look, to listen, and to breathe it all in.
         </p>
 
-        <p className="pt-6 text-center font-script text-3xl md:text-4xl text-burgundy-light not-italic leading-tight">
+        <Link to="/#experiences" className="block pt-6 text-center font-script text-3xl md:text-4xl text-burgundy-light not-italic leading-tight hover:text-primary transition-colors">
           Walk these paths, hear these stones, drink in these scents.
-        </p>
+        </Link>
       </motion.div>
     </div>
     <Footer />
