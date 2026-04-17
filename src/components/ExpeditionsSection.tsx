@@ -339,7 +339,7 @@ const ExpeditionsSection = () => {
       <div className="max-w-7xl mx-auto px-8">
         <motion.div {...fadeUp} className="mb-16">
           <span className="text-xs uppercase tracking-[0.12em] text-muted-foreground">
-            03 : Experiences
+            03 / Experiences
           </span>
           <h2 className="mt-4 text-4xl md:text-5xl font-light italic tracking-tight">
             What Awaits You
