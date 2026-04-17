@@ -51,9 +51,9 @@ const TheLandscape = () => (
           This is land that has been shaped by the elements and by history in equal measure: a landscape of extraordinary beauty that reveals itself slowly, rewarding those who take the time to look, to listen, and to breathe it all in.
         </p>
 
-        <p className="pt-6 text-center font-script text-3xl md:text-4xl text-burgundy-light not-italic leading-tight">
+        <Link to="/#experiences" className="block pt-6 text-center font-script text-3xl md:text-4xl text-burgundy-light not-italic leading-tight hover:text-primary transition-colors">
           Walk these paths, hear these stones, drink in these scents.
-        </p>
+        </Link>
       </motion.div>
     </div>
     <Footer />
