@@ -341,7 +341,7 @@ const ExpeditionsSection = () => {
           <span className="text-xs uppercase tracking-[0.12em] text-muted-foreground">
             03 / Experiences
           </span>
-          <h2 className="mt-4 text-4xl md:text-5xl font-light italic tracking-tight">
+          <h2 className="mt-4 text-4xl md:text-5xl font-display text-primary tracking-tight">
             What Awaits You
           </h2>
         </motion.div>
