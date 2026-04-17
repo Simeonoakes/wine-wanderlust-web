@@ -63,7 +63,7 @@ interface DayData {
   courses: { course: string; items: string[] }[];
 }
 
-const MenuDay = ({ day }: { day: DayData }) => (
+const MenuDay = ({ day, footnote }: { day: DayData; footnote?: string }) => (
   <div
     className="menu-paper relative px-8 py-12 md:px-16 md:py-16 mx-auto max-w-3xl"
     style={{
@@ -99,6 +99,11 @@ const MenuDay = ({ day }: { day: DayData }) => (
           </div>
         ))}
       </div>
+      {footnote && (
+        <p className="mt-12 text-center text-xs italic font-serif" style={{ color: "hsl(30 30% 30% / 0.75)" }}>
+          {footnote}
+        </p>
+      )}
     </div>
   </div>
 );
