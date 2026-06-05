@@ -77,11 +77,10 @@
     text-wrap: balance;
   }
 
-  /* Global burgundy hover for any clickable element */
-  a:hover,
-  button:not(:disabled):hover,
-  [role="button"]:not([aria-disabled="true"]):hover {
-    color: hsl(var(--burgundy-light));
+  /* Clickable elements keep the gold colour on hover (no burgundy fade) */
+  a,
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]) {
     transition: color 200ms ease;
   }
 }

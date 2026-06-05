@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const links: { label: string; href: string }[] = [
   { label: "The Terroir", href: "/#the-terroir" },
   { label: "Your Guide", href: "/#your-guide" },
   { label: "Experiences", href: "/#experiences" },
+  { label: "Seasons", href: "/#seasons" },
   { label: "Corporate", href: "/#corporate-and-consulting" },
   { label: "Sim's Samples", href: "/#sims-samples" },
   { label: "Contact", href: "/contact" },
@@ -17,11 +19,11 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-8 flex items-center justify-between h-16">
-        <Link
-          to="/"
-          className="font-display text-xl tracking-tight text-primary whitespace-nowrap"
-        >
-          In Vino Veritas
+        <Link to="/" className="flex items-center gap-2 whitespace-nowrap">
+          <img src={logo} alt="" className="h-9 w-9 object-contain" />
+          <span className="font-script text-3xl tracking-tight text-primary leading-none">
+            In Vino Veritas
+          </span>
         </Link>
 
         <div className="hidden md:flex items-center gap-5 ml-auto">
@@ -29,7 +31,7 @@ const Navbar = () => {
             <Link
               key={link.label}
               to={link.href}
-              className="text-xs uppercase tracking-[0.1em] text-muted-foreground hover:text-primary transition-colors duration-200 whitespace-nowrap"
+              className="text-xs uppercase tracking-[0.1em] text-primary whitespace-nowrap"
             >
               {link.label}
             </Link>
@@ -62,7 +64,7 @@ const Navbar = () => {
                   key={link.label}
                   to={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="text-sm uppercase tracking-[0.1em] text-muted-foreground"
+                  className="text-sm uppercase tracking-[0.1em] text-primary"
                 >
                   {link.label}
                 </Link>

@@ -2,8 +2,8 @@
 
 ## Core
 Brand: 'In Vino Veritas', Founder: Simeon. High-end bespoke wine experiences (Corbières).
-Aesthetic: Luxury, dark bg (#0a0a0a), gold accents (hsl(40 60% 50%)), burgundy hover (hsl(350 50% 40%)) globally on clickable elements.
-Typography: Marcellus (font-display, main titles), Italianno (font-script, decorative titles & 'terroir'/Truly Tasting Terroir hero), Tangerine (font-menu, menu day headings), Mrs Saint Delafield (font-signature, Simeon).
+Aesthetic: Luxury, dark bg (#0a0a0a), gold accents (hsl(40 60% 50%)), burgundy (hsl(350 50% 40%)) for highlights only — NO global burgundy hover on links/buttons (text stays gold on hover).
+Typography: Marcellus (font-display, main titles), Italianno (font-script, used for 'In Vino Veritas' wordmark in navbar/footer AND 'terroir'/'Truly Tasting Terroir' hero), Tangerine (font-menu, menu day headings), Mrs Saint Delafield (font-signature, Simeon).
 Tone: 'Enjoyment-first', emphasize pleasure over technicality. French immersion.
 Spelling: British English ONLY (colour, flavour, organise, focusing). NEVER use em dashes (—) as punctuation; use colons or semicolons instead.
 

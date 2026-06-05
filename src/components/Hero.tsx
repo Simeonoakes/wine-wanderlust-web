@@ -3,12 +3,15 @@ import logo from "@/assets/logo.png";
 import heroVideoAsset from "@/assets/hero-background.mp4.asset.json";
 
 const Hero = () => {
-  // Video is ~39s. Logo visible from start. Words appear near the end.
+  // Video is ~39s. Logo fades in during the last few seconds as the camera
+  // pulls away from the church; the words appear right after, as the video
+  // fades to black.
   const VIDEO_FADE_IN = 0.5;
-  const TRULY_DELAY = 26;
-  const TASTING_DELAY = 28;
-  const TERROIR_DELAY = 30;
-  const TAGLINE_DELAY = 32;
+  const LOGO_DELAY = 30;
+  const TRULY_DELAY = 34;
+  const TASTING_DELAY = 35.5;
+  const TERROIR_DELAY = 37;
+  const TAGLINE_DELAY = 39;
 
   const wordVariant = {
     hidden: { opacity: 0, filter: "blur(8px)" },
@@ -49,14 +52,18 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-20 flex flex-col items-center text-center">
-        {/* Logo appears instantly */}
-        <div>
+        {/* Logo fades in near the end of the video */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96, filter: "blur(10px)" }}
+          animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+          transition={{ duration: 3, delay: LOGO_DELAY, ease: [0.16, 1, 0.3, 1] }}
+        >
           <img
             src={logo}
             alt="In Vino Veritas logo"
             className="w-[26rem] h-[26rem] sm:w-[34rem] sm:h-[34rem] md:w-[42rem] md:h-[42rem] lg:w-[50rem] lg:h-[50rem] object-contain"
           />
-        </div>
+        </motion.div>
 
         {/* Words centered below logo */}
         <div className="flex gap-3 md:gap-5 -mt-16 md:-mt-24 justify-center">
@@ -82,7 +89,7 @@ const Hero = () => {
         <motion.p
           initial={{ opacity: 0, filter: "blur(4px)" }}
           animate={{ opacity: 1, filter: "blur(0px)" }}
-          transition={{ duration: 1, delay: TAGLINE_DELAY, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 1.2, delay: TAGLINE_DELAY, ease: [0.16, 1, 0.3, 1] }}
           className="mt-6 font-display text-sm md:text-lg tracking-[0.18em] italic text-foreground/70"
         >
           Bespoke wine experiences in the South of France

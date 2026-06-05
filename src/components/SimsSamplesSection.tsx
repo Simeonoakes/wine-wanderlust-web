@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { PlayCircle, X } from "lucide-react";
-import vineyardHarvestImg from "@/assets/vineyard-harvest.jpg";
+import { PlayCircle, X, Instagram } from "lucide-react";
+import pruningThumb from "@/assets/pruning-thumb.jpg";
 import cellarPortraitImg from "@/assets/cellar-portrait.jpg";
 import handsOnImg from "@/assets/hands-on-winemaking.jpg";
 import pruningVideoAsset from "@/assets/pruning-march-2026.mp4.asset.json";
@@ -20,10 +20,16 @@ interface Sample {
 }
 
 const samples: Sample[] = [
-  { title: "Pruning - March 2026", image: vineyardHarvestImg, video: pruningVideoAsset.url },
+  { title: "Pruning - March 2026", image: pruningThumb, video: pruningVideoAsset.url },
   { title: "Inside the Winery", image: cellarPortraitImg },
   { title: "Meet the Makers", image: handsOnImg },
 ];
+
+const TikTokIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.83a8.16 8.16 0 0 0 4.77 1.52V6.9a4.84 4.84 0 0 1-1.84-.21z" />
+  </svg>
+);
 
 const SimsSamplesSection = () => {
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
@@ -33,16 +39,39 @@ const SimsSamplesSection = () => {
       <div className="max-w-7xl mx-auto px-8">
         <motion.div {...fadeUp} className="mb-10">
           <span className="text-xs uppercase tracking-[0.12em] text-muted-foreground">
-            05 / Sim's Samples
+            06 / Sim's Samples
           </span>
           <h2 className="mt-4 text-4xl md:text-5xl font-display text-primary tracking-tight italic">
-            Sim's Samples Videos
+            Sim's Samples
+            <span className="block mt-2 text-xl md:text-2xl not-italic font-body tracking-[0.15em] uppercase text-muted-foreground">
+              As seen on{" "}
+              <a
+                href="https://www.instagram.com/invinoveritas.fr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-primary"
+              >
+                <Instagram className="h-4 w-4" /> Instagram
+              </a>{" "}
+              and{" "}
+              <a
+                href="https://www.tiktok.com/@invinoveritas.fr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-primary"
+              >
+                <TikTokIcon className="h-4 w-4" /> TikTok
+              </a>
+            </span>
           </h2>
         </motion.div>
 
-        <motion.div {...fadeUp} className="max-w-3xl mb-16">
+        <motion.div {...fadeUp} className="max-w-3xl mb-16 space-y-4">
           <p className="text-sm text-muted-foreground leading-relaxed font-body">
-            Delve into the vineyards <em>almost</em> for real with Simeon. Through a series of short videos, samples, dare I say tasters of the life of a vine itself and the different processes it takes to bring a vine to fruition and ensure a harvest year after year. Walk through vineyards and wineries with me from the comfort of your home and meet the men and women who help the magic to happen, until you are able to do so yourself, here in person.
+            Delve into the vineyards <em>almost</em> for real with Simeon. Through a series of short videos, samples, dare I say: tasters of the life of a vine itself and the different processes it takes to bring a vine to fruition and ensure a harvest year after year.
+          </p>
+          <p className="text-sm text-muted-foreground leading-relaxed font-body">
+            Walk through vineyards and wineries with me from the comfort of your home and meet the men and women who help to make the magic happen. That is, of course, until you are able to do so yourself, here, in person.
           </p>
         </motion.div>
 
@@ -64,10 +93,10 @@ const SimsSamplesSection = () => {
                 />
               </div>
               <div className="absolute inset-0 bg-background/40 group-hover:bg-background/20 transition-colors duration-500 flex items-center justify-center">
-                <PlayCircle className="h-16 w-16 text-primary/90 group-hover:text-burgundy-light transition-colors" strokeWidth={1} />
+                <PlayCircle className="h-16 w-16 text-primary/90" strokeWidth={1} />
               </div>
               <div className="p-6 text-center bg-background">
-                <h3 className="text-lg font-display tracking-tight text-foreground group-hover:text-burgundy-light transition-colors">
+                <h3 className="text-lg font-display tracking-tight text-foreground">
                   {s.title}
                 </h3>
               </div>
@@ -87,7 +116,7 @@ const SimsSamplesSection = () => {
           onClick={() => setActiveVideo(null)}
         >
           <button
-            className="absolute top-6 right-6 text-primary hover:text-burgundy-light"
+            className="absolute top-6 right-6 text-primary"
             onClick={() => setActiveVideo(null)}
             aria-label="Close video"
           >
