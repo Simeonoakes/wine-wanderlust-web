@@ -52,7 +52,7 @@ const RegionsSection = () => {
         {/* Terroir description text */}
         <motion.div {...fadeUp} className="max-w-4xl mx-auto mb-10">
           <p className="text-sm text-muted-foreground leading-relaxed font-body">
-            Wonderfully untranslatable, the word <span className="font-script text-primary text-5xl md:text-6xl leading-none align-middle">terroir</span> is as rich and complex as the concept it illustrates.
+            Wonderfully untranslatable, the word <span className="font-script text-primary text-3xl md:text-4xl leading-none align-middle">terroir</span> is as rich and complex as the concept it illustrates.
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed font-body mt-4">
             Almost exclusively used in viticulture, it reflects all the naturally occurring external factors (climate, elements, soil type, flora) that come into action to intrinsically affect, nurture and forge a vine, its grapes and therefore, ultimately the wine.

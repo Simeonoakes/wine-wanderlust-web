@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
 import logo from "@/assets/logo.png";
-import heroBg from "@/assets/vineyard-castle.jpg";
+import heroVideoAsset from "@/assets/hero-background.mp4.asset.json";
 
 const Hero = () => {
-  const TRULY_DELAY = 1.2;
-  const TASTING_DELAY = 2.4;
-  const TERROIR_DELAY = 3.6;
-  const PHOTO_DELAY = 4.8;
-  const TAGLINE_DELAY = 6.4;
+  // Video is ~39s. Logo visible from start. Words appear near the end.
+  const VIDEO_FADE_IN = 0.5;
+  const TRULY_DELAY = 26;
+  const TASTING_DELAY = 28;
+  const TERROIR_DELAY = 30;
+  const TAGLINE_DELAY = 32;
 
   const wordVariant = {
     hidden: { opacity: 0, filter: "blur(8px)" },
@@ -20,25 +21,28 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center bg-black overflow-hidden">
-      {/* Black overlay that fades out when photo appears */}
+      {/* Black overlay that fades out when video appears */}
       <motion.div
         initial={{ opacity: 1 }}
         animate={{ opacity: 0 }}
-        transition={{ duration: 2, delay: PHOTO_DELAY, ease: "easeInOut" }}
+        transition={{ duration: 1.5, delay: VIDEO_FADE_IN, ease: "easeInOut" }}
         className="absolute inset-0 bg-black z-10"
       />
 
-      {/* Background photo fades in */}
+      {/* Background video */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 2.5, delay: PHOTO_DELAY, ease: "easeInOut" }}
+        transition={{ duration: 2, delay: VIDEO_FADE_IN, ease: "easeInOut" }}
         className="absolute inset-0"
       >
-        <img
-          src={heroBg}
-          alt=""
-          className="w-full h-full object-cover object-[center_60%] brightness-[1.45] opacity-65"
+        <video
+          src={heroVideoAsset.url}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover object-center brightness-110 opacity-80"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/5 via-background/25 to-background" />
       </motion.div>

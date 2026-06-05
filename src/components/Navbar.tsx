@@ -2,11 +2,11 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 
-const links: { label: string; href: string; external?: boolean }[] = [
+const links: { label: string; href: string }[] = [
   { label: "The Terroir", href: "/#the-terroir" },
   { label: "Your Guide", href: "/#your-guide" },
   { label: "Experiences", href: "/#experiences" },
-  { label: "Corporate & Consulting", href: "/#corporate-and-consulting" },
+  { label: "Corporate", href: "/#corporate-and-consulting" },
   { label: "Sim's Samples", href: "/#sims-samples" },
   { label: "Contact", href: "/contact" },
 ];
@@ -17,16 +17,19 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-8 flex items-center justify-between h-16">
-        <Link to="/" className="font-display text-xl tracking-tight text-primary">
+        <Link
+          to="/"
+          className="font-display text-xl tracking-tight text-primary whitespace-nowrap"
+        >
           In Vino Veritas
         </Link>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-5 ml-auto">
           {links.map((link) => (
             <Link
               key={link.label}
               to={link.href}
-              className="text-xs uppercase tracking-[0.12em] text-muted-foreground hover:text-primary transition-colors duration-200"
+              className="text-xs uppercase tracking-[0.1em] text-muted-foreground hover:text-primary transition-colors duration-200 whitespace-nowrap"
             >
               {link.label}
             </Link>
