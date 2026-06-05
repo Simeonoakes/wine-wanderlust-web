@@ -43,9 +43,9 @@ const HashScroll = () => {
       return;
     }
 
-    // Fade out, jump, fade back in
+    // Fade out, jump, fade back in (slower, gentler crossfade)
     const body = document.body;
-    body.style.transition = "opacity 300ms ease";
+    body.style.transition = "opacity 700ms ease";
     body.style.opacity = "0";
 
     const t = setTimeout(() => {
@@ -53,7 +53,7 @@ const HashScroll = () => {
       requestAnimationFrame(() => {
         body.style.opacity = "1";
       });
-    }, 300);
+    }, 700);
 
     return () => clearTimeout(t);
   }, [pathname, hash]);
