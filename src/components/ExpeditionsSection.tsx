@@ -74,7 +74,7 @@ const MenuDay = ({ day, footnote }: { day: DayData; footnote?: string }) => (
     }}
   >
     {/* Subtle inner shadow + tint for paper depth */}
-    <div className="absolute inset-0 pointer-events-none" style={{ boxShadow: "inset 0 0 80px rgba(120,80,30,0.18)" }} />
+    <div className="absolute inset-0 pointer-events-none" style={{ boxShadow: "inset 0 0 60px rgba(180,150,100,0.08)" }} />
     <div className="relative z-10">
       <h4 className="font-menu text-burgundy text-6xl md:text-7xl text-center leading-none mb-8" style={{ color: "hsl(350 60% 30%)" }}>
         {day.day}
@@ -355,15 +355,15 @@ const ExpeditionsSection = () => {
 
         {/* Tabbed experience showcase */}
         <motion.div {...fadeUp} className="mb-16">
-          <div className="flex gap-2 mb-8 border-b border-border overflow-x-auto">
+          <div className="flex flex-wrap gap-2 mb-8">
             {experiences.map((exp, i) => (
               <button
                 key={exp.id}
                 onClick={() => setActiveTab(i)}
-                className={`px-4 py-3 text-xs uppercase tracking-[0.1em] font-body transition-colors duration-300 border-b-2 -mb-px whitespace-nowrap flex-shrink-0 ${
+                className={`px-4 py-3 text-xs uppercase tracking-[0.1em] font-body transition-colors duration-300 whitespace-nowrap flex-shrink-0 border ${
                   activeTab === i
-                    ? "border-primary text-primary"
-                    : "border-transparent text-muted-foreground hover:text-foreground"
+                    ? "bg-burgundy text-primary border-burgundy"
+                    : "bg-transparent text-muted-foreground border-border hover:text-foreground"
                 }`}
               >
                 {exp.title}
@@ -405,15 +405,15 @@ const ExpeditionsSection = () => {
 
         {/* Duration sub-tabs */}
         <motion.div {...fadeUp} className="mb-16">
-          <div className="flex gap-2 mb-8 border-b border-border">
+          <div className="flex flex-wrap gap-2 mb-8">
             {durations.map((dur, i) => (
               <button
                 key={dur.label}
                 onClick={() => setActiveDuration(i)}
-                className={`px-5 py-3 text-xs uppercase tracking-[0.1em] font-body transition-colors duration-300 border-b-2 -mb-px whitespace-nowrap ${
+                className={`px-5 py-3 text-xs uppercase tracking-[0.1em] font-body transition-colors duration-300 whitespace-nowrap border ${
                   activeDuration === i
-                    ? "border-primary text-primary"
-                    : "border-transparent text-muted-foreground hover:text-foreground"
+                    ? "bg-burgundy text-primary border-burgundy"
+                    : "bg-transparent text-muted-foreground border-border hover:text-foreground"
                 }`}
               >
                 {dur.label}
