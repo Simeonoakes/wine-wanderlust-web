@@ -5,6 +5,8 @@ import pruningThumb from "@/assets/pruning-thumb.jpg";
 import cellarPortraitImg from "@/assets/cellar-portrait.jpg";
 import handsOnImg from "@/assets/hands-on-winemaking.jpg";
 import pruningVideoAsset from "@/assets/pruning-march-2026.mp4.asset.json";
+import newGrowthVideoAsset from "@/assets/new-growth-april-2026.mp4.asset.json";
+import newGrowthThumbAsset from "@/assets/new-growth-thumb.jpg.asset.json";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -21,6 +23,7 @@ interface Sample {
 
 const samples: Sample[] = [
   { title: "Pruning - March 2026", image: pruningThumb, video: pruningVideoAsset.url },
+  { title: "New Growth - April 2026", image: newGrowthThumbAsset.url, video: newGrowthVideoAsset.url },
   { title: "Inside the Winery", image: cellarPortraitImg },
   { title: "Meet the Makers", image: handsOnImg },
 ];
@@ -71,11 +74,14 @@ const SimsSamplesSection = () => {
             Delve into the vineyards <em>almost</em> for real with Simeon. Through a series of short videos, samples, dare I say: tasters of the life of a vine itself and the different processes it takes to bring a vine to fruition and ensure a harvest year after year.
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed font-body">
-            Walk through vineyards and wineries with me from the comfort of your home and meet the men and women who help to make the magic happen. That is, of course, until you are able to do so yourself, here, in person.
+            Walk through vineyards and wineries with me from the comfort of your home and meet the men and women who help to make the magic happen.
+          </p>
+          <p className="text-sm text-muted-foreground leading-relaxed font-body">
+            That is, of course, until you are able to do so yourself, here, in person.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {samples.map((s, i) => (
             <motion.div
               key={s.title}

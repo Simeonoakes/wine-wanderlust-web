@@ -12,8 +12,9 @@ import cellarPortraitImg from "@/assets/cellar-portrait.jpg";
 import tractorSelfieImg from "@/assets/tractor-selfie.jpg";
 import vineyardHarvestImg from "@/assets/vineyard-harvest.jpg";
 import extraSceneImg from "@/assets/extra-scene.jpg";
-import cafeCroissantImg from "@/assets/cafe-croissant.jpg";
+import cafeCroissantImg from "@/assets/cafe-croissant-v2.jpg";
 import grapeHarvestImg from "@/assets/grape-harvest.jpg";
+import whiteGrapesAsset from "@/assets/white-grapes.jpg.asset.json";
 
 const experiences = [
   {
@@ -47,6 +48,14 @@ const experiences = [
     description:
       "Guided by the vinegrowers themselves, in the wine cellar or in the vineyards. Watch, listen and take part in the beauty of the process at every stage, depending on the season.",
     image: handsOnImg,
+  },
+  {
+    id: "05",
+    title: "Accommodation",
+    highlight: "Stay at the Heart of It All",
+    description:
+      "Your accommodation is completely taken care of and we will ensure you stay in one of our prime locations in the village of Paziols or a stone's throw away. Typical old stone buildings stylishly renovated, offering the perfect blend of traditional charm with all modern comfort and amenities.\n\nFor the 2-day intensive or the 1 week full immersion experiences, you can arrive the day before or leave the day after or both! It's up to you.",
+    image: extraSceneImg,
   },
 ];
 
@@ -156,7 +165,7 @@ const OneDayContent = ({ onBook }: { onBook: () => void }) => (
 const TwoDayContent = ({ onBook }: { onBook: () => void }) => (
   <div className="space-y-8">
     <div className="w-full overflow-hidden">
-      <img src={roseOlivesImg} alt="Two days in the Corbières" className="w-full h-[35vh] md:h-[50vh] object-cover object-center" loading="lazy" />
+      <img src={whiteGrapesAsset.url} alt="Two days in the Corbières" className="w-full h-[35vh] md:h-[50vh] object-cover object-center" loading="lazy" />
     </div>
 
     <div className="text-center space-y-2">
@@ -335,10 +344,30 @@ const ExpeditionsSection = () => {
     setBookingOpen(true);
   };
 
+  const BespokeContent = () => (
+    <div className="space-y-8 max-w-3xl mx-auto text-center">
+      <div className="w-full overflow-hidden">
+        <img src={extraSceneImg} alt="A bespoke journey" className="w-full h-[35vh] md:h-[50vh] object-cover object-center" loading="lazy" />
+      </div>
+      <p className="text-sm text-muted-foreground leading-relaxed font-body">
+        Looking for something entirely your own? A bespoke journey is designed from scratch, around your tastes, your timing and your dreams. Whether you have a precise itinerary in mind or just a feeling for what you'd love to live, we'll craft each day together: choice of wineries, meals, accommodation, activities and pace, all built around you.
+      </p>
+      <p className="text-xs uppercase tracking-[0.2em] text-primary font-body">
+        At every stage you will be encouraged to use as much or as little French as you know or fancy!
+      </p>
+      <div className="pt-4">
+        <Button onClick={() => openBooking("Bespoke Experience")} variant="expedition" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-sm px-10 py-5">
+          Enquire About a Bespoke Journey
+        </Button>
+      </div>
+    </div>
+  );
+
   const durations = [
     { label: "1 Day Taster", content: <OneDayContent onBook={() => openBooking("Taster Journey")} /> },
     { label: "2-Day Intensive", content: <TwoDayContent onBook={() => openBooking("Intensive Journey")} /> },
     { label: "1 Week Full Immersion", content: <WeekContent onBook={() => openBooking("Full Immersion Journey")} /> },
+    { label: "Bespoke", content: <BespokeContent /> },
   ];
 
   return (
@@ -396,7 +425,7 @@ const ExpeditionsSection = () => {
               <h3 className="mt-3 text-3xl md:text-4xl font-light italic tracking-tight">
                 {experiences[activeTab].title}
               </h3>
-              <p className="mt-6 text-sm text-muted-foreground leading-relaxed font-body">
+              <p className="mt-6 text-sm text-muted-foreground leading-relaxed font-body whitespace-pre-line">
                 {experiences[activeTab].description}
               </p>
             </motion.div>

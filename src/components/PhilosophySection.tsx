@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import guidePortraitAsset from "@/assets/guide-portrait.jpg.asset.json";
+import guidePortrait from "@/assets/guide-portrait-v2.jpg";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -14,7 +14,7 @@ const PhilosophySection = () => {
       {/* Full-width banner image */}
       <motion.div {...fadeUp} className="w-full aspect-[3/1] overflow-hidden mb-16">
         <img
-          src={guidePortraitAsset.url}
+          src={guidePortrait}
           alt="Your guide, In Vino Veritas"
           className="w-full h-full object-cover object-center"
         />
