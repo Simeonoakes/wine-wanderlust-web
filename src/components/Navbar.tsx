@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import logo from "@/assets/logo.png";
+import logoAsset from "@/assets/logo-new.png.asset.json";
 
 const links: { label: string; href: string }[] = [
   { label: "The Terroir", href: "/#the-terroir" },
   { label: "Your Guide", href: "/#your-guide" },
   { label: "Experiences", href: "/#experiences" },
-  { label: "Seasons", href: "/#seasons" },
+  { label: "When to Visit", href: "/#seasons" },
   { label: "Corporate", href: "/#corporate-and-consulting" },
   { label: "Sim's Samples", href: "/#sims-samples" },
   { label: "Contact", href: "/contact" },
@@ -18,9 +18,9 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
-      <div className="max-w-7xl mx-auto px-8 flex items-center justify-between h-16">
-        <Link to="/" className="flex items-center gap-2 whitespace-nowrap">
-          <img src={logo} alt="" className="h-9 w-9 object-contain" />
+      <div className="max-w-7xl mx-auto px-8 flex items-center justify-between h-20">
+        <Link to="/" className="flex items-center gap-3 whitespace-nowrap">
+          <img src={logoAsset.url} alt="" className="h-16 w-16 object-contain" />
           <span className="font-script text-3xl tracking-tight text-primary leading-none">
             In Vino Veritas
           </span>

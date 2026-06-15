@@ -1,96 +1,86 @@
 import { motion } from "framer-motion";
-import logo from "@/assets/logo.png";
+import logoAsset from "@/assets/logo-new.png.asset.json";
 import heroVideoAsset from "@/assets/hero-background.mp4.asset.json";
 
+// Video is ~39s. The camera pulls away from the church in the final seconds and
+// slows to a near-still frame around 36s before fading to black. The logo
+// fades in precisely on that slow-down; "Truly Tasting Terroir" is then
+// written by hand, letter-by-letter, as the footage fades to black.
+const LOGO_DELAY = 36;
+const WRITE_START = 38;
+const WRITE_PER_LETTER = 0.09; // seconds per character
+const TAGLINE_DELAY = 42;
+
+const phrase = "Truly Tasting Terroir";
+
 const Hero = () => {
-  // Video is ~39s. Logo fades in during the last few seconds as the camera
-  // pulls away from the church; the words appear right after, as the video
-  // fades to black.
-  const VIDEO_FADE_IN = 0.5;
-  const LOGO_DELAY = 30;
-  const TRULY_DELAY = 34;
-  const TASTING_DELAY = 35.5;
-  const TERROIR_DELAY = 37;
-  const TAGLINE_DELAY = 39;
-
-  const wordVariant = {
-    hidden: { opacity: 0, filter: "blur(8px)" },
-    visible: (delay: number) => ({
-      opacity: 1,
-      filter: "blur(0px)",
-      transition: { duration: 1.8, delay, ease: [0.16, 1, 0.3, 1] },
-    }),
-  };
-
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center bg-black overflow-hidden">
-      {/* Black overlay that fades out when video appears */}
-      <motion.div
-        initial={{ opacity: 1 }}
-        animate={{ opacity: 0 }}
-        transition={{ duration: 1.5, delay: VIDEO_FADE_IN, ease: "easeInOut" }}
-        className="absolute inset-0 bg-black z-10"
-      />
-
-      {/* Background video */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 2, delay: VIDEO_FADE_IN, ease: "easeInOut" }}
-        className="absolute inset-0"
-      >
+      {/* Background video — visible from the very first frame, no fade-in */}
+      <div className="absolute inset-0">
         <video
           src={heroVideoAsset.url}
           autoPlay
           muted
           loop
           playsInline
-          className="w-full h-full object-cover object-center brightness-110 opacity-80"
+          className="w-full h-full object-cover object-center"
+          style={{
+            // Cinematic grading: slight teal/orange split-tone with rich contrast
+            filter:
+              "contrast(1.12) saturate(1.18) brightness(1.05) sepia(0.08) hue-rotate(-6deg)",
+          }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/5 via-background/25 to-background" />
-      </motion.div>
+        {/* Soft cinematic vignette on the sides only (no bottom darkening) */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.35) 100%)",
+          }}
+        />
+      </div>
 
       {/* Content */}
-      <div className="relative z-20 flex flex-col items-center text-center">
-        {/* Logo fades in near the end of the video */}
+      <div className="relative z-20 flex flex-col items-center text-center pointer-events-none">
+        {/* Logo: fades in precisely as the video slows on its last frames */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.96, filter: "blur(10px)" }}
+          initial={{ opacity: 0, scale: 0.97, filter: "blur(8px)" }}
           animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-          transition={{ duration: 3, delay: LOGO_DELAY, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 2.2, delay: LOGO_DELAY, ease: [0.16, 1, 0.3, 1] }}
         >
           <img
-            src={logo}
+            src={logoAsset.url}
             alt="In Vino Veritas logo"
-            className="w-[26rem] h-[26rem] sm:w-[34rem] sm:h-[34rem] md:w-[42rem] md:h-[42rem] lg:w-[50rem] lg:h-[50rem] object-contain"
+            className="w-[18rem] h-[18rem] sm:w-[22rem] sm:h-[22rem] md:w-[26rem] md:h-[26rem] lg:w-[30rem] lg:h-[30rem] object-contain drop-shadow-[0_10px_40px_rgba(0,0,0,0.6)]"
           />
         </motion.div>
 
-        {/* Words centered below logo */}
-        <div className="flex gap-3 md:gap-5 -mt-16 md:-mt-24 justify-center">
-          {[
-            { word: "Truly", delay: TRULY_DELAY },
-            { word: "Tasting", delay: TASTING_DELAY },
-            { word: "Terroir", delay: TERROIR_DELAY },
-          ].map(({ word, delay }) => (
+        {/* Handwritten phrase: each letter appears in sequence */}
+        <div className="-mt-6 md:-mt-10 flex flex-wrap justify-center max-w-[90vw]">
+          {phrase.split("").map((ch, i) => (
             <motion.span
-              key={word}
-              custom={delay}
-              initial="hidden"
-              animate="visible"
-              variants={wordVariant}
-              className="font-script text-6xl md:text-8xl lg:text-9xl tracking-[0.02em] text-primary leading-none"
+              key={i}
+              initial={{ opacity: 0, y: 6, filter: "blur(3px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{
+                duration: 0.35,
+                delay: WRITE_START + i * WRITE_PER_LETTER,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              className="font-signature text-6xl md:text-8xl lg:text-9xl text-primary leading-none"
+              style={{ whiteSpace: ch === " " ? "pre" : undefined }}
             >
-              {word}
+              {ch}
             </motion.span>
           ))}
         </div>
 
-        {/* Tagline centered */}
         <motion.p
           initial={{ opacity: 0, filter: "blur(4px)" }}
           animate={{ opacity: 1, filter: "blur(0px)" }}
           transition={{ duration: 1.2, delay: TAGLINE_DELAY, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-6 font-display text-sm md:text-lg tracking-[0.18em] italic text-foreground/70"
+          className="mt-6 font-display text-sm md:text-lg tracking-[0.18em] italic text-foreground/80"
         >
           Bespoke wine experiences in the South of France
         </motion.p>
