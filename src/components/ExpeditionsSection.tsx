@@ -49,6 +49,14 @@ const experiences = [
       "Guided by the vinegrowers themselves, in the wine cellar or in the vineyards. Watch, listen and take part in the beauty of the process at every stage, depending on the season.",
     image: handsOnImg,
   },
+  {
+    id: "05",
+    title: "Accommodation",
+    highlight: "Stay at the Heart of It All",
+    description:
+      "Your accommodation is completely taken care of and we will ensure you stay in one of our prime locations in the village of Paziols or a stone's throw away. Typical old stone buildings stylishly renovated, offering the perfect blend of traditional charm with all modern comfort and amenities.\n\nFor the 2-day intensive or the 1 week full immersion experiences, you can arrive the day before or leave the day after or both! It's up to you.",
+    image: extraSceneImg,
+  },
 ];
 
 const fadeUp = {
