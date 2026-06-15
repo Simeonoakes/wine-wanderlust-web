@@ -165,7 +165,7 @@ const OneDayContent = ({ onBook }: { onBook: () => void }) => (
 const TwoDayContent = ({ onBook }: { onBook: () => void }) => (
   <div className="space-y-8">
     <div className="w-full overflow-hidden">
-      <img src={roseOlivesImg} alt="Two days in the Corbières" className="w-full h-[35vh] md:h-[50vh] object-cover object-center" loading="lazy" />
+      <img src={whiteGrapesAsset.url} alt="Two days in the Corbières" className="w-full h-[35vh] md:h-[50vh] object-cover object-center" loading="lazy" />
     </div>
 
     <div className="text-center space-y-2">
@@ -405,7 +405,7 @@ const ExpeditionsSection = () => {
               <h3 className="mt-3 text-3xl md:text-4xl font-light italic tracking-tight">
                 {experiences[activeTab].title}
               </h3>
-              <p className="mt-6 text-sm text-muted-foreground leading-relaxed font-body">
+              <p className="mt-6 text-sm text-muted-foreground leading-relaxed font-body whitespace-pre-line">
                 {experiences[activeTab].description}
               </p>
             </motion.div>
