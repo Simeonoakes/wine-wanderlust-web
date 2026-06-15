@@ -12,8 +12,9 @@ import cellarPortraitImg from "@/assets/cellar-portrait.jpg";
 import tractorSelfieImg from "@/assets/tractor-selfie.jpg";
 import vineyardHarvestImg from "@/assets/vineyard-harvest.jpg";
 import extraSceneImg from "@/assets/extra-scene.jpg";
-import cafeCroissantImg from "@/assets/cafe-croissant.jpg";
+import cafeCroissantImg from "@/assets/cafe-croissant-v2.jpg";
 import grapeHarvestImg from "@/assets/grape-harvest.jpg";
+import whiteGrapesAsset from "@/assets/white-grapes.jpg.asset.json";
 
 const experiences = [
   {
