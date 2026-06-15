@@ -1,23 +1,23 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import grapeHarvestImg from "@/assets/grape-harvest.jpg";
-import village2cvImg from "@/assets/village-2cv.jpg";
-import landscapeGarrigueImg from "@/assets/landscape-garrigue.jpg";
+import img7983Asset from "@/assets/img-7983.jpg.asset.json";
+import autumnOfAutumnAsset from "@/assets/autumn-of-autumn.jpg.asset.json";
+import blueCarBwImg from "@/assets/blue-car-bw.jpg";
 
 const highlights = [
   {
     name: "Ancient Vines",
-    image: grapeHarvestImg,
+    image: img7983Asset.url,
     link: "/the-vineyards",
   },
   {
     name: "The Landscape",
-    image: landscapeGarrigueImg,
+    image: autumnOfAutumnAsset.url,
     link: "/the-landscape",
   },
   {
     name: "The Culture",
-    image: village2cvImg,
+    image: blueCarBwImg,
     link: "/the-culture",
   },
 ];

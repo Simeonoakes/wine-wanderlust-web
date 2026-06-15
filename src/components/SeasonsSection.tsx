@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import vineyardCastleImg from "@/assets/vineyard-castle.jpg";
-import landscapeGarrigueImg from "@/assets/landscape-garrigue.jpg";
+import almondBlossomAsset from "@/assets/almond-blossom.jpg.asset.json";
+import poppiesAsset from "@/assets/poppies.jpg.asset.json";
 import cellarPortraitImg from "@/assets/cellar-portrait.jpg";
 import autumnLandscapeImg from "@/assets/autumn-landscape-new.jpg";
 
@@ -14,21 +14,21 @@ const fadeUp = {
 
 const seasons = [
   {
-    season: "Spring",
+    season: "Winter",
     title: "Almond Blossom & Pruning",
-    image: vineyardCastleImg,
-    text: "As the first warmth returns, hillsides explode in clouds of white and pink almond blossom. In the vineyards, the vignerons are bent low, shaping the year's growth with deft secateurs. A season of new beginnings: quiet, hopeful and intensely beautiful.",
+    image: almondBlossomAsset.url,
+    text: "Surprisingly chilly but also breathtakingly beautiful. Frosts and, if you're lucky, a sprinkling of snow on the summit of Mont Tauch. The painstakingly precise art of pruning and some ploughing set the pace. From January to February, the surrounding garrigue awakens well before the vines do: white and pink tufts of almond blossom appear across the landscape and have the bees swarming. Next comes the vibrant yellow of the mimosa and the blend of intoxicating scents is heavenly; a beacon to the promise of spring.",
+    cta: "Get a Taste of Winter",
+  },
+  {
+    season: "Spring",
+    title: "Poppies & Pest Control",
+    image: poppiesAsset.url,
+    text: "Crimson poppies set the fields ablaze and combine with the iridescent yellow and intoxicating scent of the scotch broom and the vibrant greens of fresh shoots on the vines to paint a picture of paradise under the endless blue skies. The vignerons tend the vines with care every day, weeding, ploughing and warding off unwanted visitors.",
     cta: "Get a Taste of Spring",
   },
   {
     season: "Summer",
-    title: "Poppy Fields & Pest Control",
-    image: landscapeGarrigueImg,
-    text: "Crimson poppies set the fields ablaze under a relentless southern sun. In the rows, the winemakers walk every day, watching, listening, balancing the vine's vigour and warding off unwanted visitors. The garrigue hums; the cicadas have not yet taken over.",
-    cta: "Get a Taste of Summer",
-  },
-  {
-    season: "Late Summer",
     title: "Cicadas & Bottling",
     image: cellarPortraitImg,
     text: "The cicadas are deafening, the air shimmers and the vines hang heavy with ripening fruit. Inside the cool of the cellar, last year's wines are being bottled: a moment of stillness before the storm of harvest.",
@@ -38,7 +38,7 @@ const seasons = [
     season: "Autumn",
     title: "Autumn Glory & Harvesting",
     image: autumnLandscapeImg,
-    text: "The vineyards turn gold, russet and burgundy, the air sharpens and the whole region holds its breath. Pickers move through the rows from dawn, baskets fill, and the winery hums day and night with juice, song and the heady scent of fermenting grapes.",
+    text: "From late summer to early autumn, a year's work reaches its pinnacle: les vendanges, harvest is here at last. The air sharpens and the whole region holds its breath. Pickers move through the rows from dawn, buckets then hods then trailers filled, and the winery hums day and night with juice, song and the heady scent of fermenting grapes. Then the vineyards turn gold, russet and burgundy, the whole landscape ablaze with iridescent glory as the temperature and the light soften and carve shapes and shades sublime.",
     cta: "Get a Taste of Autumn",
   },
 ];
@@ -49,7 +49,7 @@ const SeasonsSection = () => {
       <div className="max-w-7xl mx-auto px-8">
         <motion.div {...fadeUp} className="mb-12">
           <span className="text-xs uppercase tracking-[0.12em] text-muted-foreground">
-            04 / The Seasons
+            04 / When to Visit
           </span>
           <h2 className="mt-4 text-4xl md:text-5xl font-display text-primary tracking-tight">
             Come and Go with the Seasons
@@ -58,7 +58,7 @@ const SeasonsSection = () => {
 
         <motion.div {...fadeUp} className="max-w-3xl mb-16">
           <p className="text-sm text-muted-foreground leading-relaxed font-body">
-            Every season in the Corbières tells its own story. The landscape changes colour, the vines change rhythm, and life in the winery follows its own ancient calendar. Choose when to visit and you choose what to live: the quiet promise of spring, the heady abundance of summer, the focused frenzy of harvest or the deep, contemplative rest of winter.
+            Every season in the Corbières tells its own story. The landscape changes colour, the vines change rhythm, and life in the winery follows its own ancient calendar. Choose when to visit and you choose what to live: the quiet promise of winter, the riot of colour and renewal in spring, the heady abundance of summer or the focused frenzy and golden glow of autumn harvest.
           </p>
         </motion.div>
 

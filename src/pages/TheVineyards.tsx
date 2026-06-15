@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import grapeHarvestImg from "@/assets/grape-harvest.jpg";
+import img8254BwAsset from "@/assets/img-8254-bw.jpg.asset.json";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -16,7 +16,7 @@ const TheVineyards = () => (
     <Navbar />
     {/* Banner */}
     <div className="w-full h-[50vh] md:h-[60vh] overflow-hidden">
-      <img src={grapeHarvestImg} alt="Ancient Vines" className="w-full h-full object-cover object-center" />
+      <img src={img8254BwAsset.url} alt="Ancient Vines" className="w-full h-full object-cover object-center grayscale" />
     </div>
 
     <div className="max-w-4xl mx-auto px-8 py-20">

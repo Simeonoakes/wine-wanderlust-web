@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import landscapeGarrigueImg from "@/assets/landscape-garrigue.jpg";
+import fontfroideAsset from "@/assets/fontfroide.jpg.asset.json";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -15,7 +15,7 @@ const TheLandscape = () => (
   <div className="min-h-screen">
     <Navbar />
     <div className="w-full h-[50vh] md:h-[60vh] overflow-hidden">
-      <img src={landscapeGarrigueImg} alt="Garrigue, Mountains & Ancient Stones" className="w-full h-full object-cover object-center" />
+      <img src={fontfroideAsset.url} alt="Garrigue, Mountains & Ancient Stones" className="w-full h-full object-cover object-center" />
     </div>
 
     <div className="max-w-4xl mx-auto px-8 py-20">
