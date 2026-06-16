@@ -15,6 +15,13 @@ import extraSceneImg from "@/assets/extra-scene.jpg";
 import cafeCroissantImg from "@/assets/cafe-croissant-v2.jpg";
 import grapeHarvestImg from "@/assets/grape-harvest.jpg";
 import whiteGrapesAsset from "@/assets/white-grapes.jpg.asset.json";
+import img0941Asset from "@/assets/img-0941.jpg.asset.json";
+import img5207Asset from "@/assets/img-5207.jpg.asset.json";
+import img7985Asset from "@/assets/img-7985.jpg.asset.json";
+import img0568Asset from "@/assets/img-0568.jpg.asset.json";
+import img3035Asset from "@/assets/img-3035.jpg.asset.json";
+import img5824Asset from "@/assets/img-5824.jpg.asset.json";
+import img7315Asset from "@/assets/img-7315.jpg.asset.json";
 
 const experiences = [
   {
