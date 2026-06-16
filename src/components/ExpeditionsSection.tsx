@@ -15,6 +15,13 @@ import extraSceneImg from "@/assets/extra-scene.jpg";
 import cafeCroissantImg from "@/assets/cafe-croissant-v2.jpg";
 import grapeHarvestImg from "@/assets/grape-harvest.jpg";
 import whiteGrapesAsset from "@/assets/white-grapes.jpg.asset.json";
+import img0941Asset from "@/assets/img-0941.jpg.asset.json";
+import img5207Asset from "@/assets/img-5207.jpg.asset.json";
+import img7985Asset from "@/assets/img-7985.jpg.asset.json";
+import img0568Asset from "@/assets/img-0568.jpg.asset.json";
+import img3035Asset from "@/assets/img-3035.jpg.asset.json";
+import img5824Asset from "@/assets/img-5824.jpg.asset.json";
+import img7315Asset from "@/assets/img-7315.jpg.asset.json";
 
 const experiences = [
   {
@@ -31,7 +38,7 @@ const experiences = [
     highlight: "Vineyard to Table",
     description:
       "From intimate vineyard lunches with the estate's cuvées to 4 course meals in the best local restaurant as well as traditional rustic barbecues cooked on old vine wood with aromatic herbs in the very vineyard they come from.",
-    image: roseOlivesImg,
+    image: img0941Asset.url,
   },
   {
     id: "03",
@@ -55,7 +62,7 @@ const experiences = [
     highlight: "Stay at the Heart of It All",
     description:
       "Your accommodation is completely taken care of and we will ensure you stay in one of our prime locations in the village of Paziols or a stone's throw away. Typical old stone buildings stylishly renovated, offering the perfect blend of traditional charm with all modern comfort and amenities.\n\nFor the 2-day intensive or the 1 week full immersion experiences, you can arrive the day before or leave the day after or both! It's up to you.",
-    image: extraSceneImg,
+    image: img5207Asset.url,
   },
 ];
 
@@ -120,7 +127,7 @@ const MenuDay = ({ day, footnote }: { day: DayData; footnote?: string }) => (
 const OneDayContent = ({ onBook }: { onBook: () => void }) => (
   <div className="space-y-8">
     <div className="w-full overflow-hidden">
-      <img src={cafeCroissantImg} alt="A day in the Corbières" className="w-full h-[35vh] md:h-[50vh] object-cover object-center" loading="lazy" />
+      <img src={roseOlivesImg} alt="A day in the Corbières" className="w-full h-[35vh] md:h-[50vh] object-cover object-center" loading="lazy" />
     </div>
 
     <div className="text-center space-y-2">
@@ -147,6 +154,16 @@ const OneDayContent = ({ onBook }: { onBook: () => void }) => (
         ]},
       ]
     }} />
+
+    {/* Photo strip beneath the day menu */}
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 pt-4">
+      {[img0568Asset.url, img3035Asset.url, img5824Asset.url, img7315Asset.url].map((src, i) => (
+        <div key={i} className="relative overflow-hidden aspect-square group">
+          <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" />
+          <div className="absolute inset-0 bg-background/20 group-hover:bg-background/5 transition-colors duration-500" />
+        </div>
+      ))}
+    </div>
 
     <div className="text-center pt-4 space-y-3">
       <p className="text-xs uppercase tracking-[0.2em] text-primary font-body">
@@ -461,7 +478,7 @@ const ExpeditionsSection = () => {
 
         {/* Photo strip */}
         <motion.div {...fadeUp} className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-16">
-          {[wineTastingTableImg, cellarPortraitImg, tractorSelfieImg, vineyardHarvestImg, extraSceneImg].map((img, i) => (
+          {[wineTastingTableImg, cafeCroissantImg, tractorSelfieImg, vineyardHarvestImg, extraSceneImg].map((img, i) => (
             <div key={i} className="relative overflow-hidden aspect-square group">
               <img
                 src={img}

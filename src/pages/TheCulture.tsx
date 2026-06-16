@@ -3,6 +3,11 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import garlicAsset from "@/assets/garlic.jpg.asset.json";
+import img0941Asset from "@/assets/img-0941.jpg.asset.json";
+import img5479Asset from "@/assets/img-5479.jpg.asset.json";
+import img5698Asset from "@/assets/img-5698.jpg.asset.json";
+import img1527Asset from "@/assets/img-1527.jpg.asset.json";
+import img7315Asset from "@/assets/img-7315.jpg.asset.json";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -14,8 +19,14 @@ const fadeUp = {
 const TheCulture = () => (
   <div className="min-h-screen">
     <Navbar />
+    {/* Banner: zoom to centre so only the garlic is visible (no cardboard) */}
     <div className="w-full h-[50vh] md:h-[60vh] overflow-hidden">
-      <img src={garlicAsset.url} alt="The Culture" className="w-full h-full object-cover object-center" />
+      <img
+        src={garlicAsset.url}
+        alt="The Culture"
+        className="w-full h-full object-cover object-center"
+        style={{ transform: "scale(1.35)", transformOrigin: "center" }}
+      />
     </div>
 
     <div className="max-w-4xl mx-auto px-8 py-20">
@@ -51,6 +62,16 @@ const TheCulture = () => (
         <Link to="/#experiences" className="block pt-6 text-center font-script text-3xl md:text-4xl text-burgundy-light not-italic leading-tight hover:text-primary transition-colors">
           Dance to these beats, relish this pace, feast on these joys.
         </Link>
+      </motion.div>
+
+      {/* Photo strip */}
+      <motion.div {...fadeUp} className="grid grid-cols-2 md:grid-cols-5 gap-3 mt-20">
+        {[img0941Asset.url, img5479Asset.url, img5698Asset.url, img1527Asset.url, img7315Asset.url].map((src, i) => (
+          <div key={i} className="relative overflow-hidden aspect-square group">
+            <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" />
+            <div className="absolute inset-0 bg-background/20 group-hover:bg-background/5 transition-colors duration-500" />
+          </div>
+        ))}
       </motion.div>
     </div>
     <Footer />
