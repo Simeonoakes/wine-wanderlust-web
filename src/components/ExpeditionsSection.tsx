@@ -155,6 +155,16 @@ const OneDayContent = ({ onBook }: { onBook: () => void }) => (
       ]
     }} />
 
+    {/* Photo strip beneath the day menu */}
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 pt-4">
+      {[img0568Asset.url, img3035Asset.url, img5824Asset.url, img7315Asset.url].map((src, i) => (
+        <div key={i} className="relative overflow-hidden aspect-square group">
+          <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" />
+          <div className="absolute inset-0 bg-background/20 group-hover:bg-background/5 transition-colors duration-500" />
+        </div>
+      ))}
+    </div>
+
     <div className="text-center pt-4 space-y-3">
       <p className="text-xs uppercase tracking-[0.2em] text-primary font-body">
         At every stage you will be encouraged to use as much or as little French as you know or fancy!
