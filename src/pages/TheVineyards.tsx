@@ -2,7 +2,13 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import img8254BwAsset from "@/assets/img-8254-bw.jpg.asset.json";
+import img8254ColorAsset from "@/assets/img-8254-color.jpg.asset.json";
+import img0568Asset from "@/assets/img-0568.jpg.asset.json";
+import img3035Asset from "@/assets/img-3035.jpg.asset.json";
+import img5824Asset from "@/assets/img-5824.jpg.asset.json";
+import img7315Asset from "@/assets/img-7315.jpg.asset.json";
+import img7466Asset from "@/assets/img-7466.jpg.asset.json";
+import img4310Asset from "@/assets/img-4310.jpg.asset.json";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -14,9 +20,14 @@ const fadeUp = {
 const TheVineyards = () => (
   <div className="min-h-screen">
     <Navbar />
-    {/* Banner */}
+    {/* Banner: original colour photo, framed a little wider */}
     <div className="w-full h-[50vh] md:h-[60vh] overflow-hidden">
-      <img src={img8254BwAsset.url} alt="Ancient Vines" className="w-full h-full object-cover object-center grayscale" />
+      <img
+        src={img8254ColorAsset.url}
+        alt="Ancient Vines"
+        className="w-full h-full object-cover object-center"
+        style={{ objectPosition: "center 40%", transform: "scale(0.92)", transformOrigin: "center" }}
+      />
     </div>
 
     <div className="max-w-4xl mx-auto px-8 py-20">
@@ -52,6 +63,16 @@ const TheVineyards = () => (
         <Link to="/#experiences" className="block pt-6 text-center font-script text-3xl md:text-4xl text-burgundy-light not-italic leading-tight hover:text-primary transition-colors">
           Tread these soils, meet these people, taste this history.
         </Link>
+      </motion.div>
+
+      {/* Photo strip */}
+      <motion.div {...fadeUp} className="grid grid-cols-2 md:grid-cols-5 gap-3 mt-20">
+        {[img7466Asset.url, img0568Asset.url, img5824Asset.url, img3035Asset.url, img4310Asset.url].map((src, i) => (
+          <div key={i} className="relative overflow-hidden aspect-square group">
+            <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" />
+            <div className="absolute inset-0 bg-background/20 group-hover:bg-background/5 transition-colors duration-500" />
+          </div>
+        ))}
       </motion.div>
     </div>
     <Footer />
