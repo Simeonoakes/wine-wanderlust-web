@@ -237,6 +237,15 @@ const TwoDayContent = ({ onBook }: { onBook: () => void }) => (
       />
     ))}
 
+    {/* 2-Day photo strip */}
+    <div className="grid grid-cols-3 gap-3 pt-4">
+      {[img1587Asset.url, img9230Asset.url, img9197Asset.url].map((src, i) => (
+        <div key={i} className="relative overflow-hidden aspect-square group">
+          <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" />
+        </div>
+      ))}
+    </div>
+
     <div className="text-center space-y-3 pt-4">
       <p className="text-sm text-muted-foreground font-body italic">
         All is included, all is taken care of. All you need to do is book your transport to and from the area and we will take it from there.
@@ -257,7 +266,7 @@ const TwoDayContent = ({ onBook }: { onBook: () => void }) => (
 const WeekContent = ({ onBook }: { onBook: () => void }) => (
   <div className="space-y-8">
     <div className="w-full overflow-hidden">
-      <img src={landscapeGarrigueImg} alt="A week in the Corbières" className="w-full h-[35vh] md:h-[50vh] object-cover object-center" loading="lazy" />
+      <img src={img4091Asset.url} alt="A week in the Corbières" className="w-full h-[35vh] md:h-[50vh] object-cover object-center" loading="lazy" />
     </div>
 
     <div className="text-center space-y-2">
