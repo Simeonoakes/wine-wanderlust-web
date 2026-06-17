@@ -344,6 +344,15 @@ const WeekContent = ({ onBook }: { onBook: () => void }) => (
       />
     ))}
 
+    {/* 1-Week photo strip (Carcassonne / 3793 / 3022 / 2557 placeholders) */}
+    <div className="grid grid-cols-2 md:grid-cols-5 gap-3 pt-4">
+      {[fontfroideAsset.url, autumnVinesAsset.url, img7466Asset.url, cafeCroissantImg, img8718Asset.url].map((src, i) => (
+        <div key={i} className="relative overflow-hidden aspect-square group">
+          <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" />
+        </div>
+      ))}
+    </div>
+
     <div className="text-center space-y-3 pt-4">
       <p className="text-sm text-muted-foreground font-body italic">
         All is included, all is taken care of. All you need to do is book your transport to and from the area and we will take it from there.
