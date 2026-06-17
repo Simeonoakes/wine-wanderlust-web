@@ -75,7 +75,12 @@ const SeasonsSection = () => {
                   src={s.image}
                   alt={s.title}
                   loading="lazy"
-                  className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  style={
+                    s.season === "Summer"
+                      ? { objectPosition: "center 60%", transform: "scale(1.15)", filter: "saturate(1.15) hue-rotate(-6deg) brightness(1.04)" }
+                      : { objectPosition: "center center" }
+                  }
                 />
               </div>
               <div className="mt-6 flex-1 flex flex-col">
