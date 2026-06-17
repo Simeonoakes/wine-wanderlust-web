@@ -15,13 +15,18 @@ import extraSceneImg from "@/assets/extra-scene.jpg";
 import cafeCroissantImg from "@/assets/cafe-croissant-v2.jpg";
 import grapeHarvestImg from "@/assets/grape-harvest.jpg";
 import whiteGrapesAsset from "@/assets/white-grapes.jpg.asset.json";
-import img0941Asset from "@/assets/img-0941.jpg.asset.json";
+import img0941Asset from "@/assets/img-0941-color.jpg.asset.json";
 import img5207Asset from "@/assets/img-5207.jpg.asset.json";
 import img7985Asset from "@/assets/img-7985.jpg.asset.json";
-import img0568Asset from "@/assets/img-0568.jpg.asset.json";
-import img3035Asset from "@/assets/img-3035.jpg.asset.json";
-import img5824Asset from "@/assets/img-5824.jpg.asset.json";
-import img7315Asset from "@/assets/img-7315.jpg.asset.json";
+import img8718Asset from "@/assets/img-8718.jpg.asset.json";
+import img4091Asset from "@/assets/img-4091-clean.jpg.asset.json";
+import img00015Asset from "@/assets/img-00015.jpg.asset.json";
+import img1587Asset from "@/assets/img-1587.jpg.asset.json";
+import img9230Asset from "@/assets/img-9230.jpg.asset.json";
+import img9197Asset from "@/assets/img-9197.jpg.asset.json";
+import img7466Asset from "@/assets/img-7466.jpg.asset.json";
+import fontfroideAsset from "@/assets/fontfroide-clean.jpg.asset.json";
+import autumnVinesAsset from "@/assets/autumn-vines.jpg.asset.json";
 
 const experiences = [
   {
@@ -46,7 +51,7 @@ const experiences = [
     highlight: "The Wild Corbières",
     description:
       "Picturesque villages, rugged garrigue, Cathar castles, medieval abbeys and fortified towns set in dramatic panoramas nestled between the snow-capped Pyrenees and the glistening Mediterranean.",
-    image: landscapeGarrigueImg,
+    image: img8718Asset.url,
   },
   {
     id: "04",
@@ -127,7 +132,7 @@ const MenuDay = ({ day, footnote }: { day: DayData; footnote?: string }) => (
 const OneDayContent = ({ onBook }: { onBook: () => void }) => (
   <div className="space-y-8">
     <div className="w-full overflow-hidden">
-      <img src={roseOlivesImg} alt="A day in the Corbières" className="w-full h-[35vh] md:h-[50vh] object-cover object-center" loading="lazy" />
+      <img src={roseOlivesImg} alt="A day in the Corbières" className="w-full h-[35vh] md:h-[50vh] object-cover" style={{ objectPosition: "center 40%" }} loading="lazy" />
     </div>
 
     <div className="text-center space-y-2">
@@ -155,14 +160,11 @@ const OneDayContent = ({ onBook }: { onBook: () => void }) => (
       ]
     }} />
 
-    {/* Photo strip beneath the day menu */}
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 pt-4">
-      {[img0568Asset.url, img3035Asset.url, img5824Asset.url, img7315Asset.url].map((src, i) => (
-        <div key={i} className="relative overflow-hidden aspect-square group">
-          <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" />
-          <div className="absolute inset-0 bg-background/20 group-hover:bg-background/5 transition-colors duration-500" />
-        </div>
-      ))}
+    {/* Single illustrative photo beneath the day menu */}
+    <div className="pt-4">
+      <div className="relative overflow-hidden aspect-[16/9] group">
+        <img src={img00015Asset.url} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
+      </div>
     </div>
 
     <div className="text-center pt-4 space-y-3">
@@ -235,6 +237,15 @@ const TwoDayContent = ({ onBook }: { onBook: () => void }) => (
       />
     ))}
 
+    {/* 2-Day photo strip */}
+    <div className="grid grid-cols-3 gap-3 pt-4">
+      {[img1587Asset.url, img9230Asset.url, img9197Asset.url].map((src, i) => (
+        <div key={i} className="relative overflow-hidden aspect-square group">
+          <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" />
+        </div>
+      ))}
+    </div>
+
     <div className="text-center space-y-3 pt-4">
       <p className="text-sm text-muted-foreground font-body italic">
         All is included, all is taken care of. All you need to do is book your transport to and from the area and we will take it from there.
@@ -255,7 +266,7 @@ const TwoDayContent = ({ onBook }: { onBook: () => void }) => (
 const WeekContent = ({ onBook }: { onBook: () => void }) => (
   <div className="space-y-8">
     <div className="w-full overflow-hidden">
-      <img src={landscapeGarrigueImg} alt="A week in the Corbières" className="w-full h-[35vh] md:h-[50vh] object-cover object-center" loading="lazy" />
+      <img src={img4091Asset.url} alt="A week in the Corbières" className="w-full h-[35vh] md:h-[50vh] object-cover object-center" loading="lazy" />
     </div>
 
     <div className="text-center space-y-2">
@@ -332,6 +343,15 @@ const WeekContent = ({ onBook }: { onBook: () => void }) => (
         footnote={idx === arr.length - 1 ? "* Vegetarian and vegan alternatives available on request" : undefined}
       />
     ))}
+
+    {/* 1-Week photo strip (Carcassonne / 3793 / 3022 / 2557 placeholders) */}
+    <div className="grid grid-cols-2 md:grid-cols-5 gap-3 pt-4">
+      {[fontfroideAsset.url, autumnVinesAsset.url, img7466Asset.url, cafeCroissantImg, img8718Asset.url].map((src, i) => (
+        <div key={i} className="relative overflow-hidden aspect-square group">
+          <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" />
+        </div>
+      ))}
+    </div>
 
     <div className="text-center space-y-3 pt-4">
       <p className="text-sm text-muted-foreground font-body italic">
@@ -451,7 +471,10 @@ const ExpeditionsSection = () => {
 
         {/* Duration sub-tabs */}
         <motion.div {...fadeUp} className="mb-16">
-          <div className="flex flex-wrap gap-2 mb-8">
+          <h3 className="text-3xl md:text-4xl font-display text-primary tracking-tight mb-6 text-center">
+            Take Your Pick
+          </h3>
+          <div className="flex flex-wrap gap-2 mb-8 justify-center">
             {durations.map((dur, i) => (
               <button
                 key={dur.label}

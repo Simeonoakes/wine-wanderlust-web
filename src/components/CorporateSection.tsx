@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import BookingDialog from "@/components/BookingDialog";
 import img5479Asset from "@/assets/img-5479.jpg.asset.json";
-import img5698Asset from "@/assets/img-5698.jpg.asset.json";
+import img5698Asset from "@/assets/img-5698-color.jpg.asset.json";
 import img1527Asset from "@/assets/img-1527.jpg.asset.json";
 
 const offerings = [
@@ -68,7 +68,8 @@ const CorporateSection = () => {
                   src={item.image}
                   alt={item.title}
                   loading="lazy"
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover"
+                  style={item.title === "Corporate Events" ? { objectPosition: "center 20%" } : { objectPosition: "center center" }}
                 />
               </div>
               <div className="p-8">
