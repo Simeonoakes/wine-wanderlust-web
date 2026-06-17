@@ -15,13 +15,18 @@ import extraSceneImg from "@/assets/extra-scene.jpg";
 import cafeCroissantImg from "@/assets/cafe-croissant-v2.jpg";
 import grapeHarvestImg from "@/assets/grape-harvest.jpg";
 import whiteGrapesAsset from "@/assets/white-grapes.jpg.asset.json";
-import img0941Asset from "@/assets/img-0941.jpg.asset.json";
+import img0941Asset from "@/assets/img-0941-color.jpg.asset.json";
 import img5207Asset from "@/assets/img-5207.jpg.asset.json";
 import img7985Asset from "@/assets/img-7985.jpg.asset.json";
-import img0568Asset from "@/assets/img-0568.jpg.asset.json";
-import img3035Asset from "@/assets/img-3035.jpg.asset.json";
-import img5824Asset from "@/assets/img-5824.jpg.asset.json";
-import img7315Asset from "@/assets/img-7315.jpg.asset.json";
+import img8718Asset from "@/assets/img-8718.jpg.asset.json";
+import img4091Asset from "@/assets/img-4091-clean.jpg.asset.json";
+import img00015Asset from "@/assets/img-00015.jpg.asset.json";
+import img1587Asset from "@/assets/img-1587.jpg.asset.json";
+import img9230Asset from "@/assets/img-9230.jpg.asset.json";
+import img9197Asset from "@/assets/img-9197.jpg.asset.json";
+import img7466Asset from "@/assets/img-7466.jpg.asset.json";
+import fontfroideAsset from "@/assets/fontfroide-clean.jpg.asset.json";
+import autumnVinesAsset from "@/assets/autumn-vines.jpg.asset.json";
 
 const experiences = [
   {
@@ -46,7 +51,7 @@ const experiences = [
     highlight: "The Wild Corbières",
     description:
       "Picturesque villages, rugged garrigue, Cathar castles, medieval abbeys and fortified towns set in dramatic panoramas nestled between the snow-capped Pyrenees and the glistening Mediterranean.",
-    image: landscapeGarrigueImg,
+    image: img8718Asset.url,
   },
   {
     id: "04",
