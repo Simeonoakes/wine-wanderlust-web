@@ -471,7 +471,10 @@ const ExpeditionsSection = () => {
 
         {/* Duration sub-tabs */}
         <motion.div {...fadeUp} className="mb-16">
-          <div className="flex flex-wrap gap-2 mb-8">
+          <h3 className="text-3xl md:text-4xl font-display text-primary tracking-tight mb-6 text-center">
+            Take Your Pick
+          </h3>
+          <div className="flex flex-wrap gap-2 mb-8 justify-center">
             {durations.map((dur, i) => (
               <button
                 key={dur.label}
