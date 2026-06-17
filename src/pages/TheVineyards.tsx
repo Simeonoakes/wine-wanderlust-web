@@ -67,7 +67,7 @@ const TheVineyards = () => (
 
       {/* Photo strip */}
       <motion.div {...fadeUp} className="grid grid-cols-2 md:grid-cols-5 gap-3 mt-20">
-        {[img7466Asset.url, img0568Asset.url, img5824Asset.url, img3035Asset.url, img4310Asset.url].map((src, i) => (
+        {[img7466Asset.url, img0568Asset.url, img4310Asset.url, img7315Asset.url, img5824Asset.url].map((src, i) => (
           <div key={i} className="relative overflow-hidden aspect-square group">
             <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" />
             <div className="absolute inset-0 bg-background/20 group-hover:bg-background/5 transition-colors duration-500" />

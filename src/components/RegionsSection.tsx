@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import img7983Asset from "@/assets/img-7983.jpg.asset.json";
 import autumnOfAutumnAsset from "@/assets/autumn-of-autumn.jpg.asset.json";
-import blueCarBwImg from "@/assets/blue-car-bw.jpg";
+import blueCarBwImg from "@/assets/blue-car-v2.jpg";
 
 const highlights = [
   {
@@ -84,6 +84,7 @@ const RegionsSection = () => {
                     alt={item.name}
                     loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    style={item.name === "The Landscape" ? { objectPosition: "center 15%" } : undefined}
                   />
                 </div>
                 <div className="mt-6">

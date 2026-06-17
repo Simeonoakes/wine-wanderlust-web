@@ -5,9 +5,10 @@ import Footer from "@/components/Footer";
 import fontfroideAsset from "@/assets/fontfroide-clean.jpg.asset.json";
 import autumnOfAutumnAsset from "@/assets/autumn-of-autumn.jpg.asset.json";
 import autumnVinesAsset from "@/assets/autumn-vines.jpg.asset.json";
-import img7315Asset from "@/assets/img-7315.jpg.asset.json";
-import img0568Asset from "@/assets/img-0568.jpg.asset.json";
-import img5824Asset from "@/assets/img-5824.jpg.asset.json";
+import img7466Asset from "@/assets/img-7466.jpg.asset.json";
+import img3035Asset from "@/assets/img-3035.jpg.asset.json";
+import img0941Asset from "@/assets/img-0941-color.jpg.asset.json";
+import img4310Asset from "@/assets/img-4310.jpg.asset.json";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -19,13 +20,13 @@ const fadeUp = {
 const TheLandscape = () => (
   <div className="min-h-screen">
     <Navbar />
-    {/* Banner: shifted up a touch so the mountain ridge is fully visible */}
+    {/* Banner: cleaned Fontfroide (no walker) */}
     <div className="w-full h-[50vh] md:h-[60vh] overflow-hidden">
       <img
-        src={autumnOfAutumnAsset.url}
+        src={fontfroideAsset.url}
         alt="Garrigue, Mountains & Ancient Stones"
         className="w-full h-full object-cover"
-        style={{ objectPosition: "center 25%" }}
+        style={{ objectPosition: "center center" }}
       />
     </div>
 
@@ -67,9 +68,9 @@ const TheLandscape = () => (
         </Link>
       </motion.div>
 
-      {/* Photo strip */}
+      {/* Photo strip (different from Experiences) */}
       <motion.div {...fadeUp} className="grid grid-cols-2 md:grid-cols-5 gap-3 mt-20">
-        {[fontfroideAsset.url, autumnVinesAsset.url, img7315Asset.url, img0568Asset.url, img5824Asset.url].map((src, i) => (
+        {[autumnOfAutumnAsset.url, autumnVinesAsset.url, img7466Asset.url, img4310Asset.url, img0941Asset.url].map((src, i) => (
           <div key={i} className="relative overflow-hidden aspect-square group">
             <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" />
             <div className="absolute inset-0 bg-background/20 group-hover:bg-background/5 transition-colors duration-500" />
