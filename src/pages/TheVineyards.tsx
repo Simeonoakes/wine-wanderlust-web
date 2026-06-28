@@ -4,11 +4,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import img8254ColorAsset from "@/assets/img-8254-color.jpg.asset.json";
 import img0568Asset from "@/assets/img-0568.jpg.asset.json";
-import img3035Asset from "@/assets/img-3035.jpg.asset.json";
-import img5824Asset from "@/assets/img-5824.jpg.asset.json";
-import img7315Asset from "@/assets/img-7315.jpg.asset.json";
-import img7466Asset from "@/assets/img-7466.jpg.asset.json";
-import img4310Asset from "@/assets/img-4310.jpg.asset.json";
+import img1587Asset from "@/assets/img-1587.jpg.asset.json";
+import img9230Asset from "@/assets/img-9230.jpg.asset.json";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -48,7 +45,7 @@ const TheVineyards = () => (
           These gnarled, resilient survivors dig deep into soils that shift dramatically from one plot to the next: limestone here, schist there, clay and sandstone a stone's throw away. This astonishing diversity of terroirs, packed into a relatively compact area, has nothing to envy in Burgundy's celebrated <span className="italic">climats</span>.
         </p>
         <p>
-          Each parcel tells a different geological story, producing wines of startling individuality varying sometimes drastically between adjacent plots. But the wines are linked by a common quality: bold yet elegant, rugged yet refined.
+          Each parcel tells a different geological story, producing wines of startling individuality varying sometimes drastically between adjacent plots. But the wines are linked by a common quality: bold yet elegant, robust yet refined.
         </p>
         <p>
           Unlike the vast, sweeping estates of the New World or even Bordeaux, the Corbières is a land of small, morcelled properties; intimate plots carved into hillsides and valleys, often tended by a single family across generations. This human scale is precisely what makes the wines so personal, so rooted in place and person.
@@ -65,9 +62,9 @@ const TheVineyards = () => (
         </Link>
       </motion.div>
 
-      {/* Photo strip */}
-      <motion.div {...fadeUp} className="grid grid-cols-2 md:grid-cols-5 gap-3 mt-20">
-        {[img7466Asset.url, img0568Asset.url, img4310Asset.url, img7315Asset.url, img5824Asset.url].map((src, i) => (
+      {/* Photo strip — 3 photos */}
+      <motion.div {...fadeUp} className="grid grid-cols-3 gap-3 mt-20">
+        {[img0568Asset.url, img1587Asset.url, img9230Asset.url].map((src, i) => (
           <div key={i} className="relative overflow-hidden aspect-square group">
             <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" />
             <div className="absolute inset-0 bg-background/20 group-hover:bg-background/5 transition-colors duration-500" />

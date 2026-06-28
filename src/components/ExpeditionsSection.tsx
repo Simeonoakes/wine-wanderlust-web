@@ -27,6 +27,14 @@ import img9197Asset from "@/assets/img-9197.jpg.asset.json";
 import img7466Asset from "@/assets/img-7466.jpg.asset.json";
 import fontfroideAsset from "@/assets/fontfroide-clean.jpg.asset.json";
 import autumnVinesAsset from "@/assets/autumn-vines.jpg.asset.json";
+import img5391Asset from "@/assets/img-5391.jpg.asset.json";
+import img4969Asset from "@/assets/img-4969.jpg.asset.json";
+import img8460Asset from "@/assets/img-8460.jpg.asset.json";
+import img7315Asset from "@/assets/img-7315.jpg.asset.json";
+import img7170Asset from "@/assets/img-7170.jpg.asset.json";
+import img2646Asset from "@/assets/img-2646.jpg.asset.json";
+import img8152Asset from "@/assets/img-8152.jpg.asset.json";
+import img3022Asset from "@/assets/img-3022.jpg.asset.json";
 
 const experiences = [
   {
@@ -160,11 +168,13 @@ const OneDayContent = ({ onBook }: { onBook: () => void }) => (
       ]
     }} />
 
-    {/* Single illustrative photo beneath the day menu */}
-    <div className="pt-4">
-      <div className="relative overflow-hidden aspect-[16/9] group">
-        <img src={img00015Asset.url} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
-      </div>
+    {/* 1-Day photo strip */}
+    <div className="grid grid-cols-2 md:grid-cols-5 gap-3 pt-4">
+      {[img5391Asset.url, img4969Asset.url, img8460Asset.url, img7315Asset.url, img00015Asset.url].map((src, i) => (
+        <div key={i} className="relative overflow-hidden aspect-square group">
+          <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" />
+        </div>
+      ))}
     </div>
 
     <div className="text-center pt-4 space-y-3">
@@ -344,9 +354,9 @@ const WeekContent = ({ onBook }: { onBook: () => void }) => (
       />
     ))}
 
-    {/* 1-Week photo strip (Carcassonne / 3793 / 3022 / 2557 placeholders) */}
+    {/* 1-Week photo strip */}
     <div className="grid grid-cols-2 md:grid-cols-5 gap-3 pt-4">
-      {[fontfroideAsset.url, autumnVinesAsset.url, img7466Asset.url, cafeCroissantImg, img8718Asset.url].map((src, i) => (
+      {[img9197Asset.url, img7170Asset.url, img2646Asset.url, img8152Asset.url, img3022Asset.url].map((src, i) => (
         <div key={i} className="relative overflow-hidden aspect-square group">
           <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" />
         </div>

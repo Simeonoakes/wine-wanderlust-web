@@ -3,12 +3,9 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import fontfroideAsset from "@/assets/fontfroide-clean.jpg.asset.json";
-import autumnOfAutumnAsset from "@/assets/autumn-of-autumn.jpg.asset.json";
-import autumnVinesAsset from "@/assets/autumn-vines.jpg.asset.json";
-import img7466Asset from "@/assets/img-7466.jpg.asset.json";
 import img3035Asset from "@/assets/img-3035.jpg.asset.json";
-import img0941Asset from "@/assets/img-0941-color.jpg.asset.json";
-import img4310Asset from "@/assets/img-4310.jpg.asset.json";
+import img2968Asset from "@/assets/img-2968.jpg.asset.json";
+import carcassonneAsset from "@/assets/carcassonne.jpg.asset.json";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -51,7 +48,7 @@ const TheLandscape = () => (
           Then there is <span className="text-foreground font-medium">Carcassonne</span>, the UNESCO World Heritage fortified city, its double-walled ramparts rising like a medieval dream above the Aude valley. A living monument to the turbulent history of this borderland, where cultures, languages and empires collided for centuries.
         </p>
         <p>
-          The medieval village of <span className="text-foreground font-medium">Lagrasse</span>, officially one of the most beautiful villages in France, straddles the Orbieu river with its stone bridges, cobbled streets and the magnificent Benedictine abbey that has stood watch since the 8th and which a congregation of monks still call home today.
+          The medieval village of <span className="text-foreground font-medium">Lagrasse</span>, officially one of the most beautiful villages in France, straddles the Orbieu river with its stone bridges, cobbled streets and the magnificent Benedictine abbey that has stood watch since the 8th century and which a congregation of monks still call home today.
         </p>
         <p>
           Beyond these landmarks, the landscape itself is the attraction: rolling hills covered in low shrubland called <span className="italic">garrigue</span> giving way to dramatic gorges and hidden valleys. Rocky outcrops catch the golden light of sunset, turning the entire terrain into a canvas of amber, ochre and olive. Every season reshapes and reinvents the landscape and illuminates this glorious natural canvas with the full palette of colours from liquid gold to turquoise via scarlet, vibrant yellow and iridescent green.
@@ -68,9 +65,9 @@ const TheLandscape = () => (
         </Link>
       </motion.div>
 
-      {/* Photo strip (different from Experiences) */}
-      <motion.div {...fadeUp} className="grid grid-cols-2 md:grid-cols-5 gap-3 mt-20">
-        {[autumnOfAutumnAsset.url, autumnVinesAsset.url, img7466Asset.url, img4310Asset.url, img0941Asset.url].map((src, i) => (
+      {/* Photo strip — 3 photos */}
+      <motion.div {...fadeUp} className="grid grid-cols-3 gap-3 mt-20">
+        {[img3035Asset.url, img2968Asset.url, carcassonneAsset.url].map((src, i) => (
           <div key={i} className="relative overflow-hidden aspect-square group">
             <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" />
             <div className="absolute inset-0 bg-background/20 group-hover:bg-background/5 transition-colors duration-500" />
