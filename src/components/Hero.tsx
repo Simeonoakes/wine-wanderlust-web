@@ -5,10 +5,10 @@ import heroVideoAsset from "@/assets/hero-bg-hires.mp4.asset.json";
 
 // Timing: logo fades in over the moving footage, then a short breath,
 // then the handwritten phrase is written letter by letter.
-const LOGO_DELAY = 18;
-const WRITE_START = 22;
+const LOGO_DELAY = 20;
+const WRITE_START = 24;
 const WRITE_PER_LETTER = 0.14;
-const TAGLINE_DELAY = 27;
+const TAGLINE_DELAY = 29;
 
 const phrase = "Truly Tasting Terroir";
 
