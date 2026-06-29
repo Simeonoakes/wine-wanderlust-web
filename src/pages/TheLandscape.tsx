@@ -70,7 +70,7 @@ const TheLandscape = () => (
         {[img3035Asset, img2968Asset, carcassonneAsset].map((src, i) => (
           <div key={i} className="relative overflow-hidden aspect-square group">
             <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" />
-            <div className="absolute inset-0 bg-background/20 group-hover:bg-background/5 transition-colors duration-500" />
+            
           </div>
         ))}
       </motion.div>
