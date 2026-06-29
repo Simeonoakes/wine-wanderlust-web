@@ -22,7 +22,7 @@ const Navbar = () => {
         <Link to="/" className="flex items-center gap-3 whitespace-nowrap">
           <img src={logoAsset.url} alt="" className="h-16 w-16 object-contain" />
           <span className="font-signature text-4xl tracking-tight text-primary leading-none">
-            in vino veritas
+            <span className="text-[1.15em]">I</span>n <span className="text-[1.15em]">V</span>ino <span className="text-[1.15em]">V</span>eritas
           </span>
         </Link>
 
