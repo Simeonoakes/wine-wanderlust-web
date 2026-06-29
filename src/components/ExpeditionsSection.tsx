@@ -21,17 +21,13 @@ import img8191Asset from "@/assets/img-8191.jpg";
 import img7985Asset from "@/assets/img-7985.jpg";
 import img8718Asset from "@/assets/img-8718.jpg";
 import img4091Asset from "@/assets/img-4091-clean.jpg";
-import img00015Asset from "@/assets/img-00015.jpg";
+
 import img1587Asset from "@/assets/img-1587.jpg";
 import img9230Asset from "@/assets/img-9230.jpg";
 import img9197Asset from "@/assets/img-9197.jpg";
 import img7466Asset from "@/assets/img-7466.jpg";
 import fontfroideAsset from "@/assets/fontfroide-clean.jpg";
 import autumnVinesAsset from "@/assets/autumn-vines.jpg";
-import img5391Asset from "@/assets/img-5391.jpg";
-import img4969Asset from "@/assets/img-4969.jpg";
-import img8460Asset from "@/assets/img-8460.jpg";
-import img7315Asset from "@/assets/img-7315.jpg";
 import img7170Asset from "@/assets/img-7170.jpg";
 import img2646Asset from "@/assets/img-2646.jpg";
 import img8152Asset from "@/assets/img-8152.jpg";
