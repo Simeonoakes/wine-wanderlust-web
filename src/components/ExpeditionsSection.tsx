@@ -169,14 +169,6 @@ const OneDayContent = ({ onBook }: { onBook: () => void }) => (
       ]
     }} />
 
-    {/* 1-Day photo strip */}
-    <div className="grid grid-cols-2 md:grid-cols-5 gap-3 pt-4">
-      {[img5391Asset, img4969Asset, img8460Asset, img7315Asset, img00015Asset].map((src, i) => (
-        <div key={i} className="relative overflow-hidden aspect-square group">
-          <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" />
-        </div>
-      ))}
-    </div>
 
     <div className="text-center pt-4 space-y-3">
       <p className="text-xs uppercase tracking-[0.2em] text-primary font-body">
@@ -520,7 +512,7 @@ const ExpeditionsSection = () => {
                 loading="lazy"
                 className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-background/30 group-hover:bg-background/10 transition-colors duration-500" />
+              
             </div>
           ))}
         </motion.div>
