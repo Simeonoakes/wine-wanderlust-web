@@ -1,18 +1,18 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import img7983Asset from "@/assets/img-7983.jpg.asset.json";
-import autumnOfAutumnAsset from "@/assets/autumn-of-autumn.jpg.asset.json";
+import img7983Asset from "@/assets/img-7983.jpg";
+import autumnOfAutumnAsset from "@/assets/autumn-of-autumn.jpg";
 import blueCarBwImg from "@/assets/blue-car-v2.jpg";
 
 const highlights = [
   {
     name: "Ancient Vines",
-    image: img7983Asset.url,
+    image: img7983Asset,
     link: "/the-vineyards",
   },
   {
     name: "The Landscape",
-    image: autumnOfAutumnAsset.url,
+    image: autumnOfAutumnAsset,
     link: "/the-landscape",
   },
   {

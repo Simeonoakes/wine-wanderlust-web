@@ -1,11 +1,11 @@
-import logoAsset from "@/assets/logo-new.png.asset.json";
+import logoAsset from "@/assets/logo-new.png";
 
 const Footer = () => {
   return (
     <footer className="border-t border-border py-16">
       <div className="max-w-7xl mx-auto px-8 grid grid-cols-12 gap-8">
         <div className="col-span-12 md:col-span-4">
-          <img src={logoAsset.url} alt="In Vino Veritas" className="w-16 h-16 object-contain mb-4" />
+          <img src={logoAsset} alt="In Vino Veritas" className="w-16 h-16 object-contain mb-4" />
           <span className="font-signature text-5xl tracking-tight text-primary leading-none"><span className="text-[1.15em]">I</span>n <span className="text-[1.15em]">V</span>ino <span className="text-[1.15em]">V</span>eritas</span>
           <p className="mt-4 text-xs text-muted-foreground font-body leading-relaxed max-w-xs">
             Bespoke wine education, tourism and events in the heart of the Corbières, Languedoc.

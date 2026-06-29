@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import logoAsset from "@/assets/logo-new.png.asset.json";
+import logoAsset from "@/assets/logo-new.png";
 
 const links: { label: string; href: string }[] = [
   { label: "The Terroir", href: "/#the-terroir" },
@@ -20,7 +20,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-8 flex items-center justify-between h-20">
         <Link to="/" className="flex items-center gap-3 whitespace-nowrap">
-          <img src={logoAsset.url} alt="" className="h-16 w-16 object-contain" />
+          <img src={logoAsset} alt="" className="h-16 w-16 object-contain" />
           <span className="font-signature text-4xl tracking-tight text-primary leading-none">
             <span className="text-[1.15em]">I</span>n <span className="text-[1.15em]">V</span>ino <span className="text-[1.15em]">V</span>eritas
           </span>

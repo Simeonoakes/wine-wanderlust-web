@@ -14,28 +14,28 @@ import vineyardHarvestImg from "@/assets/vineyard-harvest.jpg";
 import extraSceneImg from "@/assets/extra-scene.jpg";
 import cafeCroissantImg from "@/assets/cafe-croissant-v2.jpg";
 import grapeHarvestImg from "@/assets/grape-harvest.jpg";
-import whiteGrapesAsset from "@/assets/white-grapes.jpg.asset.json";
-import img0941Asset from "@/assets/img-0941-color.jpg.asset.json";
-import img5207Asset from "@/assets/img-5207.jpg.asset.json";
-import img8191Asset from "@/assets/img-8191.jpg.asset.json";
-import img7985Asset from "@/assets/img-7985.jpg.asset.json";
-import img8718Asset from "@/assets/img-8718.jpg.asset.json";
-import img4091Asset from "@/assets/img-4091-clean.jpg.asset.json";
-import img00015Asset from "@/assets/img-00015.jpg.asset.json";
-import img1587Asset from "@/assets/img-1587.jpg.asset.json";
-import img9230Asset from "@/assets/img-9230.jpg.asset.json";
-import img9197Asset from "@/assets/img-9197.jpg.asset.json";
-import img7466Asset from "@/assets/img-7466.jpg.asset.json";
-import fontfroideAsset from "@/assets/fontfroide-clean.jpg.asset.json";
-import autumnVinesAsset from "@/assets/autumn-vines.jpg.asset.json";
-import img5391Asset from "@/assets/img-5391.jpg.asset.json";
-import img4969Asset from "@/assets/img-4969.jpg.asset.json";
-import img8460Asset from "@/assets/img-8460.jpg.asset.json";
-import img7315Asset from "@/assets/img-7315.jpg.asset.json";
-import img7170Asset from "@/assets/img-7170.jpg.asset.json";
-import img2646Asset from "@/assets/img-2646.jpg.asset.json";
-import img8152Asset from "@/assets/img-8152.jpg.asset.json";
-import img3022Asset from "@/assets/img-3022.jpg.asset.json";
+import whiteGrapesAsset from "@/assets/white-grapes.jpg";
+import img0941Asset from "@/assets/img-0941-color.jpg";
+import img5207Asset from "@/assets/img-5207.jpg";
+import img8191Asset from "@/assets/img-8191.jpg";
+import img7985Asset from "@/assets/img-7985.jpg";
+import img8718Asset from "@/assets/img-8718.jpg";
+import img4091Asset from "@/assets/img-4091-clean.jpg";
+import img00015Asset from "@/assets/img-00015.jpg";
+import img1587Asset from "@/assets/img-1587.jpg";
+import img9230Asset from "@/assets/img-9230.jpg";
+import img9197Asset from "@/assets/img-9197.jpg";
+import img7466Asset from "@/assets/img-7466.jpg";
+import fontfroideAsset from "@/assets/fontfroide-clean.jpg";
+import autumnVinesAsset from "@/assets/autumn-vines.jpg";
+import img5391Asset from "@/assets/img-5391.jpg";
+import img4969Asset from "@/assets/img-4969.jpg";
+import img8460Asset from "@/assets/img-8460.jpg";
+import img7315Asset from "@/assets/img-7315.jpg";
+import img7170Asset from "@/assets/img-7170.jpg";
+import img2646Asset from "@/assets/img-2646.jpg";
+import img8152Asset from "@/assets/img-8152.jpg";
+import img3022Asset from "@/assets/img-3022.jpg";
 
 const experiences = [
   {
@@ -52,7 +52,7 @@ const experiences = [
     highlight: "Vineyard to Table",
     description:
       "From intimate vineyard lunches with the estate's cuvées to 4 course meals in the best local restaurant as well as traditional rustic barbecues cooked on old vine wood with aromatic herbs in the very vineyard they come from.",
-    image: img0941Asset.url,
+    image: img0941Asset,
   },
   {
     id: "03",
@@ -60,7 +60,7 @@ const experiences = [
     highlight: "The Wild Corbières",
     description:
       "Picturesque villages, rugged garrigue, Cathar castles, medieval abbeys and fortified towns set in dramatic panoramas nestled between the snow-capped Pyrenees and the glistening Mediterranean.",
-    image: img8718Asset.url,
+    image: img8718Asset,
   },
   {
     id: "04",
@@ -76,7 +76,7 @@ const experiences = [
     highlight: "Stay at the Heart of It All",
     description:
       "Your accommodation is completely taken care of and we will ensure you stay in one of our prime locations in the village of Paziols or a stone's throw away. Typical old stone buildings stylishly renovated, offering the perfect blend of traditional charm with all modern comfort and amenities.\n\nFor the 2-day intensive or the 1 week full immersion experiences, you can arrive the day before or leave the day after or both! It's up to you.",
-    image: img8191Asset.url,
+    image: img8191Asset,
   },
 ];
 
@@ -171,7 +171,7 @@ const OneDayContent = ({ onBook }: { onBook: () => void }) => (
 
     {/* 1-Day photo strip */}
     <div className="grid grid-cols-2 md:grid-cols-5 gap-3 pt-4">
-      {[img5391Asset.url, img4969Asset.url, img8460Asset.url, img7315Asset.url, img00015Asset.url].map((src, i) => (
+      {[img5391Asset, img4969Asset, img8460Asset, img7315Asset, img00015Asset].map((src, i) => (
         <div key={i} className="relative overflow-hidden aspect-square group">
           <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" />
         </div>
@@ -195,7 +195,7 @@ const OneDayContent = ({ onBook }: { onBook: () => void }) => (
 const TwoDayContent = ({ onBook }: { onBook: () => void }) => (
   <div className="space-y-8">
     <div className="w-full overflow-hidden">
-      <img src={whiteGrapesAsset.url} alt="Two days in the Corbières" className="w-full h-[35vh] md:h-[50vh] object-cover object-center" loading="lazy" />
+      <img src={whiteGrapesAsset} alt="Two days in the Corbières" className="w-full h-[35vh] md:h-[50vh] object-cover object-center" loading="lazy" />
     </div>
 
     <div className="text-center space-y-2">
@@ -250,7 +250,7 @@ const TwoDayContent = ({ onBook }: { onBook: () => void }) => (
 
     {/* 2-Day photo strip */}
     <div className="grid grid-cols-3 gap-3 pt-4">
-      {[img1587Asset.url, img9230Asset.url, img9197Asset.url].map((src, i) => (
+      {[img1587Asset, img9230Asset, img9197Asset].map((src, i) => (
         <div key={i} className="relative overflow-hidden aspect-square group">
           <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" />
         </div>
@@ -277,7 +277,7 @@ const TwoDayContent = ({ onBook }: { onBook: () => void }) => (
 const WeekContent = ({ onBook }: { onBook: () => void }) => (
   <div className="space-y-8">
     <div className="w-full overflow-hidden">
-      <img src={img4091Asset.url} alt="A week in the Corbières" className="w-full h-[35vh] md:h-[50vh] object-cover object-center" loading="lazy" />
+      <img src={img4091Asset} alt="A week in the Corbières" className="w-full h-[35vh] md:h-[50vh] object-cover object-center" loading="lazy" />
     </div>
 
     <div className="text-center space-y-2">
@@ -357,7 +357,7 @@ const WeekContent = ({ onBook }: { onBook: () => void }) => (
 
     {/* 1-Week photo strip */}
     <div className="grid grid-cols-2 md:grid-cols-5 gap-3 pt-4">
-      {[img9197Asset.url, img7170Asset.url, img2646Asset.url, img8152Asset.url, img3022Asset.url].map((src, i) => (
+      {[img9197Asset, img7170Asset, img2646Asset, img8152Asset, img3022Asset].map((src, i) => (
         <div key={i} className="relative overflow-hidden aspect-square group">
           <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" />
         </div>
