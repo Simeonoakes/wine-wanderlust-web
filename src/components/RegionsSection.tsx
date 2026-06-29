@@ -55,7 +55,7 @@ const RegionsSection = () => {
             Wonderfully untranslatable, the word <span className="font-script text-primary text-3xl md:text-4xl leading-none align-middle">terroir</span> is as rich and complex as the concept it illustrates.
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed font-body mt-4">
-            Almost exclusively used in viticulture, it reflects all the naturally occurring external factors (climate, elements, soil type, flora) that come into action to intrinsically affect, nurture and forge a vine, its grapes and therefore, ultimately the wine.
+            Almost exclusively used in viticulture, it reflects all the naturally occurring external factors (climate, elements, soil type, flora) that come into action to intrinsically affect, nurture and forge a vine, its grapes and therefore, ultimately, the wine.
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed font-body mt-4">
             Naturally, the human who guides, tends and transforms at every stage from the first seed to the final glass, is indissociable from the science and the magic.
