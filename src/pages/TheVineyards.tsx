@@ -23,7 +23,7 @@ const TheVineyards = () => (
         src={img8254ColorAsset.url}
         alt="Ancient Vines"
         className="w-full h-full object-cover object-center"
-        style={{ objectPosition: "center 40%", transform: "scale(0.92)", transformOrigin: "center" }}
+        style={{ objectPosition: "center 40%" }}
       />
     </div>
 
