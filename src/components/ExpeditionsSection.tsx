@@ -17,6 +17,7 @@ import grapeHarvestImg from "@/assets/grape-harvest.jpg";
 import whiteGrapesAsset from "@/assets/white-grapes.jpg.asset.json";
 import img0941Asset from "@/assets/img-0941-color.jpg.asset.json";
 import img5207Asset from "@/assets/img-5207.jpg.asset.json";
+import img8191Asset from "@/assets/img-8191.jpg.asset.json";
 import img7985Asset from "@/assets/img-7985.jpg.asset.json";
 import img8718Asset from "@/assets/img-8718.jpg.asset.json";
 import img4091Asset from "@/assets/img-4091-clean.jpg.asset.json";
