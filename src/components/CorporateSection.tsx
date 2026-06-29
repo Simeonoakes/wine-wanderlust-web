@@ -2,28 +2,28 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import BookingDialog from "@/components/BookingDialog";
-import img5479Asset from "@/assets/img-5479.jpg.asset.json";
-import img5698Asset from "@/assets/img-5698-color.jpg.asset.json";
-import img1527Asset from "@/assets/img-1527.jpg.asset.json";
+import img5479Asset from "@/assets/img-5479.jpg";
+import img5698Asset from "@/assets/img-5698-color.jpg";
+import img1527Asset from "@/assets/img-1527.jpg";
 
 const offerings = [
   {
     title: "Food & Wine Pairing Meals",
     description:
       "Curated multi-course dining experiences that marry local cuisine with exceptional wines, tailored for your team or clients.",
-    image: img5479Asset.url,
+    image: img5479Asset,
   },
   {
     title: "Tasting Masterclasses",
     description:
       "Led by an experienced guide, these sessions sharpen palates and deepen appreciation, from introductory to advanced levels.",
-    image: img5698Asset.url,
+    image: img5698Asset,
   },
   {
     title: "Corporate Events",
     description:
       "In the heart of the Corbières or brought to you worldwide: unforgettable wine-centred events for team-building, client entertainment, or product launches.",
-    image: img1527Asset.url,
+    image: img1527Asset,
   },
 ];
 

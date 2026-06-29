@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import logoAsset from "@/assets/logo-new.png.asset.json";
+import logoAsset from "@/assets/logo-new.png";
 import heroVideoAsset from "@/assets/hero-bg-hires.mp4.asset.json";
 
 // Timing: logo fades in over the moving footage, then a short breath,
@@ -56,7 +56,7 @@ const Hero = () => {
           transition={{ duration: 2.2, delay: LOGO_DELAY, ease: [0.16, 1, 0.3, 1] }}
         >
           <img
-            src={logoAsset.url}
+            src={logoAsset}
             alt="In Vino Veritas logo"
             className="w-[18rem] h-[18rem] sm:w-[22rem] sm:h-[22rem] md:w-[26rem] md:h-[26rem] lg:w-[30rem] lg:h-[30rem] object-contain drop-shadow-[0_10px_40px_rgba(0,0,0,0.6)]"
           />

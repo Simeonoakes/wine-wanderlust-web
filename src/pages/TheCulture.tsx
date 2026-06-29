@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import garlicAsset from "@/assets/garlic.jpg.asset.json";
+import garlicAsset from "@/assets/garlic.jpg";
 import cafeCroissantImg from "@/assets/cafe-croissant-v2.jpg";
-import img5447Asset from "@/assets/img-5447.jpg.asset.json";
-import img7904Asset from "@/assets/img-7904.jpg.asset.json";
+import img5447Asset from "@/assets/img-5447.jpg";
+import img7904Asset from "@/assets/img-7904.jpg";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -20,7 +20,7 @@ const TheCulture = () => (
     {/* Banner: zoomed slightly, lifted so only full cloves of garlic are visible */}
     <div className="w-full h-[50vh] md:h-[60vh] overflow-hidden">
       <img
-        src={garlicAsset.url}
+        src={garlicAsset}
         alt="The Culture"
         className="w-full h-full object-cover"
         style={{ transform: "scale(1.15)", transformOrigin: "center 35%", objectPosition: "center 30%" }}
@@ -64,7 +64,7 @@ const TheCulture = () => (
 
       {/* Photo strip — 3 photos */}
       <motion.div {...fadeUp} className="grid grid-cols-3 gap-3 mt-20">
-        {[cafeCroissantImg, img5447Asset.url, img7904Asset.url].map((src, i) => (
+        {[cafeCroissantImg, img5447Asset, img7904Asset].map((src, i) => (
           <div key={i} className="relative overflow-hidden aspect-square group">
             <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" />
             <div className="absolute inset-0 bg-background/20 group-hover:bg-background/5 transition-colors duration-500" />

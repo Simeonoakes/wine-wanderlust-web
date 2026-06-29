@@ -5,8 +5,8 @@ import pruningThumb from "@/assets/pruning-thumb.jpg";
 import cellarPortraitImg from "@/assets/cellar-portrait.jpg";
 import handsOnImg from "@/assets/hands-on-winemaking.jpg";
 import pruningVideoAsset from "@/assets/pruning-march-2026.mp4.asset.json";
-import newGrowthVideoAsset from "@/assets/new-growth-april-2026.mp4.asset.json";
-import newGrowthThumbAsset from "@/assets/new-growth-thumb.jpg.asset.json";
+import newGrowthVideoAsset from "@/assets/new-growth-april-2026.mp4";
+import newGrowthThumbAsset from "@/assets/new-growth-thumb.jpg";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -23,7 +23,7 @@ interface Sample {
 
 const samples: Sample[] = [
   { title: "Pruning - March 2026", image: pruningThumb, video: pruningVideoAsset.url },
-  { title: "New Growth - April 2026", image: newGrowthThumbAsset.url, video: newGrowthVideoAsset.url },
+  { title: "New Growth - April 2026", image: newGrowthThumbAsset, video: newGrowthVideoAsset },
   { title: "Inside the Winery", image: cellarPortraitImg },
   { title: "Meet the Makers", image: handsOnImg },
 ];

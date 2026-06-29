@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import img8254ColorAsset from "@/assets/img-8254-color.jpg.asset.json";
-import img0568Asset from "@/assets/img-0568.jpg.asset.json";
-import img1587Asset from "@/assets/img-1587.jpg.asset.json";
-import img9230Asset from "@/assets/img-9230.jpg.asset.json";
+import img8254ColorAsset from "@/assets/img-8254-color.jpg";
+import img0568Asset from "@/assets/img-0568.jpg";
+import img1587Asset from "@/assets/img-1587.jpg";
+import img9230Asset from "@/assets/img-9230.jpg";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -20,7 +20,7 @@ const TheVineyards = () => (
     {/* Banner: original colour photo, framed a little wider */}
     <div className="w-full h-[50vh] md:h-[60vh] overflow-hidden">
       <img
-        src={img8254ColorAsset.url}
+        src={img8254ColorAsset}
         alt="Ancient Vines"
         className="w-full h-full object-cover object-center"
         style={{ objectPosition: "center 40%" }}
@@ -64,7 +64,7 @@ const TheVineyards = () => (
 
       {/* Photo strip — 3 photos */}
       <motion.div {...fadeUp} className="grid grid-cols-3 gap-3 mt-20">
-        {[img0568Asset.url, img1587Asset.url, img9230Asset.url].map((src, i) => (
+        {[img0568Asset, img1587Asset, img9230Asset].map((src, i) => (
           <div key={i} className="relative overflow-hidden aspect-square group">
             <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" />
             <div className="absolute inset-0 bg-background/20 group-hover:bg-background/5 transition-colors duration-500" />

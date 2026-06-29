@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import fontfroideAsset from "@/assets/fontfroide-clean.jpg.asset.json";
-import img3035Asset from "@/assets/img-3035.jpg.asset.json";
-import img2968Asset from "@/assets/img-2968.jpg.asset.json";
-import carcassonneAsset from "@/assets/carcassonne.jpg.asset.json";
+import fontfroideAsset from "@/assets/fontfroide-clean.jpg";
+import img3035Asset from "@/assets/img-3035.jpg";
+import img2968Asset from "@/assets/img-2968.jpg";
+import carcassonneAsset from "@/assets/carcassonne.jpg";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -20,7 +20,7 @@ const TheLandscape = () => (
     {/* Banner: cleaned Fontfroide (no walker) */}
     <div className="w-full h-[50vh] md:h-[60vh] overflow-hidden">
       <img
-        src={fontfroideAsset.url}
+        src={fontfroideAsset}
         alt="Garrigue, Mountains & Ancient Stones"
         className="w-full h-full object-cover"
         style={{ objectPosition: "center center" }}
@@ -67,7 +67,7 @@ const TheLandscape = () => (
 
       {/* Photo strip — 3 photos */}
       <motion.div {...fadeUp} className="grid grid-cols-3 gap-3 mt-20">
-        {[img3035Asset.url, img2968Asset.url, carcassonneAsset.url].map((src, i) => (
+        {[img3035Asset, img2968Asset, carcassonneAsset].map((src, i) => (
           <div key={i} className="relative overflow-hidden aspect-square group">
             <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" />
             <div className="absolute inset-0 bg-background/20 group-hover:bg-background/5 transition-colors duration-500" />
