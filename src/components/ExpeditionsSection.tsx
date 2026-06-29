@@ -75,7 +75,7 @@ const experiences = [
     highlight: "Stay at the Heart of It All",
     description:
       "Your accommodation is completely taken care of and we will ensure you stay in one of our prime locations in the village of Paziols or a stone's throw away. Typical old stone buildings stylishly renovated, offering the perfect blend of traditional charm with all modern comfort and amenities.\n\nFor the 2-day intensive or the 1 week full immersion experiences, you can arrive the day before or leave the day after or both! It's up to you.",
-    image: img5207Asset.url,
+    image: img8191Asset.url,
   },
 ];
 
