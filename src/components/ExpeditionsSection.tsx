@@ -498,30 +498,6 @@ const ExpeditionsSection = () => {
           </motion.div>
         </motion.div>
 
-        {/* Photo strip */}
-        <motion.div {...fadeUp} className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-16">
-          {[wineTastingTableImg, cafeCroissantImg, tractorSelfieImg, vineyardHarvestImg, extraSceneImg].map((img, i) => (
-            <div key={i} className="relative overflow-hidden aspect-square group">
-              <img
-                src={img}
-                alt=""
-                loading="lazy"
-                className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
-              />
-              
-            </div>
-          ))}
-        </motion.div>
-
-        <motion.div {...fadeUp} className="text-center">
-          <Button
-            onClick={() => openBooking("Bespoke Experience")}
-            variant="expedition"
-            className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-          >
-            Enquire About a Bespoke Experience
-          </Button>
-        </motion.div>
       </div>
 
       <BookingDialog open={bookingOpen} onOpenChange={setBookingOpen} journeyType={journeyType} />

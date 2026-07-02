@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import logoAsset from "@/assets/logo-new.png";
-import heroVideoAsset from "@/assets/hero-bg-hires.mp4.asset.json";
+import { MEDIA } from "@/config/media";
 
 // Timing: logo fades in over the moving footage, then a short breath,
 // then the handwritten phrase is written letter by letter.
@@ -24,7 +24,7 @@ const Hero = () => {
       <div className="absolute inset-0">
         <video
           ref={videoRef}
-          src={heroVideoAsset.url}
+          src={MEDIA.heroVideo}
           autoPlay
           muted
           loop

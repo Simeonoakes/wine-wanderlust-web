@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { PlayCircle, X, Instagram } from "lucide-react";
-import pruningThumb from "@/assets/pruning-thumb.jpg";
 import cellarPortraitImg from "@/assets/cellar-portrait.jpg";
 import handsOnImg from "@/assets/hands-on-winemaking.jpg";
-import pruningVideoAsset from "@/assets/pruning-march-2026.mp4.asset.json";
-import newGrowthVideoAsset from "@/assets/new-growth-april-2026.mp4";
+import pruningThumb from "@/assets/pruning-thumb.jpg";
 import newGrowthThumbAsset from "@/assets/new-growth-thumb.jpg";
+import { MEDIA } from "@/config/media";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -22,10 +21,10 @@ interface Sample {
 }
 
 const samples: Sample[] = [
-  { title: "Pruning - March 2026", image: pruningThumb, video: pruningVideoAsset.url },
-  { title: "New Growth - April 2026", image: newGrowthThumbAsset, video: newGrowthVideoAsset },
-  { title: "Inside the Winery", image: cellarPortraitImg },
-  { title: "Meet the Makers", image: handsOnImg },
+  { title: "March 2026 – Pruning", image: pruningThumb, video: MEDIA.pruningVideo },
+  { title: "April 2026 – First Stages of Growth", image: newGrowthThumbAsset, video: MEDIA.newGrowthVideo },
+  { title: "The Darling Buds of May", image: cellarPortraitImg, video: MEDIA.darlingBudsVideo },
+  { title: "Terroir Taster", image: handsOnImg, video: MEDIA.tasterVideo },
 ];
 
 const TikTokIcon = ({ className }: { className?: string }) => (
@@ -77,7 +76,7 @@ const SimsSamplesSection = () => {
             Walk through vineyards and wineries with me from the comfort of your home and meet the men and women who help to make the magic happen.
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed font-body">
-            That is, of course, until you are able to do so yourself, here, in person.
+            That is, of course, until you are able to tread these soils yourself, here in person.
           </p>
         </motion.div>
 

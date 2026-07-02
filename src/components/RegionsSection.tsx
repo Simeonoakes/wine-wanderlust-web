@@ -33,25 +33,12 @@ const RegionsSection = () => {
   return (
     <section id="the-terroir" className="py-[15vh]">
       <div className="max-w-7xl mx-auto px-8">
-        <motion.div {...fadeUp} className="grid grid-cols-12 gap-4 mb-16">
-          <div className="col-span-12 md:col-start-2 md:col-end-7">
-            <span className="text-xs uppercase tracking-[0.12em] text-muted-foreground">
-              01 / The Terroir
-            </span>
-            <h2 className="mt-4 text-4xl md:text-5xl font-display text-primary tracking-tight">
-              The Wild Corbières
-            </h2>
-          </div>
-          <div className="col-span-12 md:col-start-8 md:col-end-12 flex items-end">
-            <p className="text-muted-foreground text-sm leading-relaxed font-body">
-              Nestled between the Pyrenees and the Mediterranean, the Corbières is one of France's most dramatic and unspoilt wine regions: a land of ancient vines, rugged beauty, and fiercely independent winemakers.
-            </p>
-          </div>
-        </motion.div>
-
-        {/* Terroir description text */}
-        <motion.div {...fadeUp} className="max-w-4xl mx-auto mb-10">
-          <p className="text-sm text-muted-foreground leading-relaxed font-body">
+        {/* Terroir description text – comes FIRST */}
+        <motion.div {...fadeUp} className="max-w-4xl mx-auto mb-16">
+          <span className="text-xs uppercase tracking-[0.12em] text-muted-foreground">
+            01 / The Terroir
+          </span>
+          <p className="mt-6 text-sm text-muted-foreground leading-relaxed font-body">
             Wonderfully untranslatable, the word <span className="font-script text-primary text-3xl md:text-4xl leading-none align-middle">terroir</span> is as rich and complex as the concept it illustrates.
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed font-body mt-4">
@@ -62,9 +49,23 @@ const RegionsSection = () => {
           </p>
         </motion.div>
 
-        {/* Transition text */}
+        {/* Wild Corbières title + Nestled paragraph */}
+        <motion.div {...fadeUp} className="grid grid-cols-12 gap-4 mb-16">
+          <div className="col-span-12 md:col-start-2 md:col-end-7">
+            <h2 className="text-4xl md:text-5xl font-display text-primary tracking-tight">
+              The Wild Corbières
+            </h2>
+          </div>
+          <div className="col-span-12 md:col-start-8 md:col-end-12 flex items-end">
+            <p className="text-muted-foreground text-sm leading-relaxed font-body">
+              Nestled between the Pyrenees and the Mediterranean, the Corbières is one of France's most dramatic and unspoilt wine regions: a land of ancient vines, rugged beauty, and fiercely independent winemakers.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Transition tagline – same script font as detail-page taglines */}
         <motion.div {...fadeUp} className="text-center mb-16">
-          <p className="text-base md:text-lg font-display italic text-burgundy-light tracking-wide">
+          <p className="font-script text-3xl md:text-4xl text-burgundy-light leading-tight">
             This is what awaits you on your journey of discovery: where the story begins and never ends.
           </p>
         </motion.div>

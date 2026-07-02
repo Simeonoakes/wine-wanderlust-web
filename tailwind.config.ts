@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"Marcellus"', '"Cormorant Garamond"', 'Georgia', 'serif'],
+        display: ['"Cinzel"', '"Marcellus"', '"Cormorant Garamond"', 'Georgia', 'serif'],
         serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
         body: ['"Montserrat"', 'sans-serif'],
         caption: ['"Cinzel"', 'Georgia', 'serif'],
@@ -22,6 +22,7 @@ export default {
         signature: ['"Mrs Saint Delafield"', 'cursive'],
         script: ['"Italianno"', '"Tangerine"', 'cursive'],
         menu: ['"Tangerine"', '"Italianno"', 'cursive'],
+        wordmark: ['"Pinyon Script"', '"Italianno"', 'cursive'],
       },
       colors: {
         border: "hsl(var(--border))",
