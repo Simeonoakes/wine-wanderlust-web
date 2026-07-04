@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import logoAsset from "@/assets/logo-new.png";
+import { MEDIA } from "@/config/media";
+const logoAsset = MEDIA.logo;
 
 const links: { label: string; href: string }[] = [
   { label: "The Terroir", href: "/#the-terroir" },

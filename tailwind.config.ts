@@ -16,7 +16,8 @@ export default {
       fontFamily: {
         display: ['"Cinzel"', '"Marcellus"', '"Cormorant Garamond"', 'Georgia', 'serif'],
         serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-        body: ['"Montserrat"', 'sans-serif'],
+        body: ['"Cinzel"', '"Cormorant Garamond"', 'Georgia', 'serif'],
+        sans: ['"Montserrat"', 'sans-serif'],
         caption: ['"Cinzel"', 'Georgia', 'serif'],
         decorative: ['"Cinzel Decorative"', 'Georgia', 'serif'],
         signature: ['"Mrs Saint Delafield"', 'cursive'],

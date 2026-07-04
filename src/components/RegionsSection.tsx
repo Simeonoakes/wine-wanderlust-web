@@ -49,18 +49,14 @@ const RegionsSection = () => {
           </p>
         </motion.div>
 
-        {/* Wild Corbières title + Nestled paragraph */}
-        <motion.div {...fadeUp} className="grid grid-cols-12 gap-4 mb-16">
-          <div className="col-span-12 md:col-start-2 md:col-end-7">
-            <h2 className="text-4xl md:text-5xl font-display text-primary tracking-tight">
-              The Wild Corbières
-            </h2>
-          </div>
-          <div className="col-span-12 md:col-start-8 md:col-end-12 flex items-end">
-            <p className="text-muted-foreground text-sm leading-relaxed font-body">
-              Nestled between the Pyrenees and the Mediterranean, the Corbières is one of France's most dramatic and unspoilt wine regions: a land of ancient vines, rugged beauty, and fiercely independent winemakers.
-            </p>
-          </div>
+        {/* Wild Corbières title + Nestled paragraph (same column as other body copy) */}
+        <motion.div {...fadeUp} className="max-w-4xl mx-auto mb-16">
+          <h2 className="text-4xl md:text-5xl font-display text-primary tracking-tight">
+            The Wild Corbières
+          </h2>
+          <p className="mt-6 text-sm text-muted-foreground leading-relaxed font-body">
+            Nestled between the Pyrenees and the Mediterranean, the Corbières is one of France's most dramatic and unspoilt wine regions: a land of ancient vines, rugged beauty, and fiercely independent winemakers.
+          </p>
         </motion.div>
 
         {/* Transition tagline – same script font as detail-page taglines */}

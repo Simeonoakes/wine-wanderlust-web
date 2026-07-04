@@ -1,10 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { PlayCircle, X, Instagram } from "lucide-react";
-import cellarPortraitImg from "@/assets/cellar-portrait.jpg";
-import handsOnImg from "@/assets/hands-on-winemaking.jpg";
-import pruningThumb from "@/assets/pruning-thumb.jpg";
-import newGrowthThumbAsset from "@/assets/new-growth-thumb.jpg";
 import { MEDIA } from "@/config/media";
 
 const fadeUp = {
@@ -21,10 +17,10 @@ interface Sample {
 }
 
 const samples: Sample[] = [
-  { title: "March 2026 – Pruning", image: pruningThumb, video: MEDIA.pruningVideo },
-  { title: "April 2026 – First Stages of Growth", image: newGrowthThumbAsset, video: MEDIA.newGrowthVideo },
-  { title: "The Darling Buds of May", image: cellarPortraitImg, video: MEDIA.darlingBudsVideo },
-  { title: "Terroir Taster", image: handsOnImg, video: MEDIA.tasterVideo },
+  { title: "March 2026 – Pruning", image: MEDIA.img_8469, video: MEDIA.pruningVideo },
+  { title: "April 2026 – First Stages of Growth", image: MEDIA.img_7983, video: MEDIA.newGrowthVideo },
+  { title: "The Darling Buds of May", image: MEDIA.img_5538, video: MEDIA.darlingBudsVideo },
+  { title: "Terroir Taster", image: MEDIA.img_7615, video: MEDIA.tasterVideo },
 ];
 
 const TikTokIcon = ({ className }: { className?: string }) => (

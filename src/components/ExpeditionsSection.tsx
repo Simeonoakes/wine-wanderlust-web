@@ -32,6 +32,7 @@ import img7170Asset from "@/assets/img-7170.jpg";
 import img2646Asset from "@/assets/img-2646.jpg";
 import img8152Asset from "@/assets/img-8152.jpg";
 import img3022Asset from "@/assets/img-3022.jpg";
+import { MEDIA } from "@/config/media";
 
 const experiences = [
   {
@@ -236,9 +237,9 @@ const TwoDayContent = ({ onBook }: { onBook: () => void }) => (
       />
     ))}
 
-    {/* 2-Day photo strip */}
-    <div className="grid grid-cols-3 gap-3 pt-4">
-      {[img1587Asset, img9230Asset, img9197Asset].map((src, i) => (
+    {/* 2-Day photo strip (msg #69 selection) */}
+    <div className="grid grid-cols-2 md:grid-cols-5 gap-3 pt-4">
+      {[MEDIA.img_5824, MEDIA.img_4561, MEDIA.img_3793, MEDIA.img_0692, MEDIA.image00013].map((src, i) => (
         <div key={i} className="relative overflow-hidden aspect-square group">
           <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" />
         </div>
