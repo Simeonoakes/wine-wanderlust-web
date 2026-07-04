@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import logoAsset from "@/assets/logo-new.png";
 import { MEDIA } from "@/config/media";
+const logoAsset = MEDIA.logo;
 
 // Timing: logo fades in over the moving footage, then a short breath,
 // then the handwritten phrase is written letter by letter.

@@ -72,6 +72,18 @@
     @apply bg-background text-foreground font-body antialiased;
   }
 
+  /* Body copy uses Cinzel in lowercase; headings and elements that opt into
+     `uppercase` (utility class) override this via cascade specificity. */
+  body {
+    text-transform: lowercase;
+  }
+  h1, h2, h3, h4, h5, h6,
+  .uppercase, .normal-case, .capitalize {
+    text-transform: revert;
+  }
+  .uppercase { text-transform: uppercase; }
+  .capitalize { text-transform: capitalize; }
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-display;
     text-wrap: balance;

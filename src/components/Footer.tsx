@@ -1,4 +1,5 @@
-import logoAsset from "@/assets/logo-new.png";
+import { MEDIA } from "@/config/media";
+const logoAsset = MEDIA.logo;
 
 const Footer = () => {
   return (

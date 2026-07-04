@@ -32,6 +32,9 @@ export const cldVideo = (publicId: string, opts: string = "q_auto") =>
   `${BASE}/video/upload/${opts}/${publicId}.mp4`;
 
 export const MEDIA = {
+  // ── Brand ────────────────────────────────────────────────────────────
+  logo: cldImage("In_VIino_Veritas_8_mxitmk", "f_auto,q_auto"),
+
   // ── Videos ───────────────────────────────────────────────────────────
   heroVideo: cldVideo("Site_background_high_res_q8imar"),
   pruningVideo: cldVideo("March_2026_-_Pruning_v8bhev"),
@@ -51,11 +54,15 @@ export const MEDIA = {
   img_5391: cldImage("IMG_5391_b99uez"),
   img_4969: cldImage("IMG_4969_14.57.59_qdc75f"),
   img_8460: cldImage("IMG_8460_ozmmhy"),
+  img_8469: cldImage("IMG_8469_m6zrwx"),
   img_7315: cldImage("IMG_7315_kmqr3c"),
+  img_5538: cldImage("IMG_5538_cvod0k"),
   img_5824: cldImage("IMG_5824_habb06"),
   img_4561: cldImage("IMG_4561_ivpsnt"),
   img_3793: cldImage("IMG_3793_ansv9j"),
   img_0692: cldImage("IMG_0692_dyztc3"),
+  img_7615: cldImage("IMG_7615_ora0pi"),
+  img_7983: cldImage("IMG_7983_cfj0vr"),
   img_9197: cldImage("IMG_9197_x6pbwj"),
   img_7170: cldImage("IMG_7170_nckbft"),
   img_2646: cldImage("IMG_2646_m2cgf3"),
