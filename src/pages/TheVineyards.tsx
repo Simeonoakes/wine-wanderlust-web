@@ -2,10 +2,11 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import img8254ColorAsset from "@/assets/img-8254-color.jpg";
-import img0568Asset from "@/assets/img-0568.jpg";
-import img1587Asset from "@/assets/img-1587.jpg";
-import img9230Asset from "@/assets/img-9230.jpg";
+const img8254ColorAsset = "https://res.cloudinary.com/dhnssest7/image/upload/v1782901445/IMG_8257_eakklk.jpg";
+const img0568Asset = "https://res.cloudinary.com/dhnssest7/image/upload/v1782901425/IMG_0568_iuh0rh.jpg";
+const img1587Asset = "https://res.cloudinary.com/dhnssest7/image/upload/v1782901428/IMG_1587_pswet8.jpg";
+const colombierAsset = "https://res.cloudinary.com/dhnssest7/image/upload/v1784195100/Colombier_Mac_pgx4rt.jpg";
+const glassvineAsset = "https://res.cloudinary.com/dhnssest7/image/upload/v1783528629/glassvine_rjdtfd.png";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -18,12 +19,12 @@ const TheVineyards = () => (
   <div className="min-h-screen">
     <Navbar />
     {/* Banner: original colour photo, framed a little wider */}
-    <div className="w-full h-[50vh] md:h-[60vh] overflow-hidden">
+    <div className="w-full h-[60vh] md:h-[70vh] overflow-hidden">
       <img
         src={img8254ColorAsset}
         alt="Ancient Vines"
         className="w-full h-full object-cover object-center"
-        style={{ objectPosition: "center 40%" }}
+        style={{ objectPosition: "center 20%" }}
       />
     </div>
 
@@ -37,7 +38,7 @@ const TheVineyards = () => (
         </h1>
       </motion.div>
 
-      <motion.div {...fadeUp} className="mt-10 space-y-6 text-sm text-muted-foreground leading-relaxed font-body">
+      <motion.div {...fadeUp} className="mt-10 space-y-6 text-lg text-muted-foreground leading-relaxed font-body">
         <p>
           The vineyards of the Corbières are among the oldest in France, with some plots boasting century-old vines that have weathered countless trials and tribulations and, more recently, the relentless march of climate change from droughts to late frosts via hail and windstorms.
         </p>
@@ -64,9 +65,9 @@ const TheVineyards = () => (
 
       {/* Photo strip — 3 photos */}
       <motion.div {...fadeUp} className="grid grid-cols-3 gap-3 mt-20">
-        {[img0568Asset, img1587Asset, img9230Asset].map((src, i) => (
+        {[colombierAsset, img0568Asset, glassvineAsset].map((src, i) => (
           <div key={i} className="relative overflow-hidden aspect-square group">
-            <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" />
+            <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" style={i === 1 ? { filter: "grayscale(100%)" } : {}} />
             
           </div>
         ))}

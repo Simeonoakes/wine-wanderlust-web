@@ -6,17 +6,16 @@ const logoAsset = MEDIA.logo;
 // Timing: logo fades in over the moving footage, then a short breath,
 // then the handwritten phrase is written letter by letter.
 const LOGO_DELAY = 20;
-const WRITE_START = 24;
+const WRITE_START = 23.5;
 const WRITE_PER_LETTER = 0.14;
-const TAGLINE_DELAY = 29;
+const TAGLINE_DELAY = 26.5;
+const FADE_TO_BLACK_START = 23.5;
 
 const phrase = "Truly Tasting Terroir";
 
 const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  // After the first loop, switch the handwritten phrase to white so it
-  // stays legible against the bright opening frames of the next pass.
-  const [hasLooped, setHasLooped] = useState(false);
+  const [loopCount, setLoopCount] = useState(0);
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center bg-black overflow-hidden">
@@ -31,21 +30,24 @@ const Hero = () => {
           playsInline
           onTimeUpdate={(e) => {
             const v = e.currentTarget;
-            if (!hasLooped && v.currentTime < 1 && (v as any)._prev > 5) {
-              setHasLooped(true);
+            if (v.currentTime < 1 && (v as any)._prev > 5) {
+              setLoopCount(prev => prev + 1);
             }
             (v as any)._prev = v.currentTime;
           }}
           className="w-full h-full object-cover object-center"
-        />
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.3) 100%)",
-          }}
+          style={{ filter: "contrast(1.1) saturate(1.1) brightness(0.95)" }}
         />
       </div>
+
+      {/* Fade to black overlay */}
+      <motion.div
+        key={`fade-${loopCount}`}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2, delay: FADE_TO_BLACK_START, ease: [0.16, 1, 0.3, 1] }}
+        className="absolute inset-0 bg-black pointer-events-none"
+      />
 
       {/* Content */}
       <div className="relative z-20 flex flex-col items-center text-center pointer-events-none">
@@ -63,7 +65,7 @@ const Hero = () => {
         </motion.div>
 
         {/* Handwritten phrase, with a clear gap below the logo */}
-        <div className="mt-4 md:mt-6 flex flex-wrap justify-center max-w-[90vw]">
+        <div key={`phrase-${loopCount}`} className="mt-4 md:mt-6 flex flex-wrap justify-center max-w-[90vw]">
           {phrase.split("").map((ch, i) => (
             <motion.span
               key={i}
@@ -74,9 +76,7 @@ const Hero = () => {
                 delay: WRITE_START + i * WRITE_PER_LETTER,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className={`font-signature text-5xl md:text-7xl lg:text-8xl leading-none ${
-                hasLooped ? "text-white" : "text-primary"
-              }`}
+              className="font-signature text-5xl md:text-7xl lg:text-8xl leading-none text-primary"
               style={{
                 whiteSpace: ch === " " ? "pre" : undefined,
                 textShadow: "0 2px 14px rgba(0,0,0,0.55)",
@@ -88,6 +88,7 @@ const Hero = () => {
         </div>
 
         <motion.p
+          key={`tagline-${loopCount}`}
           initial={{ opacity: 0, filter: "blur(4px)" }}
           animate={{ opacity: 1, filter: "blur(0px)" }}
           transition={{ duration: 1.2, delay: TAGLINE_DELAY, ease: [0.16, 1, 0.3, 1] }}

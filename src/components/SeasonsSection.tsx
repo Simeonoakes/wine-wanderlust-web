@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import almondBlossomAsset from "@/assets/almond-blossom.jpg";
 import poppiesAsset from "@/assets/poppies.jpg";
-import img4310Asset from "@/assets/img-4310.jpg";
-import autumnVinesAsset from "@/assets/autumn-vines.jpg";
+const img4310Asset = "https://res.cloudinary.com/dhnssest7/image/upload/v1783528633/summer_apero_2_h75mon.png";
+const autumnVinesAsset = "https://res.cloudinary.com/dhnssest7/image/upload/v1784235865/IMG_9208_tscp1f.jpg";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -17,7 +17,7 @@ const seasons = [
     season: "Winter",
     title: "Almond Blossom & Pruning",
     image: almondBlossomAsset,
-    text: "Breathtakingly beautiful despite the chilly winds, winter in the Corbières reveals the bare bones of the landscape: pruned vines stand in patient rows, their bared branches reaching high, expectant. The silver-green of olive trees and the rustle of fallen leaves. Frosts and, if you're lucky, a sprinkling of snow on the summit of Mont Tauch. The painstakingly precise art of pruning and some ploughing set the pace. From January to February, the surrounding garrigue awakens well before the vines do: white and pink tufts of almond blossom appear across the landscape and have the bees swarming. Next comes the vibrant yellow of the mimosa and the blend of heavenly scents is intoxicating.",
+    text: "Breathtakingly beautiful despite the chilly winds, winter in the Corbières reveals the bare bones of the landscape: pruned vines stand in patient rows, their bared branches reaching high; expectant. The silver-green of olive trees and the rustle of fallen leaves. Frosts and, if you're lucky, a sprinkling of snow on the summit of Mont Tauch. The painstakingly precise art of pruning and some ploughing set the pace. From January to February, the surrounding garrigue awakens well before the vines do: white and pink tufts of almond blossom appear across the landscape and have the bees swarming. Next comes the vibrant yellow of the mimosa and the blend of heavenly scents is intoxicating.",
     cta: "Get a Taste of Winter",
   },
   {
@@ -31,7 +31,7 @@ const seasons = [
     season: "Summer",
     title: "Cicadas & Bottling",
     image: img4310Asset,
-    text: "The cicadas are deafening, the air shimmers and the vines hang heavy with ripening fruit. The garrigue releases its full perfume under the relentless sun: thyme, rosemary, fennel and pine carried on the warm wind. Days stretch long and golden, evenings linger over pastis on shaded terraces and chilled rosé in the vineyard. In the vines, the careful work of trimming, lifting wires, watching the skies and praying for rain takes over. Every leaf, every cluster monitored as veraison begins and the grapes blush from green to pink, to deep purple. Inside the cool of the cellar, last year's wines are being bottled, making way for the new vintage's precious nectar.",
+    text: "The cicadas are deafening, the air shimmers and the vines hang heavy with ripening fruit. The garrigue releases its full perfume under the relentless sun: thyme, rosemary, fennel and pine carried on the warm wind. Days stretch long and golden, evenings linger over pastis on shaded terraces and chilled rosé in the vineyard. For the vignerons, the careful work of trimming, lifting wires, watching the skies and praying for rain takes over. Every leaf, every cluster monitored as veraison begins and the grapes blush from green to pink, to deep purple. Inside the cool of the cellar, last year's wines are being bottled, making way for the new vintage's precious nectar.",
     cta: "Get a Taste of Summer",
   },
   {
@@ -57,7 +57,7 @@ const SeasonsSection = () => {
         </motion.div>
 
         <motion.div {...fadeUp} className="max-w-3xl mb-16">
-          <p className="text-sm text-muted-foreground leading-relaxed font-body">
+          <p className="text-lg text-muted-foreground leading-relaxed font-body">
             Every season in the Corbières tells its own story. The landscape changes colour, the vines change rhythm, and life in the winery follows its own ancient calendar. Choose when to visit and you choose what to live: the quiet promise of winter, the riot of colour and renewal in spring, the heady abundance of summer or the focused frenzy and golden glow of autumn harvest.
           </p>
         </motion.div>
@@ -70,7 +70,7 @@ const SeasonsSection = () => {
               transition={{ ...fadeUp.transition, delay: i * 0.1 }}
               className="flex flex-col"
             >
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className="aspect-square overflow-hidden">
                 <img
                   src={s.image}
                   alt={s.title}
@@ -78,7 +78,7 @@ const SeasonsSection = () => {
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                   style={
                     s.season === "Summer"
-                      ? { objectPosition: "center 60%", transform: "scale(1.15)", filter: "saturate(1.15) hue-rotate(-6deg) brightness(1.04)" }
+                      ? { objectPosition: "center center" }
                       : { objectPosition: "center center" }
                   }
                 />
@@ -90,7 +90,7 @@ const SeasonsSection = () => {
                 <h3 className="mt-2 text-2xl md:text-3xl font-display tracking-tight text-foreground">
                   {s.title}
                 </h3>
-                <p className="mt-4 text-sm text-muted-foreground leading-relaxed font-body flex-1" dangerouslySetInnerHTML={{ __html: s.text }} />
+                <p className="mt-4 text-base text-muted-foreground leading-relaxed font-body flex-1" dangerouslySetInnerHTML={{ __html: s.text }} />
                 <div className="mt-6">
                   <Link
                     to="/#experiences"

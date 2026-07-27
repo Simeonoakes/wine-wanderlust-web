@@ -65,13 +65,13 @@ const SimsSamplesSection = () => {
         </motion.div>
 
         <motion.div {...fadeUp} className="max-w-3xl mb-16 space-y-4">
-          <p className="text-sm text-muted-foreground leading-relaxed font-body">
+          <p className="text-lg text-muted-foreground leading-relaxed font-body">
             Delve into the vineyards <em>almost</em> for real with Simeon. Through a series of short videos, samples, dare I say: tasters of the life of a vine itself and the different processes it takes to bring a vine to fruition and ensure a harvest year after year.
           </p>
-          <p className="text-sm text-muted-foreground leading-relaxed font-body">
+          <p className="text-lg text-muted-foreground leading-relaxed font-body">
             Walk through vineyards and wineries with me from the comfort of your home and meet the men and women who help to make the magic happen.
           </p>
-          <p className="text-sm text-muted-foreground leading-relaxed font-body">
+          <p className="text-lg text-muted-foreground leading-relaxed font-body">
             That is, of course, until you are able to tread these soils yourself, here in person.
           </p>
         </motion.div>
@@ -91,6 +91,7 @@ const SimsSamplesSection = () => {
                   alt={s.title}
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  style={s.title === "April 2026 – First Stages of Growth" ? { objectPosition: "center 20%" } : {}}
                 />
               </div>
               <div className="absolute inset-0 bg-background/40 group-hover:bg-background/20 transition-colors duration-500 flex items-center justify-center">

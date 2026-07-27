@@ -7,7 +7,9 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-8 grid grid-cols-12 gap-8">
         <div className="col-span-12 md:col-span-4">
           <img src={logoAsset} alt="In Vino Veritas" className="w-16 h-16 object-contain mb-4" />
-          <span className="font-wordmark text-4xl tracking-tight text-primary leading-none">In Vino Veritas</span>
+          <span className="font-wordmark text-3xl md:text-4xl tracking-tight text-primary leading-none whitespace-nowrap">
+            In Vino Veritas
+          </span>
           <p className="mt-4 text-xs text-muted-foreground font-body leading-relaxed max-w-xs">
             Bespoke wine education, tourism and events in the heart of the Corbières, Languedoc.
           </p>

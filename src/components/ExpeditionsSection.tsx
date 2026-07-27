@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import BookingDialog from "@/components/BookingDialog";
 import menuPaperImg from "@/assets/menu-paper.jpg";
@@ -17,10 +18,23 @@ import grapeHarvestImg from "@/assets/grape-harvest.jpg";
 import whiteGrapesAsset from "@/assets/white-grapes.jpg";
 import img0941Asset from "@/assets/img-0941-color.jpg";
 import img5207Asset from "@/assets/img-5207.jpg";
-import img8191Asset from "@/assets/img-8191.jpg";
+const img8191Asset = "https://res.cloudinary.com/dhnssest7/image/upload/v1783690268/copy_of_img_8191_zznriv.jpg";
+const bespokeImg1 = "https://res.cloudinary.com/dhnssest7/image/upload/v1784195099/food_dfjn6w.jpg";
+const bespokeBannerImg = "https://res.cloudinary.com/dhnssest7/image/upload/v1782901449/IMG_8816_k8tvtv.jpg";
+const bespokeImg2 = "https://res.cloudinary.com/dhnssest7/image/upload/v1782901446/IMG_8550_pzk9jr.jpg";
+const bespokeImg3 = "https://res.cloudinary.com/dhnssest7/image/upload/v1782901440/IMG_7434_lvdwxm.jpg";
+const bespokeImg4 = "https://res.cloudinary.com/dhnssest7/image/upload/v1782901451/IMG_20200930_180642_efqp6d.jpg";
+const bespokeImg5 = "https://res.cloudinary.com/dhnssest7/image/upload/v1783259610/IMG_8284_1_12.22.40_cn0cks.jpg";
+const geneTAsset = "https://res.cloudinary.com/dhnssest7/image/upload/v1784195099/gene%CC%82t_taay2y.jpg";
 import img7985Asset from "@/assets/img-7985.jpg";
 import img8718Asset from "@/assets/img-8718.jpg";
 import img4091Asset from "@/assets/img-4091-clean.jpg";
+import img5391Asset from "@/assets/img-5391.jpg";
+import img4969Asset from "@/assets/img-4969.jpg";
+import img8460Asset from "@/assets/img-8460.jpg";
+const img7315Asset = "https://res.cloudinary.com/dhnssest7/image/upload/v1782901439/IMG_7315_kmqr3c.jpg";
+const wineSamplingAsset = "https://res.cloudinary.com/dhnssest7/image/upload/v1783528634/wine_sampling_uu7gfm.png";
+import img00015Asset from "@/assets/img-00015.jpg";
 
 import img1587Asset from "@/assets/img-1587.jpg";
 import img9230Asset from "@/assets/img-9230.jpg";
@@ -32,6 +46,9 @@ import img7170Asset from "@/assets/img-7170.jpg";
 import img2646Asset from "@/assets/img-2646.jpg";
 import img8152Asset from "@/assets/img-8152.jpg";
 import img3022Asset from "@/assets/img-3022.jpg";
+const accommodationImg1 = "https://res.cloudinary.com/dhnssest7/image/upload/v1782987021/IMG_5207_zq34rb.jpg";
+const accommodationImg2 = "https://res.cloudinary.com/dhnssest7/image/upload/v1782901443/IMG_7985_shxg15.jpg";
+const accommodationImg3 = "https://res.cloudinary.com/dhnssest7/image/upload/v1782901428/IMG_1586_exnvbn.jpg";
 import { MEDIA } from "@/config/media";
 
 const experiences = [
@@ -48,7 +65,7 @@ const experiences = [
     title: "Gastronomic Discovery",
     highlight: "Vineyard to Table",
     description:
-      "From intimate vineyard lunches with the estate's cuvées to 4 course meals in the best local restaurant as well as traditional rustic barbecues cooked on old vine wood with aromatic herbs in the very vineyard they come from.",
+      "From intimate vineyard lunches with the domaine's cuvées to 4-course meals in the best local restaurant via traditional rustic barbecues cooked on old vine wood with aromatic herbs in the very vineyard they come from.",
     image: img0941Asset,
   },
   {
@@ -57,7 +74,7 @@ const experiences = [
     highlight: "The Wild Corbières",
     description:
       "Picturesque villages, rugged garrigue, Cathar castles, medieval abbeys and fortified towns set in dramatic panoramas nestled between the snow-capped Pyrenees and the glistening Mediterranean.",
-    image: img8718Asset,
+    image: geneTAsset,
   },
   {
     id: "04",
@@ -138,11 +155,11 @@ const MenuDay = ({ day, footnote }: { day: DayData; footnote?: string }) => (
 const OneDayContent = ({ onBook }: { onBook: () => void }) => (
   <div className="space-y-8">
     <div className="w-full overflow-hidden">
-      <img src={roseOlivesImg} alt="A day in the Corbières" className="w-full h-[35vh] md:h-[50vh] object-cover" style={{ objectPosition: "center 40%" }} loading="lazy" />
+      <img src={roseOlivesImg} alt="A day in the Corbières" className="w-full h-[45vh] md:h-[60vh] object-cover" style={{ objectPosition: "center 55%" }} loading="lazy" />
     </div>
 
     <div className="text-center space-y-2">
-      <p className="text-sm text-muted-foreground leading-relaxed font-body italic max-w-2xl mx-auto">
+      <p className="text-lg text-muted-foreground leading-relaxed font-body italic max-w-2xl mx-auto">
         A curated introduction : perfect for curious travellers passing through the region, or as an exclusive activity to include into your holiday in the area.
       </p>
     </div>
@@ -178,6 +195,15 @@ const OneDayContent = ({ onBook }: { onBook: () => void }) => (
         Book Your Taster Journey
       </Button>
     </div>
+
+    {/* 1-Day photo strip */}
+    <div className="grid grid-cols-2 md:grid-cols-5 gap-3 pt-4">
+      {[img5391Asset, img4969Asset, img8460Asset, img7315Asset, img00015Asset].map((src, i) => (
+        <div key={i} className="relative overflow-hidden aspect-[4/3] group">
+          <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" />
+        </div>
+      ))}
+    </div>
   </div>
 );
 
@@ -188,10 +214,10 @@ const TwoDayContent = ({ onBook }: { onBook: () => void }) => (
     </div>
 
     <div className="text-center space-y-2">
-      <p className="text-sm text-muted-foreground leading-relaxed font-body italic max-w-2xl mx-auto">
+      <p className="text-lg text-muted-foreground leading-relaxed font-body italic max-w-2xl mx-auto">
         A deeper dive into the terroir.
       </p>
-      <p className="text-sm text-primary leading-relaxed font-body">
+      <p className="text-lg text-primary leading-relaxed font-body">
         Includes accommodation for either 2 or 3 nights
       </p>
     </div>
@@ -237,17 +263,8 @@ const TwoDayContent = ({ onBook }: { onBook: () => void }) => (
       />
     ))}
 
-    {/* 2-Day photo strip (msg #69 selection) */}
-    <div className="grid grid-cols-2 md:grid-cols-5 gap-3 pt-4">
-      {[MEDIA.img_5824, MEDIA.img_4561, MEDIA.img_3793, MEDIA.img_0692, MEDIA.image00013].map((src, i) => (
-        <div key={i} className="relative overflow-hidden aspect-square group">
-          <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" />
-        </div>
-      ))}
-    </div>
-
     <div className="text-center space-y-3 pt-4">
-      <p className="text-sm text-muted-foreground font-body italic">
+      <p className="text-lg text-muted-foreground font-body italic">
         All is included, all is taken care of. All you need to do is book your transport to and from the area and we will take it from there.
       </p>
       <p className="text-xs uppercase tracking-[0.2em] text-primary font-body">
@@ -260,20 +277,29 @@ const TwoDayContent = ({ onBook }: { onBook: () => void }) => (
         Book Your Intensive Journey
       </Button>
     </div>
+
+    {/* 2-Day photo strip */}
+    <div className="grid grid-cols-2 md:grid-cols-5 gap-3 pt-4">
+      {[MEDIA.img_5824, MEDIA.img_4561, MEDIA.img_3793, MEDIA.img_0692, MEDIA.image00013].map((src, i) => (
+        <div key={i} className="relative overflow-hidden aspect-square group">
+          <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" style={i === 3 ? { filter: "grayscale(100%)" } : {}} />
+        </div>
+      ))}
+    </div>
   </div>
 );
 
 const WeekContent = ({ onBook }: { onBook: () => void }) => (
   <div className="space-y-8">
     <div className="w-full overflow-hidden">
-      <img src={img4091Asset} alt="A week in the Corbières" className="w-full h-[35vh] md:h-[50vh] object-cover object-center" loading="lazy" />
+      <img src={img4091Asset} alt="A week in the Corbières" className="w-full h-[55vh] md:h-[70vh] object-cover object-center" loading="lazy" style={{ objectPosition: "center 40%" }} />
     </div>
 
-    <div className="text-center space-y-2">
-      <p className="text-sm text-muted-foreground leading-relaxed font-body italic max-w-2xl mx-auto">
+    <div className="max-w-3xl mx-auto text-center space-y-2">
+      <p className="text-lg text-muted-foreground leading-relaxed font-body italic max-w-2xl mx-auto">
         Live the Corbières to its fullest. 5 days of total immersion : you'll leave practically as a local.
       </p>
-      <p className="text-sm text-primary leading-relaxed font-body">
+      <p className="text-lg text-primary leading-relaxed font-body">
         Includes all meals and accommodation for either 4 or 5 nights
       </p>
     </div>
@@ -344,17 +370,8 @@ const WeekContent = ({ onBook }: { onBook: () => void }) => (
       />
     ))}
 
-    {/* 1-Week photo strip */}
-    <div className="grid grid-cols-2 md:grid-cols-5 gap-3 pt-4">
-      {[img9197Asset, img7170Asset, img2646Asset, img8152Asset, img3022Asset].map((src, i) => (
-        <div key={i} className="relative overflow-hidden aspect-square group">
-          <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" />
-        </div>
-      ))}
-    </div>
-
     <div className="text-center space-y-3 pt-4">
-      <p className="text-sm text-muted-foreground font-body italic">
+      <p className="text-lg text-muted-foreground font-body italic">
         All is included, all is taken care of. All you need to do is book your transport to and from the area and we will take it from there.
       </p>
       <p className="text-xs uppercase tracking-[0.2em] text-primary font-body">
@@ -366,6 +383,15 @@ const WeekContent = ({ onBook }: { onBook: () => void }) => (
       <Button onClick={onBook} variant="expedition" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-sm px-10 py-5">
         Book Your Full Immersion Journey
       </Button>
+    </div>
+
+    {/* 1-Week photo strip */}
+    <div className="grid grid-cols-2 md:grid-cols-5 gap-3 pt-4">
+      {[img9197Asset, img7170Asset, img2646Asset, wineSamplingAsset, img3022Asset].map((src, i) => (
+        <div key={i} className="relative overflow-hidden aspect-[4/3] group">
+          <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" style={i === 3 ? { filter: "grayscale(100%)", objectPosition: "center 20%" } : {}} />
+        </div>
+      ))}
     </div>
   </div>
 );
@@ -382,20 +408,35 @@ const ExpeditionsSection = () => {
   };
 
   const BespokeContent = () => (
-    <div className="space-y-8 max-w-3xl mx-auto text-center">
+    <div className="space-y-8">
       <div className="w-full overflow-hidden">
-        <img src={extraSceneImg} alt="A bespoke journey" className="w-full h-[35vh] md:h-[50vh] object-cover object-center" loading="lazy" />
+        <img src={bespokeBannerImg} alt="A bespoke journey" className="w-full h-[55vh] md:h-[70vh] object-cover object-center" loading="lazy" />
       </div>
-      <p className="text-sm text-muted-foreground leading-relaxed font-body">
+      <div className="max-w-3xl mx-auto text-center">
+      <p className="text-lg text-muted-foreground leading-relaxed font-body italic">
         Looking for something entirely your own? A bespoke journey is designed from scratch, around your tastes, your timing and your dreams. Whether you have a precise itinerary in mind or just a feeling for what you'd love to live, we'll craft each day together: choice of wineries, meals, accommodation, activities and pace, all built around you.
       </p>
-      <p className="text-xs uppercase tracking-[0.2em] text-primary font-body">
+      <p className="mt-6 text-xs uppercase tracking-[0.1em] text-primary font-body whitespace-nowrap">
         At every stage you will be encouraged to use as much or as little French as you know or fancy!
       </p>
-      <div className="pt-4">
-        <Button onClick={() => openBooking("Bespoke Experience")} variant="expedition" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-sm px-10 py-5">
-          Enquire About a Bespoke Journey
-        </Button>
+      </div>
+
+      <motion.div {...fadeUp} className="text-center mt-8">
+        <Link
+          to="/contact"
+          className="inline-block border border-primary text-primary px-6 py-3 text-xs uppercase tracking-[0.15em] font-body hover:bg-primary hover:text-primary-foreground transition-colors"
+        >
+          Enquire about your bespoke journey
+        </Link>
+      </motion.div>
+
+      {/* Bespoke photo strip */}
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-3 pt-4">
+        {[bespokeImg1, bespokeImg2, bespokeImg3, bespokeImg4, bespokeImg5].map((src, i) => (
+          <div key={i} className="relative overflow-hidden aspect-[4/3] group">
+            <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" style={i === 0 ? { objectPosition: "center 20%" } : i === 4 ? { objectPosition: "center 20%" } : {}} />
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -447,6 +488,7 @@ const ExpeditionsSection = () => {
                 src={experiences[activeTab].image}
                 alt={experiences[activeTab].title}
                 className="w-full h-[40vh] md:h-[55vh] object-cover object-center"
+                style={experiences[activeTab].id === "05" ? { transform: "rotate(180deg)", objectPosition: "center 65%" } : {}}
               />
             </div>
             <motion.div
@@ -454,7 +496,7 @@ const ExpeditionsSection = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="mt-8 max-w-3xl"
+              className="mt-8 max-w-3xl mx-auto"
             >
               <span className="text-xs text-primary font-body uppercase tracking-[0.1em]">
                 {experiences[activeTab].highlight}
@@ -462,9 +504,20 @@ const ExpeditionsSection = () => {
               <h3 className="mt-3 text-3xl md:text-4xl font-light italic tracking-tight">
                 {experiences[activeTab].title}
               </h3>
-              <p className="mt-6 text-sm text-muted-foreground leading-relaxed font-body whitespace-pre-line">
+              <p className="mt-6 text-lg text-muted-foreground leading-relaxed font-body whitespace-pre-line">
                 {experiences[activeTab].description}
               </p>
+              {experiences[activeTab].id === "05" && (
+                <motion.div {...fadeUp} className="mt-8">
+                  <div className="grid grid-cols-3 gap-3 max-w-3xl mx-auto">
+                    {[accommodationImg1, accommodationImg2, accommodationImg3].map((src, i) => (
+                      <div key={i} className="relative overflow-hidden aspect-square group">
+                        <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" />
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
             </motion.div>
           </div>
         </motion.div>

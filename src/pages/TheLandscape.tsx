@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import fontfroideAsset from "@/assets/fontfroide-clean.jpg";
-import img3035Asset from "@/assets/img-3035.jpg";
+const landscapeNewAsset = "https://res.cloudinary.com/dhnssest7/image/upload/v1784236606/Fontfroide_huurgk.png";
+const img3035Asset = "https://res.cloudinary.com/dhnssest7/image/upload/v1782901432/IMG_3035_rzaigk.jpg";
 import img2968Asset from "@/assets/img-2968.jpg";
 import carcassonneAsset from "@/assets/carcassonne.jpg";
+const glassAndThymeAsset = "https://res.cloudinary.com/dhnssest7/image/upload/v1783528630/glass_and_thyme_fjfrn2.png";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -20,7 +22,7 @@ const TheLandscape = () => (
     {/* Banner: cleaned Fontfroide (no walker) */}
     <div className="w-full h-[50vh] md:h-[60vh] overflow-hidden">
       <img
-        src={fontfroideAsset}
+        src={landscapeNewAsset}
         alt="Garrigue, Mountains & Ancient Stones"
         className="w-full h-full object-cover"
         style={{ objectPosition: "center center" }}
@@ -37,12 +39,12 @@ const TheLandscape = () => (
         </h1>
       </motion.div>
 
-      <motion.div {...fadeUp} className="mt-10 space-y-6 text-sm text-muted-foreground leading-relaxed font-body">
+      <motion.div {...fadeUp} className="mt-10 space-y-6 text-lg text-muted-foreground leading-relaxed font-body">
         <p>
-          The Corbières landscape is one of raw, untamed beauty: a patchwork of wild garrigue, dramatic mountain ridges and ancient stones that whisper of centuries passed. The air is thick with the scent of thyme, rosemary and cistus, and the horizon is punctuated by the silhouettes of ruined Cathar castles perched impossibly on craggy peaks.
+          The Corbières landscape is one of raw, untamed beauty: a patchwork of wild garrigue, dramatic mountain ridges and ancient stones that whisper of centuries passed. The air is thick with the scent of thyme, rosemary and cistus, and the horizon is punctuated by the silhouettes of ruined Cathar castles perched impossibly on craggy peaks. Among the most impressive of the 5 sons of Carcassonne are the castles of <span className="text-foreground font-medium">Aguilar</span>, <span className="text-foreground font-medium">Peyrepertuse</span> and <span className="text-foreground font-medium">Quéribus</span>, all an ancient stone's throw away.
         </p>
         <p>
-          Among the jewels of this landscape is <span className="text-foreground font-medium">Fontfroide Abbey</span>, a breathtaking Cistercian monastery nestled in a secluded valley, surrounded by cypress trees and vineyards. Its serene cloisters and rose gardens offer a window into a thousand years of monastic life and winemaking tradition.
+          Another jewel of this landscape is <span className="text-foreground font-medium">Fontfroide Abbey</span>, a breathtaking Cistercian monastery nestled in a secluded valley, surrounded by cypress trees and vineyards. Its serene cloisters and rose gardens offer a window into a thousand years of monastic life and winemaking tradition.
         </p>
         <p>
           Then there is <span className="text-foreground font-medium">Carcassonne</span>, the UNESCO World Heritage fortified city, its double-walled ramparts rising like a medieval dream above the Aude valley. A living monument to the turbulent history of this borderland, where cultures, languages and empires collided for centuries.
@@ -67,7 +69,7 @@ const TheLandscape = () => (
 
       {/* Photo strip — 3 photos */}
       <motion.div {...fadeUp} className="grid grid-cols-3 gap-3 mt-20">
-        {[img3035Asset, img2968Asset, carcassonneAsset].map((src, i) => (
+        {[img3035Asset, img2968Asset, glassAndThymeAsset].map((src, i) => (
           <div key={i} className="relative overflow-hidden aspect-square group">
             <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" />
             
