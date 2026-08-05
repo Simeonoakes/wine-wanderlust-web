@@ -118,6 +118,28 @@ const VineEdge = ({ className }: { className?: string }) => (
   </svg>
 );
 
+/* Vertical variant of the branch edge. */
+const VineEdgeV = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 14 400"
+    preserveAspectRatio="none"
+    fill="none"
+    aria-hidden="true"
+    className={cn("text-primary", className)}
+  >
+    <g stroke="currentColor" strokeLinecap="round" vectorEffect="non-scaling-stroke">
+      <path
+        d="M7 0c-5 30 5 60 1 92s-8 52-3 84 8 58 2 92-6 76-1 132"
+        strokeWidth="1.4"
+        opacity="0.85"
+      />
+      <path d="M8 96c4 4 4 9 1 12" strokeWidth="1" opacity="0.5" />
+      <path d="M5 200c-4 4-4 9-1 12" strokeWidth="1" opacity="0.5" />
+      <path d="M8 300c4 4 4 9 1 12" strokeWidth="1" opacity="0.5" />
+    </g>
+  </svg>
+);
+
 interface VineFrameProps {
   children: React.ReactNode;
   className?: string;
@@ -130,8 +152,9 @@ const VineFrame = ({ children, className, inset = "p-2" }: VineFrameProps) => (
     {/* branch edges */}
     <VineEdge className="absolute -top-[7px] left-8 right-8 h-[14px] pointer-events-none" />
     <VineEdge className="absolute -bottom-[7px] left-8 right-8 h-[14px] scale-y-[-1] pointer-events-none" />
-    <VineEdge className="absolute -left-[7px] top-8 bottom-8 w-[14px] h-auto pointer-events-none [writing-mode:vertical-lr] rotate-90 origin-center" />
-    <VineEdge className="absolute -right-[7px] top-8 bottom-8 w-[14px] h-auto pointer-events-none rotate-90 scale-y-[-1] origin-center" />
+    <VineEdgeV className="absolute -left-[7px] top-8 bottom-8 w-[14px] pointer-events-none" />
+    <VineEdgeV className="absolute -right-[7px] top-8 bottom-8 w-[14px] scale-x-[-1] pointer-events-none" />
+
 
     {/* corner ornaments */}
     <VineCorner className="absolute -top-3 -left-3 scale-x-[-1] pointer-events-none" />
