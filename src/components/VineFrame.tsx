@@ -1,141 +1,79 @@
 import { cn } from "@/lib/utils";
 
-/* A realistic five-lobed grape-vine leaf, stem at the bottom centre. */
-const VineLeaf = ({
-  className,
-  style,
-}: {
-  className?: string;
-  style?: React.CSSProperties;
-}) => (
-  <svg viewBox="0 0 100 100" aria-hidden="true" className={className} style={style}>
+/** Five-lobed grape-vine leaf, drawn in a 0-100 box with the stem at (50,97). */
+const LEAF_D =
+  "M50 97 C50 82 45 75 35 71 C41 72 45 70 45 66 C36 68 25 65 17 57 C25 59 31 57 31 53 C21 50 11 43 6 31 C17 41 27 44 33 42 C27 35 25 25 27 15 C31 27 39 36 45 38 C45 27 49 17 55 9 C55 22 57 34 59 40 C65 38 73 30 79 18 C79 32 73 42 67 46 C73 48 83 46 93 39 C85 51 75 58 65 58 C69 62 77 64 85 64 C75 70 61 70 55 66 C52 74 51 86 50 97 Z";
+
+const Leaf = ({ transform }: { transform: string }) => (
+  <g transform={transform}>
     <path
-      d="M50 97 C50 82 45 75 35 71 C41 72 45 70 45 66 C36 68 25 65 17 57 C25 59 31 57 31 53 C21 50 11 43 6 31 C17 41 27 44 33 42 C27 35 25 25 27 15 C31 27 39 36 45 38 C45 27 49 17 55 9 C55 22 57 34 59 40 C65 38 73 30 79 18 C79 32 73 42 67 46 C73 48 83 46 93 39 C85 51 75 58 65 58 C69 62 77 64 85 64 C75 70 61 70 55 66 C52 74 51 86 50 97 Z"
+      d={LEAF_D}
       fill="currentColor"
-      fillOpacity="0.32"
+      fillOpacity="0.3"
       stroke="currentColor"
-      strokeWidth="1.6"
+      strokeOpacity="0.9"
+      strokeWidth="2.2"
       strokeLinejoin="round"
-      strokeOpacity="0.85"
     />
-    {/* veins */}
-    <g stroke="currentColor" strokeWidth="1.2" strokeOpacity="0.7" strokeLinecap="round" fill="none">
-      <path d="M50 95 L55 12" />
-      <path d="M50 88 C46 70 36 50 10 33" />
-      <path d="M50 88 C52 70 62 50 76 24" />
-      <path d="M52 74 C50 68 38 62 22 60" />
-      <path d="M52 74 C56 68 68 62 84 60" />
+    <g stroke="currentColor" strokeWidth="1.6" strokeOpacity="0.6" strokeLinecap="round" fill="none">
+      <path d="M50 95 L55 14" />
+      <path d="M50 88 C46 70 36 52 12 34" />
+      <path d="M50 88 C52 70 62 52 75 26" />
+      <path d="M52 74 C50 68 38 62 24 60" />
+      <path d="M52 74 C56 68 68 62 82 60" />
     </g>
-  </svg>
+  </g>
 );
 
-/* Corner ornament: a woody branch that turns the corner, carrying a leaf,
-   a curling tendril and a small cluster of grapes. */
+/** Corner: a woody branch turning the corner, with vine leaves, tendril and grapes. */
 const VineCorner = ({ className }: { className?: string }) => (
   <svg
-    viewBox="0 0 90 90"
+    viewBox="0 0 72 72"
     fill="none"
     aria-hidden="true"
-    className={cn("h-16 w-16 md:h-20 md:w-20 text-primary", className)}
+    className={cn("h-16 w-16 md:h-[4.5rem] md:w-[4.5rem] text-primary", className)}
   >
-    {/* woody branch turning the corner */}
+    {/* woody branch */}
     <path
-      d="M88 6c-14-1-26 .5-36 5S34 23 29 33c-4 8-7 19-8 32-.4 8-.6 16-.6 23"
+      d="M71 8C56 7 43 10 33 17S18 35 15 48c-2 8-3 15-3 23"
       stroke="currentColor"
-      strokeWidth="2.4"
+      strokeWidth="2.2"
       strokeLinecap="round"
       opacity="0.9"
     />
     <path
-      d="M86 11c-13 0-24 2-32 6.5S39 30 34 40c-4 8-6.5 20-7.5 33"
+      d="M70 12C57 12 45 15 36 22s-14 16-17 28c-1.6 6.5-2.4 13-2.6 20"
+      stroke="currentColor"
+      strokeWidth="0.9"
+      strokeLinecap="round"
+      opacity="0.4"
+    />
+    {/* curling tendrils */}
+    <path
+      d="M50 11c3.6 5 3.4 10-.4 13.2-3 2.6-7.2 1.2-7.6-2.2-.4-2.8 2.6-4.6 4.6-2.8 2.4 2.1 1.2 6-2.6 7.4"
       stroke="currentColor"
       strokeWidth="1"
       strokeLinecap="round"
-      opacity="0.45"
+      opacity="0.65"
     />
-    {/* curling tendril */}
     <path
-      d="M56 12c4 6 4 12 0 16-3.2 3.2-8 2-8.6-2-.5-3.2 2.8-5.4 5.2-3.4 2.8 2.3 1.6 7-2.6 8.6"
+      d="M14 55c-4.6 2.4-7 6-6.2 9.6.6 3 4.2 4 6 1.6 1.4-1.9 0-4.6-2.4-4-2.6.7-3.4 4-1.6 6.3"
       stroke="currentColor"
-      strokeWidth="1.1"
+      strokeWidth="1"
       strokeLinecap="round"
-      opacity="0.7"
+      opacity="0.65"
     />
-    {/* second tendril */}
-    <path
-      d="M23 52c-5 3-8 7-7.4 11.4.5 3.6 4.8 5 7 2.2 1.8-2.2.2-5.4-2.6-4.8-3 .7-4 4.6-2 7.4"
-      stroke="currentColor"
-      strokeWidth="1.1"
-      strokeLinecap="round"
-      opacity="0.7"
-    />
-    {/* leaves growing off the branch */}
-    <g className="text-primary">
-      <VineLeaf
-        className="text-primary"
-        style={{ transform: "translate(50px,4px) rotate(28deg) scale(0.30)", transformOrigin: "0 0" }}
-      />
-      <VineLeaf
-        className="text-primary"
-        style={{ transform: "translate(6px,38px) rotate(-58deg) scale(0.26)", transformOrigin: "0 0" }}
-      />
-    </g>
-    {/* grape cluster */}
+    {/* leaves */}
+    <Leaf transform="translate(58 6) rotate(35) scale(0.20)" />
+    <Leaf transform="translate(12 34) rotate(-62) scale(0.19)" />
+    <Leaf transform="translate(34 15) rotate(8) scale(0.13)" />
+    {/* grapes */}
     <g fill="currentColor">
-      <circle cx="34" cy="18" r="2.6" opacity="0.5" />
-      <circle cx="40" cy="20" r="2.6" opacity="0.35" />
-      <circle cx="37" cy="24.5" r="2.6" opacity="0.55" />
-      <circle cx="43" cy="26" r="2.4" opacity="0.3" />
-      <circle cx="40" cy="30.5" r="2.4" opacity="0.45" />
-    </g>
-  </svg>
-);
-
-/* Edge: a thin, gently meandering branch with small tendril hooks.
-   Stretched horizontally; strokes stay hairline via non-scaling-stroke. */
-const VineEdge = ({ className }: { className?: string }) => (
-  <svg
-    viewBox="0 0 400 14"
-    preserveAspectRatio="none"
-    fill="none"
-    aria-hidden="true"
-    className={cn("text-primary", className)}
-  >
-    <g
-      stroke="currentColor"
-      strokeLinecap="round"
-      vectorEffect="non-scaling-stroke"
-    >
-      <path
-        d="M0 7c30-5 60 5 92 1s52-8 84-3 58 8 92 2 76-6 132-1"
-        strokeWidth="1.4"
-        opacity="0.85"
-      />
-      <path d="M96 8c4 4 9 4 12 1" strokeWidth="1" opacity="0.5" />
-      <path d="M200 5c4-4 9-4 12-1" strokeWidth="1" opacity="0.5" />
-      <path d="M300 8c4 4 9 4 12 1" strokeWidth="1" opacity="0.5" />
-    </g>
-  </svg>
-);
-
-/* Vertical variant of the branch edge. */
-const VineEdgeV = ({ className }: { className?: string }) => (
-  <svg
-    viewBox="0 0 14 400"
-    preserveAspectRatio="none"
-    fill="none"
-    aria-hidden="true"
-    className={cn("text-primary", className)}
-  >
-    <g stroke="currentColor" strokeLinecap="round" vectorEffect="non-scaling-stroke">
-      <path
-        d="M7 0c-5 30 5 60 1 92s-8 52-3 84 8 58 2 92-6 76-1 132"
-        strokeWidth="1.4"
-        opacity="0.85"
-      />
-      <path d="M8 96c4 4 4 9 1 12" strokeWidth="1" opacity="0.5" />
-      <path d="M5 200c-4 4-4 9-1 12" strokeWidth="1" opacity="0.5" />
-      <path d="M8 300c4 4 4 9 1 12" strokeWidth="1" opacity="0.5" />
+      <circle cx="26" cy="27" r="2.3" opacity="0.5" />
+      <circle cx="31" cy="29" r="2.3" opacity="0.34" />
+      <circle cx="28" cy="33" r="2.3" opacity="0.55" />
+      <circle cx="33" cy="34.5" r="2.1" opacity="0.3" />
+      <circle cx="30" cy="38.5" r="2.1" opacity="0.45" />
     </g>
   </svg>
 );
@@ -147,20 +85,43 @@ interface VineFrameProps {
   inset?: string;
 }
 
+/**
+ * Ornamental frame: meandering vine-branch edges (never straight rules)
+ * with vine-leaf, tendril and grape corner ornaments.
+ */
 const VineFrame = ({ children, className, inset = "p-2" }: VineFrameProps) => (
   <div className={cn("relative", className)}>
-    {/* branch edges */}
-    <VineEdge className="absolute -top-[7px] left-8 right-8 h-[14px] pointer-events-none" />
-    <VineEdge className="absolute -bottom-[7px] left-8 right-8 h-[14px] scale-y-[-1] pointer-events-none" />
-    <VineEdgeV className="absolute -left-[7px] top-8 bottom-8 w-[14px] pointer-events-none" />
-    <VineEdgeV className="absolute -right-[7px] top-8 bottom-8 w-[14px] scale-x-[-1] pointer-events-none" />
-
+    {/* meandering branch edges — stretched to the frame, hairline strokes */}
+    <svg
+      className="absolute inset-0 w-full h-full text-primary pointer-events-none overflow-visible"
+      viewBox="0 0 100 100"
+      preserveAspectRatio="none"
+      fill="none"
+      aria-hidden="true"
+    >
+      <g stroke="currentColor" strokeLinecap="round" vectorEffect="non-scaling-stroke" opacity="0.8">
+        {/* top */}
+        <path d="M6 0.6C18 2.4 30 -1 44 0.9s26 3 50 -0.4" strokeWidth="1.3" />
+        {/* bottom */}
+        <path d="M6 99.4C18 97.6 30 101 44 99.1s26 -3 50 0.4" strokeWidth="1.3" />
+        {/* left */}
+        <path d="M0.6 6C2.4 18 -1 30 0.9 44s3 26 -0.4 50" strokeWidth="1.3" />
+        {/* right */}
+        <path d="M99.4 6C97.6 18 101 30 99.1 44s-3 26 0.4 50" strokeWidth="1.3" />
+      </g>
+      <g stroke="currentColor" strokeLinecap="round" vectorEffect="non-scaling-stroke" opacity="0.4" strokeWidth="0.8">
+        <path d="M24 1.6C34 3 44 0.4 58 1.8" />
+        <path d="M24 98.4C34 97 44 99.6 58 98.2" />
+        <path d="M1.6 24C3 34 0.4 44 1.8 58" />
+        <path d="M98.4 24C97 34 99.6 44 98.2 58" />
+      </g>
+    </svg>
 
     {/* corner ornaments */}
-    <VineCorner className="absolute -top-3 -left-3 scale-x-[-1] pointer-events-none" />
-    <VineCorner className="absolute -top-3 -right-3 pointer-events-none" />
-    <VineCorner className="absolute -bottom-3 -left-3 scale-[-1] pointer-events-none" />
-    <VineCorner className="absolute -bottom-3 -right-3 scale-y-[-1] pointer-events-none" />
+    <VineCorner className="absolute -top-4 -left-4 scale-x-[-1] pointer-events-none" />
+    <VineCorner className="absolute -top-4 -right-4 pointer-events-none" />
+    <VineCorner className="absolute -bottom-4 -left-4 scale-[-1] pointer-events-none" />
+    <VineCorner className="absolute -bottom-4 -right-4 scale-y-[-1] pointer-events-none" />
 
     <div className={cn("relative", inset)}>{children}</div>
   </div>
