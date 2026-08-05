@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { Mail, Phone, Instagram } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import VineFrame from "@/components/VineFrame";
+
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -28,49 +30,56 @@ const Contact = () => (
         </motion.div>
 
         <motion.div {...fadeUp} className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10">
-          <a
-            href="mailto:invinoveritasexperiences@gmail.com"
-            className="group flex flex-col items-center text-center p-8 border border-border hover:border-primary transition-colors"
-          >
-            <Mail className="h-7 w-7 text-primary mb-5" strokeWidth={1.2} />
-            <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-body mb-3">
-              Email
-            </span>
-            <span className="text-sm font-body group-hover:text-primary transition-colors break-all">
-              invinoveritasexperiences@gmail.com
-            </span>
-          </a>
-
-          <div className="flex flex-col items-center text-center p-8 border border-border">
-            <Phone className="h-7 w-7 text-primary mb-5" strokeWidth={1.2} />
-            <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-body mb-3">
-              Phone
-            </span>
-            <a href="tel:+33766678973" className="text-sm font-body hover:text-primary transition-colors">
-              <span className="block text-xs text-muted-foreground/70 mb-1">France</span>
-              0033 7 66 67 89 73
+          <VineFrame inset="p-0">
+            <a
+              href="mailto:invinoveritasexperiences@gmail.com"
+              className="group flex flex-col items-center text-center p-8 h-full"
+            >
+              <Mail className="h-7 w-7 text-primary mb-5" strokeWidth={1.2} />
+              <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-body mb-3">
+                Email
+              </span>
+              <span className="text-sm font-body group-hover:text-primary transition-colors break-all">
+                invinoveritasexperiences@gmail.com
+              </span>
             </a>
-            <a href="tel:+447706809331" className="mt-3 text-sm font-body hover:text-primary transition-colors">
-              <span className="block text-xs text-muted-foreground/70 mb-1">United Kingdom</span>
-              0044 7706 809 331
-            </a>
-          </div>
+          </VineFrame>
 
-          <a
-            href="https://instagram.com/invinoveritas"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex flex-col items-center text-center p-8 border border-border hover:border-primary transition-colors"
-          >
-            <Instagram className="h-7 w-7 text-primary mb-5" strokeWidth={1.2} />
-            <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-body mb-3">
-              Instagram
-            </span>
-            <span className="text-sm font-body group-hover:text-primary transition-colors">
-              @invinoveritas
-            </span>
-          </a>
+          <VineFrame inset="p-0">
+            <div className="flex flex-col items-center text-center p-8 h-full">
+              <Phone className="h-7 w-7 text-primary mb-5" strokeWidth={1.2} />
+              <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-body mb-3">
+                Phone
+              </span>
+              <a href="tel:+33766678973" className="text-sm font-body hover:text-primary transition-colors">
+                <span className="block text-xs text-muted-foreground/70 mb-1">France</span>
+                0033 7 66 67 89 73
+              </a>
+              <a href="tel:+447706809331" className="mt-3 text-sm font-body hover:text-primary transition-colors">
+                <span className="block text-xs text-muted-foreground/70 mb-1">United Kingdom</span>
+                0044 7706 809 331
+              </a>
+            </div>
+          </VineFrame>
+
+          <VineFrame inset="p-0">
+            <a
+              href="https://instagram.com/invinoveritas"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center text-center p-8 h-full"
+            >
+              <Instagram className="h-7 w-7 text-primary mb-5" strokeWidth={1.2} />
+              <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-body mb-3">
+                Instagram
+              </span>
+              <span className="text-sm font-body group-hover:text-primary transition-colors">
+                @invinoveritas
+              </span>
+            </a>
+          </VineFrame>
         </motion.div>
+
 
         <motion.p {...fadeUp} className="mt-20 text-center font-script text-3xl text-burgundy-light leading-tight">
           We look forward to welcoming you to the Corbières.
