@@ -1,29 +1,30 @@
 import { cn } from "@/lib/utils";
 
-/** Five-lobed grape-vine leaf, drawn in a 0-100 box with the stem at (50,97). */
+/** Five-lobed grape-vine leaf, drawn in a 0-100 box with the stem at (50,98). */
 const LEAF_D =
-  "M50 97 C50 82 45 75 35 71 C41 72 45 70 45 66 C36 68 25 65 17 57 C25 59 31 57 31 53 C21 50 11 43 6 31 C17 41 27 44 33 42 C27 35 25 25 27 15 C31 27 39 36 45 38 C45 27 49 17 55 9 C55 22 57 34 59 40 C65 38 73 30 79 18 C79 32 73 42 67 46 C73 48 83 46 93 39 C85 51 75 58 65 58 C69 62 77 64 85 64 C75 70 61 70 55 66 C52 74 51 86 50 97 Z";
+  "M50 98 C50 87 48 79 44 72 C36 77 25 77 19 72 C26 72 30 68 30 64 C20 64 10 58 5 48 C14 55 24 57 32 54 C25 46 23 35 27 25 C31 36 38 44 45 47 C43 36 45 23 51 13 C56 23 57 36 56 47 C63 44 70 36 74 25 C77 36 75 46 69 54 C77 57 87 55 95 48 C90 58 80 64 70 64 C70 68 74 72 81 72 C75 77 64 77 56 72 C52 79 50 87 50 98 Z";
 
 const Leaf = ({ transform }: { transform: string }) => (
   <g transform={transform}>
     <path
       d={LEAF_D}
       fill="currentColor"
-      fillOpacity="0.3"
+      fillOpacity="0.32"
       stroke="currentColor"
       strokeOpacity="0.9"
-      strokeWidth="2.2"
+      strokeWidth="2.4"
       strokeLinejoin="round"
     />
-    <g stroke="currentColor" strokeWidth="1.6" strokeOpacity="0.6" strokeLinecap="round" fill="none">
-      <path d="M50 95 L55 14" />
-      <path d="M50 88 C46 70 36 52 12 34" />
-      <path d="M50 88 C52 70 62 52 75 26" />
-      <path d="M52 74 C50 68 38 62 24 60" />
-      <path d="M52 74 C56 68 68 62 82 60" />
+    <g stroke="currentColor" strokeWidth="1.8" strokeOpacity="0.55" strokeLinecap="round" fill="none">
+      <path d="M50 96 L51 20" />
+      <path d="M50 84 C47 70 38 60 16 52" />
+      <path d="M50 84 C53 70 62 60 84 52" />
+      <path d="M50 70 C46 60 40 48 30 34" />
+      <path d="M50 70 C54 60 60 48 70 34" />
     </g>
   </g>
 );
+
 
 /** Corner: a woody branch turning the corner, with vine leaves, tendril and grapes. */
 const VineCorner = ({ className }: { className?: string }) => (
