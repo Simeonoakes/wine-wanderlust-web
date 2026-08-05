@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import VineFrame from "@/components/VineFrame";
+
 const img7983Asset = "https://res.cloudinary.com/dhnssest7/image/upload/v1783251611/IMG_7466_zamvox.jpg";
 import autumnOfAutumnAsset from "@/assets/autumn-of-autumn.jpg";
 import blueCarBwImg from "@/assets/blue-car-v2.jpg";
@@ -75,15 +77,18 @@ const RegionsSection = () => {
               className="group cursor-pointer flex flex-col items-center text-center"
             >
               <Link to={item.link} className="w-full">
-                <div className="w-full aspect-square overflow-hidden border-4 border-border p-1">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    style={item.name === "The Landscape" ? { objectPosition: "center 15%" } : undefined}
-                  />
-                </div>
+                <VineFrame className="w-full" inset="p-[10px]">
+                  <div className="w-full aspect-square overflow-hidden">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      loading="lazy"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      style={item.name === "The Landscape" ? { objectPosition: "center 15%" } : undefined}
+                    />
+                  </div>
+                </VineFrame>
+
                 <div className="mt-6">
                   <h3 className="text-3xl md:text-4xl font-script text-primary group-hover:text-burgundy-light transition-colors leading-tight">
                     {item.name}
