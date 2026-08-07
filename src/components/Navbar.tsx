@@ -21,7 +21,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-8 flex items-center justify-between h-20">
         <Link to="/" className="flex items-center gap-3 whitespace-nowrap">
-          <img src={logoAsset} alt="" className="h-16 w-16 object-contain" />
+          <img src={logoAsset} alt="" className="h-24 w-24 object-contain" />
           <span className="font-wordmark text-3xl md:text-4xl tracking-tight text-primary leading-none whitespace-nowrap">
             In Vino Veritas
           </span>
