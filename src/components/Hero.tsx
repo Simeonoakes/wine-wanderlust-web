@@ -45,7 +45,7 @@ const Hero = () => {
         key={`fade-${loopCount}`}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 2, delay: FADE_TO_BLACK_START, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 8, delay: FADE_TO_BLACK_START, ease: [0.16, 1, 0.3, 1] }}
         className="absolute inset-0 bg-black pointer-events-none"
       />
 
