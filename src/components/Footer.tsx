@@ -1,20 +1,21 @@
+import { useState } from "react";
 import { MEDIA } from "@/config/media";
+import BookingDialog from "@/components/BookingDialog";
 const logoAsset = MEDIA.logo;
 
 const Footer = () => {
+  const [bookingOpen, setBookingOpen] = useState(false);
+
   return (
     <footer className="border-t border-border py-16">
-      <div className="max-w-7xl mx-auto px-8 grid grid-cols-12 gap-8">
+      <div className="max-w-7xl mx-auto px-8 grid grid-cols-12 gap-8 items-start">
         <div className="col-span-12 md:col-span-4">
-          <img src={logoAsset} alt="In Vino Veritas" className="w-64 h-64 object-contain mb-4 -mt-16" />
-          <span className="font-wordmark text-3xl md:text-4xl tracking-tight text-primary leading-none whitespace-nowrap">
-            In Vino Veritas
-          </span>
-          <p className="mt-4 text-xs text-muted-foreground font-body leading-relaxed max-w-xs">
+          <img src={logoAsset} alt="In Vino Veritas" className="w-64 h-64 object-contain mb-2 -mt-16" />
+          <p className="text-xs text-muted-foreground font-body leading-relaxed max-w-xs">
             Bespoke wine education, tourism and events in the heart of the Corbières, Languedoc.
           </p>
         </div>
-        <div className="col-span-6 md:col-span-2 md:col-start-7">
+        <div className="col-span-6 md:col-span-2 md:col-start-8">
           <h4 className="text-xs uppercase tracking-[0.12em] text-muted-foreground mb-4">Navigate</h4>
           <ul className="space-y-3 text-sm font-body">
             <li><a href="#experiences" className="hover:text-primary transition-colors">Experiences</a></li>
@@ -25,16 +26,18 @@ const Footer = () => {
         <div className="col-span-6 md:col-span-2">
           <h4 className="text-xs uppercase tracking-[0.12em] text-muted-foreground mb-4">Contact</h4>
           <ul className="space-y-3 text-sm font-body text-muted-foreground">
-            <li>info@invinoveritas.fr</li>
-            <li>Corbières, France</li>
+            <li>invinoveritasexperiences@gmail.com</li>
+            <li>+33 766678973</li>
+            <li><button onClick={() => setBookingOpen(true)} className="text-primary hover:text-primary/80 transition-colors">Book Now</button></li>
           </ul>
         </div>
-        <div className="col-span-12 md:col-span-2 flex items-end">
+        <div className="col-span-12 md:col-span-2 md:col-start-11 flex items-end justify-end self-end">
           <p className="text-xs text-muted-foreground font-body text-tabular">
             © 2026 In Vino Veritas
           </p>
         </div>
       </div>
+      <BookingDialog open={bookingOpen} onOpenChange={setBookingOpen} />
     </footer>
   );
 };
