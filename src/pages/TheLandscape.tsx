@@ -35,13 +35,13 @@ const TheLandscape = () => (
           ← Back to The Terroir
         </Link>
         <h1 className="mt-8 text-5xl md:text-6xl font-script text-primary tracking-tight leading-none">
-          Garrigue, Mountains &amp; Ancient Stones
+          Garrigue, Mountains and Ancient Listed Stones
         </h1>
       </motion.div>
 
-      <motion.div {...fadeUp} className="mt-10 space-y-6 text-lg text-muted-foreground leading-relaxed font-body">
+      <motion.div {...fadeUp} className="mt-10 space-y-6 text-xl text-muted-foreground leading-relaxed font-body">
         <p>
-          The Corbières landscape is one of raw, untamed beauty: a patchwork of wild garrigue, dramatic mountain ridges and ancient stones that whisper of centuries passed. The air is thick with the scent of thyme, rosemary and cistus, and the horizon is punctuated by the silhouettes of ruined Cathar castles perched impossibly on craggy peaks. Among the most impressive of the 5 sons of Carcassonne are the castles of <span className="text-foreground font-medium">Aguilar</span>, <span className="text-foreground font-medium">Peyrepertuse</span> and <span className="text-foreground font-medium">Quéribus</span>, all an ancient stone's throw away.
+          The Corbières landscape is one of raw, untamed beauty: a patchwork of wild garrigue, dramatic mountain ridges and ancient stones that whisper of centuries passed. The air is thick with the scent of thyme, rosemary and cistus, and the horizon is punctuated by the silhouettes of ruined Cathar castles perched impossibly on craggy peaks. The affectionately-named 5 sons of Carcassonne have been granted the hugely prestigious status of UNESCO World Heritage sites and the three most impressive of them: the castles of <span className="text-foreground font-medium">Aguilar</span>, <span className="text-foreground font-medium">Peyrepertuse</span> and <span className="text-foreground font-medium">Quéribus</span>, are all just an ancient stone's throw away.
         </p>
         <p>
           Another jewel of this landscape is <span className="text-foreground font-medium">Fontfroide Abbey</span>, a breathtaking Cistercian monastery nestled in a secluded valley, surrounded by cypress trees and vineyards. Its serene cloisters and rose gardens offer a window into a thousand years of monastic life and winemaking tradition.
