@@ -44,6 +44,10 @@ const BookingDialog = ({ open, onOpenChange, journeyType }: BookingDialogProps) 
     airport: "",
   });
   const [preferredDate, setPreferredDate] = useState<Date | undefined>();
+  const [dateRange, setDateRange] = useState<{ from: Date | undefined; to: Date | undefined }>({
+    from: undefined,
+    to: undefined,
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -62,7 +66,11 @@ const BookingDialog = ({ open, onOpenChange, journeyType }: BookingDialogProps) 
           email: formData.email,
           phone: formData.phone,
           party_size: formData.partySize,
-          preferred_date: preferredDate ? format(preferredDate, "PPP") : "Not specified",
+          preferred_date: dateRange.from && dateRange.to 
+            ? `${format(dateRange.from, "PPP")} - ${format(dateRange.to, "PPP")}`
+            : dateRange.from 
+            ? format(dateRange.from, "PPP")
+            : "Not specified",
           dietary_requirements: formData.dietary || "None",
           airport: formData.airport || "Perpignan",
           journey_type: journeyType || "General Enquiry",
@@ -73,7 +81,7 @@ const BookingDialog = ({ open, onOpenChange, journeyType }: BookingDialogProps) 
         toast.success("Thank you for your enquiry! We'll be in touch shortly.");
         onOpenChange(false);
         setFormData({ name: "", email: "", phone: "", partySize: "", dietary: "", airport: "" });
-        setPreferredDate(undefined);
+        setDateRange({ from: undefined, to: undefined });
       } else {
         const errorData = await response.json();
         console.error('Formspree error:', errorData);
@@ -158,31 +166,58 @@ const BookingDialog = ({ open, onOpenChange, journeyType }: BookingDialogProps) 
             </div>
             <div className="space-y-2">
               <Label className="text-xs uppercase tracking-[0.1em] font-body text-muted-foreground">Preferred Dates</Label>
-              <Popover>
-                <PopoverTrigger asChild>
-                  <Button
-                    type="button"
-                    variant="outline"
-                    className={cn(
-                      "w-full justify-start text-left font-normal bg-secondary border-border hover:bg-secondary/80",
-                      !preferredDate && "text-muted-foreground"
-                    )}
-                  >
-                    <CalendarIcon className="mr-2 h-4 w-4" />
-                    {preferredDate ? format(preferredDate, "PPP") : <span>Pick a date</span>}
-                  </Button>
-                </PopoverTrigger>
-                <PopoverContent className="w-auto p-0 bg-card border-border" align="start">
-                  <Calendar
-                    mode="single"
-                    selected={preferredDate}
-                    onSelect={setPreferredDate}
-                    disabled={(date) => date < new Date(new Date().setHours(0, 0, 0, 0))}
-                    initialFocus
-                    className={cn("p-3 pointer-events-auto")}
-                  />
-                </PopoverContent>
-              </Popover>
+              <div className="grid grid-cols-2 gap-2">
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <Button
+                      type="button"
+                      variant="outline"
+                      className={cn(
+                        "justify-start text-left font-normal bg-secondary border-border hover:bg-secondary/80",
+                        !dateRange.from && "text-muted-foreground"
+                      )}
+                    >
+                      <CalendarIcon className="mr-2 h-4 w-4" />
+                      {dateRange.from ? format(dateRange.from, "PPP") : <span>From</span>}
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-auto p-0 bg-card border-border" align="start">
+                    <Calendar
+                      mode="single"
+                      selected={dateRange.from}
+                      onSelect={(date) => setDateRange({ ...dateRange, from: date })}
+                      disabled={(date) => date < new Date(new Date().setHours(0, 0, 0, 0))}
+                      initialFocus
+                      className={cn("p-3 pointer-events-auto")}
+                    />
+                  </PopoverContent>
+                </Popover>
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <Button
+                      type="button"
+                      variant="outline"
+                      className={cn(
+                        "justify-start text-left font-normal bg-secondary border-border hover:bg-secondary/80",
+                        !dateRange.to && "text-muted-foreground"
+                      )}
+                    >
+                      <CalendarIcon className="mr-2 h-4 w-4" />
+                      {dateRange.to ? format(dateRange.to, "PPP") : <span>To</span>}
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-auto p-0 bg-card border-border" align="start">
+                    <Calendar
+                      mode="single"
+                      selected={dateRange.to}
+                      onSelect={(date) => setDateRange({ ...dateRange, to: date })}
+                      disabled={(date) => date < new Date(new Date().setHours(0, 0, 0, 0))}
+                      initialFocus
+                      className={cn("p-3 pointer-events-auto")}
+                    />
+                  </PopoverContent>
+                </Popover>
+              </div>
             </div>
           </div>
 
