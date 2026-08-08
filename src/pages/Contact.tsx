@@ -34,7 +34,7 @@ const Contact = () => {
 
         <motion.div {...fadeUp} className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
           <a
-            href="mailto:invinoveritasexperiences@gmail.com"
+            href="mailto:contact@invinoveritasexperiences.com"
             className="group flex flex-col items-center text-center p-8 border border-border hover:border-primary transition-colors w-full max-w-[320px]"
           >
             <Mail className="h-5 w-5 text-primary mb-3" strokeWidth={1.2} />
@@ -42,7 +42,7 @@ const Contact = () => {
               Email
             </span>
             <span className="text-sm font-body group-hover:text-primary transition-colors">
-              invinoveritasexperiences@gmail.com
+              contact@invinoveritasexperiences.com
             </span>
           </a>
 

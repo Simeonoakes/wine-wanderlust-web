@@ -26,7 +26,7 @@ const Footer = () => {
         <div className="col-span-6 md:col-span-2">
           <h4 className="text-xs uppercase tracking-[0.12em] text-muted-foreground mb-4">Contact</h4>
           <ul className="space-y-3 text-sm font-body text-muted-foreground">
-            <li>invinoveritasexperiences@gmail.com</li>
+            <li>contact@invinoveritasexperiences.com</li>
             <li>+33 766678973</li>
             <li><button onClick={() => setBookingOpen(true)} className="text-primary hover:text-primary/80 transition-colors">Book Now</button></li>
           </ul>
