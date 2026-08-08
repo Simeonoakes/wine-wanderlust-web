@@ -1,0 +1,11 @@
+name = "wine-wanderlust-web"
+compatibility_date = "2024-01-01"
+
+[vars]
+# Environment variables will be set in Cloudflare Pages dashboard
+# RESEND_API_KEY = "your_resend_api_key"
+
+# Cloudflare Pages Functions configuration
+[[functions]]
+name = "send-email"
+
