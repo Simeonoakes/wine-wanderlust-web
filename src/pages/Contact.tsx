@@ -41,7 +41,7 @@ const Contact = () => {
             <span className="text-sm uppercase tracking-[0.2em] text-muted-foreground font-body mb-2">
               Email
             </span>
-            <span className="text-sm font-body group-hover:text-primary transition-colors">
+            <span className="text-xs font-body group-hover:text-primary transition-colors break-all">
               contact@invinoveritasexperiences.com
             </span>
           </a>
