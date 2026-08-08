@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
+import emailjs from "@emailjs/browser";
 import {
   Dialog,
   DialogContent,
@@ -28,6 +29,11 @@ import {
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 
+// EmailJS configuration - replace with your actual credentials
+const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
+const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+
 interface BookingDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
@@ -45,12 +51,37 @@ const BookingDialog = ({ open, onOpenChange, journeyType }: BookingDialogProps) 
   });
   const [preferredDate, setPreferredDate] = useState<Date | undefined>();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Thank you for your enquiry! We'll be in touch shortly.");
-    onOpenChange(false);
-    setFormData({ name: "", email: "", phone: "", partySize: "", dietary: "", airport: "" });
-    setPreferredDate(undefined);
+    
+    try {
+      const templateParams = {
+        to_email: "invinoveritasexperiences@gmail.com",
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        party_size: formData.partySize,
+        preferred_date: preferredDate ? format(preferredDate, "PPP") : "Not specified",
+        dietary_requirements: formData.dietary || "None",
+        airport: formData.airport || "Perpignan",
+        journey_type: journeyType || "General Enquiry",
+      };
+
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
+      );
+
+      toast.success("Thank you for your enquiry! We'll be in touch shortly.");
+      onOpenChange(false);
+      setFormData({ name: "", email: "", phone: "", partySize: "", dietary: "", airport: "" });
+      setPreferredDate(undefined);
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      toast.error("Failed to send enquiry. Please try again or contact us directly.");
+    }
   };
 
   return (
