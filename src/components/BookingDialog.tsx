@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
+import { useForm, ValidationError } from "@formspree/react";
 import {
   Dialog,
   DialogContent,
@@ -44,42 +45,17 @@ const BookingDialog = ({ open, onOpenChange, journeyType }: BookingDialogProps) 
     airport: "",
   });
   const [preferredDate, setPreferredDate] = useState<Date | undefined>();
+  const [state, handleSubmit] = useForm("maewqlyy");
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    try {
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          to_email: "invinoveritasexperiences@gmail.com",
-          from_name: formData.name,
-          from_email: formData.email,
-          phone: formData.phone,
-          party_size: formData.partySize,
-          preferred_date: preferredDate ? format(preferredDate, "PPP") : "Not specified",
-          dietary_requirements: formData.dietary || "None",
-          airport: formData.airport || "Perpignan",
-          journey_type: journeyType || "General Enquiry",
-        }),
-      });
-
-      if (response.ok) {
-        toast.success("Thank you for your enquiry! We'll be in touch shortly.");
-        onOpenChange(false);
-        setFormData({ name: "", email: "", phone: "", partySize: "", dietary: "", airport: "" });
-        setPreferredDate(undefined);
-      } else {
-        throw new Error('Failed to send email');
-      }
-    } catch (error) {
-      console.error("Email error:", error);
-      toast.error("Failed to send enquiry. Please try again or contact us directly.");
+  // Close dialog and reset form on successful submission
+  useEffect(() => {
+    if (state.succeeded) {
+      toast.success("Thank you for your enquiry! We'll be in touch shortly.");
+      onOpenChange(false);
+      setFormData({ name: "", email: "", phone: "", partySize: "", dietary: "", airport: "" });
+      setPreferredDate(undefined);
     }
-  };
+  }, [state.succeeded, onOpenChange]);
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -94,16 +70,22 @@ const BookingDialog = ({ open, onOpenChange, journeyType }: BookingDialogProps) 
         </DialogHeader>
 
         <form onSubmit={handleSubmit} className="space-y-5 mt-4">
+          <input type="hidden" name="journey_type" value={journeyType || "General Enquiry"} />
+          <input type="hidden" name="airport" value={formData.airport || "Perpignan"} />
+          <input type="hidden" name="preferred_date" value={preferredDate ? format(preferredDate, "PPP") : "Not specified"} />
+          
           <div className="space-y-2">
             <Label htmlFor="name" className="text-xs uppercase tracking-[0.1em] font-body text-muted-foreground">Name</Label>
             <Input
               id="name"
+              name="name"
               required
               maxLength={100}
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               className="bg-secondary border-border"
             />
+            <ValidationError field="name" errors={state.errors} />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -111,6 +93,7 @@ const BookingDialog = ({ open, onOpenChange, journeyType }: BookingDialogProps) 
               <Label htmlFor="email" className="text-xs uppercase tracking-[0.1em] font-body text-muted-foreground">Email</Label>
               <Input
                 id="email"
+                name="email"
                 type="email"
                 required
                 maxLength={255}
@@ -118,11 +101,13 @@ const BookingDialog = ({ open, onOpenChange, journeyType }: BookingDialogProps) 
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="bg-secondary border-border"
               />
+              <ValidationError field="email" errors={state.errors} />
             </div>
             <div className="space-y-2">
               <Label htmlFor="phone" className="text-xs uppercase tracking-[0.1em] font-body text-muted-foreground">Phone</Label>
               <Input
                 id="phone"
+                name="phone"
                 type="tel"
                 maxLength={30}
                 value={formData.phone}
@@ -137,6 +122,7 @@ const BookingDialog = ({ open, onOpenChange, journeyType }: BookingDialogProps) 
               <Label htmlFor="partySize" className="text-xs uppercase tracking-[0.1em] font-body text-muted-foreground">Number of People</Label>
               <Input
                 id="partySize"
+                name="party_size"
                 type="number"
                 min="1"
                 max="50"
@@ -180,6 +166,7 @@ const BookingDialog = ({ open, onOpenChange, journeyType }: BookingDialogProps) 
             <Label htmlFor="dietary" className="text-xs uppercase tracking-[0.1em] font-body text-muted-foreground">Dietary Requirements</Label>
             <Textarea
               id="dietary"
+              name="dietary_requirements"
               maxLength={500}
               placeholder="Any allergies or dietary requirements…"
               value={formData.dietary}
@@ -214,8 +201,9 @@ const BookingDialog = ({ open, onOpenChange, journeyType }: BookingDialogProps) 
             type="submit"
             variant="expedition"
             className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground text-sm py-5 mt-4"
+            disabled={state.submitting}
           >
-            Send Enquiry
+            {state.submitting ? "Sending..." : "Send Enquiry"}
           </Button>
         </form>
       </DialogContent>
