@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { PlayCircle, X, Instagram } from "lucide-react";
+import { PlayCircle, X, Instagram, Youtube } from "lucide-react";
 import { MEDIA } from "@/config/media";
 
 const fadeUp = {
@@ -17,9 +17,10 @@ interface Sample {
 }
 
 const samples: Sample[] = [
-  { title: "March 2026 – Pruning", image: MEDIA.img_8469, video: MEDIA.pruningVideo },
-  { title: "April 2026 – First Stages of Growth", image: MEDIA.img_7983, video: MEDIA.newGrowthVideo },
+  { title: "March – Pruning", image: MEDIA.img_8469, video: MEDIA.pruningVideo },
+  { title: "April – First growth", image: MEDIA.img_7983, video: MEDIA.newGrowthVideo },
   { title: "The Darling Buds of May", image: MEDIA.img_5538, video: MEDIA.darlingBudsVideo },
+  { title: "June – Flowering", image: "https://res.cloudinary.com/dhnssest7/image/upload/v1783180104/IMG_7977_gnf5zx.jpg", video: "https://res.cloudinary.com/dhnssest7/video/upload/v1785432419/Flowering-compressed_epipbh.mp4" },
   { title: "Terroir Taster", image: MEDIA.img_7615, video: MEDIA.tasterVideo },
 ];
 
@@ -44,34 +45,43 @@ const SimsSamplesSection = () => {
             <span className="block mt-2 text-xl md:text-2xl not-italic font-body tracking-[0.15em] uppercase text-muted-foreground">
               As seen on{" "}
               <a
-                href="https://www.instagram.com/invinoveritas.fr"
+                href="https://www.instagram.com/invinoveritasexperiences/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 text-primary"
               >
                 <Instagram className="h-4 w-4" /> Instagram
-              </a>{" "}
-              and{" "}
+              </a>
+              {" "},{" "}
               <a
-                href="https://www.tiktok.com/@invinoveritas.fr"
+                href="https://www.tiktok.com/@invinoveritasexperiences"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 text-primary"
               >
                 <TikTokIcon className="h-4 w-4" /> TikTok
               </a>
+              {" "}, and{" "}
+              <a
+                href="https://www.youtube.com/@InVinoVeritas-x6c"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-primary"
+              >
+                <Youtube className="h-4 w-4" /> YouTube
+              </a>
             </span>
           </h2>
         </motion.div>
 
         <motion.div {...fadeUp} className="max-w-3xl mb-16 space-y-4">
-          <p className="text-lg text-muted-foreground leading-relaxed font-body">
+          <p className="text-xl text-muted-foreground leading-relaxed font-body">
             Delve into the vineyards <em>almost</em> for real with Simeon. Through a series of short videos, samples, dare I say: tasters of the life of a vine itself and the different processes it takes to bring a vine to fruition and ensure a harvest year after year.
           </p>
-          <p className="text-lg text-muted-foreground leading-relaxed font-body">
+          <p className="text-xl text-muted-foreground leading-relaxed font-body">
             Walk through vineyards and wineries with me from the comfort of your home and meet the men and women who help to make the magic happen.
           </p>
-          <p className="text-lg text-muted-foreground leading-relaxed font-body">
+          <p className="text-xl text-muted-foreground leading-relaxed font-body">
             That is, of course, until you are able to tread these soils yourself, here in person.
           </p>
         </motion.div>
@@ -91,7 +101,7 @@ const SimsSamplesSection = () => {
                   alt={s.title}
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  style={s.title === "April 2026 – First Stages of Growth" ? { objectPosition: "center 20%" } : {}}
+                  style={s.title === "April – First growth" ? { objectPosition: "center 20%" } : {}}
                 />
               </div>
               <div className="absolute inset-0 bg-background/40 group-hover:bg-background/20 transition-colors duration-500 flex items-center justify-center">

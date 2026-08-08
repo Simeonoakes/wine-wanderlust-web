@@ -60,7 +60,7 @@ const BookingDialog = ({ open, onOpenChange, journeyType }: BookingDialogProps) 
           <DialogTitle className="font-display text-2xl italic text-primary">
             {journeyType ? `Book Your ${journeyType}` : "Booking Enquiry"}
           </DialogTitle>
-          <DialogDescription className="text-muted-foreground font-body text-sm">
+          <DialogDescription className="text-muted-foreground font-body text-base">
             Fill in your details and we'll get back to you to arrange your experience.
           </DialogDescription>
         </DialogHeader>

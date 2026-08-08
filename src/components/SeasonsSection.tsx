@@ -57,7 +57,7 @@ const SeasonsSection = () => {
         </motion.div>
 
         <motion.div {...fadeUp} className="max-w-3xl mb-16">
-          <p className="text-lg text-muted-foreground leading-relaxed font-body">
+          <p className="text-xl text-muted-foreground leading-relaxed font-body">
             Every season in the Corbières tells its own story. The landscape changes colour, the vines change rhythm, and life in the winery follows its own ancient calendar. Choose when to visit and you choose what to live: the quiet promise of winter, the riot of colour and renewal in spring, the heady abundance of summer or the focused frenzy and golden glow of autumn harvest.
           </p>
         </motion.div>
@@ -90,7 +90,7 @@ const SeasonsSection = () => {
                 <h3 className="mt-2 text-2xl md:text-3xl font-display tracking-tight text-foreground">
                   {s.title}
                 </h3>
-                <p className="mt-4 text-base text-muted-foreground leading-relaxed font-body flex-1" dangerouslySetInnerHTML={{ __html: s.text }} />
+                <p className="mt-4 text-xl text-muted-foreground leading-relaxed font-body flex-1" dangerouslySetInnerHTML={{ __html: s.text }} />
                 <div className="mt-6">
                   <Link
                     to="/#experiences"

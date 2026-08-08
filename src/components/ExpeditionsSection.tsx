@@ -197,9 +197,9 @@ const OneDayContent = ({ onBook }: { onBook: () => void }) => (
     </div>
 
     {/* 1-Day photo strip */}
-    <div className="grid grid-cols-2 md:grid-cols-5 gap-3 pt-4">
+    <div className="flex flex-wrap justify-center gap-3 pt-4">
       {[img5391Asset, img4969Asset, img8460Asset, img7315Asset, img00015Asset].map((src, i) => (
-        <div key={i} className="relative overflow-hidden aspect-[4/3] group">
+        <div key={i} className="relative overflow-hidden aspect-[4/3] group w-[calc(50%-6px)] md:w-[calc(20%-9.6px)]">
           <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" />
         </div>
       ))}
@@ -279,9 +279,9 @@ const TwoDayContent = ({ onBook }: { onBook: () => void }) => (
     </div>
 
     {/* 2-Day photo strip */}
-    <div className="grid grid-cols-2 md:grid-cols-5 gap-3 pt-4">
+    <div className="flex flex-wrap justify-center gap-3 pt-4">
       {[MEDIA.img_5824, MEDIA.img_4561, MEDIA.img_3793, MEDIA.img_0692, MEDIA.image00013].map((src, i) => (
-        <div key={i} className="relative overflow-hidden aspect-square group">
+        <div key={i} className="relative overflow-hidden aspect-square group w-[calc(50%-6px)] md:w-[calc(20%-9.6px)]">
           <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" style={i === 3 ? { filter: "grayscale(100%)" } : {}} />
         </div>
       ))}
@@ -386,9 +386,9 @@ const WeekContent = ({ onBook }: { onBook: () => void }) => (
     </div>
 
     {/* 1-Week photo strip */}
-    <div className="grid grid-cols-2 md:grid-cols-5 gap-3 pt-4">
+    <div className="flex flex-wrap justify-center gap-3 pt-4">
       {[img9197Asset, img7170Asset, img2646Asset, wineSamplingAsset, img3022Asset].map((src, i) => (
-        <div key={i} className="relative overflow-hidden aspect-[4/3] group">
+        <div key={i} className="relative overflow-hidden aspect-[4/3] group w-[calc(50%-6px)] md:w-[calc(20%-9.6px)]">
           <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" style={i === 3 ? { filter: "grayscale(100%)", objectPosition: "center 20%" } : {}} />
         </div>
       ))}
@@ -431,9 +431,9 @@ const ExpeditionsSection = () => {
       </motion.div>
 
       {/* Bespoke photo strip */}
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-3 pt-4">
+      <div className="flex flex-wrap justify-center gap-3 pt-4">
         {[bespokeImg1, bespokeImg2, bespokeImg3, bespokeImg4, bespokeImg5].map((src, i) => (
-          <div key={i} className="relative overflow-hidden aspect-[4/3] group">
+          <div key={i} className="relative overflow-hidden aspect-[4/3] group w-[calc(50%-6px)] md:w-[calc(20%-9.6px)]">
             <img src={src} alt="" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" style={i === 0 ? { objectPosition: "center 20%" } : i === 4 ? { objectPosition: "center 20%" } : {}} />
           </div>
         ))}

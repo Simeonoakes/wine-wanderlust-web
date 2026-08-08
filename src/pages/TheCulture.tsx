@@ -37,7 +37,7 @@ const TheCulture = () => (
         </h1>
       </motion.div>
 
-      <motion.div {...fadeUp} className="mt-10 space-y-6 text-lg text-muted-foreground leading-relaxed font-body">
+      <motion.div {...fadeUp} className="mt-10 space-y-6 text-xl text-muted-foreground leading-relaxed font-body">
         <p>
           The culture of the Corbières is woven from the threads of resilience, passion, and a fierce love of the land. This is a place where weekly markets are sacred rituals: small stalls packed with local goat's cheese, saucisson studded with wild herbs, thyme and rosemary, honey harvested from hives perched among the garrigue, and fruits and vegetables grown minutes away in the sun-drenched soil.
         </p>

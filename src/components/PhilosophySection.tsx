@@ -37,16 +37,16 @@ const PhilosophySection = () => {
             </motion.div>
 
             <motion.div {...fadeUp} className="mt-10">
-              <p className="text-lg text-muted-foreground leading-relaxed font-body">
+              <p className="text-xl text-muted-foreground leading-relaxed font-body">
                 At least to begin with… If, however, you do want to try out some of the tasting techniques, have help giving mouth to your tastebuds and vocabulary to your nose's perceptions, leave that up to me. Sit back, unwind, drink it all in and retain or forget as much as you fancy.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed font-body mt-4">
+              <p className="text-xl text-muted-foreground leading-relaxed font-body mt-4">
                 Practically raised among the vines of Paziols, son of a self-taught vine grower, 
                 I honed my skills quite literally in the field, lending a hand at every stage of the 
                 vine-growing season. From sales at the local cooperative to communication and events 
                 at a boutique winery, I've lived every facet of this world.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed font-body mt-4">
+              <p className="text-xl text-muted-foreground leading-relaxed font-body mt-4">
                 With the helping hand of my retired vine-growing father and my vigneron brother, 
                 let me take you on a sensorial journey of discovery here in the wild Corbières.
               </p>

@@ -50,7 +50,7 @@ const CorporateSection = () => {
         </motion.div>
 
         <motion.div {...fadeUp} className="max-w-3xl mb-16">
-          <p className="text-lg text-muted-foreground leading-relaxed font-body">
+          <p className="text-xl text-muted-foreground leading-relaxed font-body">
             Whether you're looking for an unforgettable team-building experience in the vineyards, an exclusive corporate event to impress clients, or expert bespoke consulting services tailored to your business, we bring the world of wine to your doorstep. From intimate private tastings to large-scale events, every detail is crafted to inspire, connect, and leave a lasting impression.
           </p>
         </motion.div>
@@ -82,7 +82,7 @@ const CorporateSection = () => {
               </div>
               <div className="p-8">
                 <h3 className="text-2xl font-display text-primary leading-tight tracking-tight">{item.title}</h3>
-                <p className="mt-4 text-base text-muted-foreground leading-relaxed font-body">
+                <p className="mt-4 text-lg text-muted-foreground leading-relaxed font-body">
                   {item.description}
                 </p>
               </div>

@@ -38,7 +38,7 @@ const TheVineyards = () => (
         </h1>
       </motion.div>
 
-      <motion.div {...fadeUp} className="mt-10 space-y-6 text-lg text-muted-foreground leading-relaxed font-body">
+      <motion.div {...fadeUp} className="mt-10 space-y-6 text-xl text-muted-foreground leading-relaxed font-body">
         <p>
           The vineyards of the Corbières are among the oldest in France, with some plots boasting century-old vines that have weathered countless trials and tribulations and, more recently, the relentless march of climate change from droughts to late frosts via hail and windstorms.
         </p>
