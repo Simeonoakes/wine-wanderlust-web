@@ -35,23 +35,23 @@ const Contact = () => {
         <motion.div {...fadeUp} className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
           <a
             href="mailto:contact@invinoveritasexperiences.com"
-            className="group flex flex-col items-center text-center p-8 border border-border hover:border-primary transition-colors w-full max-w-[320px]"
+            className="group flex flex-col items-center text-center p-8 border border-border hover:border-primary transition-colors w-full max-w-[400px]"
           >
             <Mail className="h-5 w-5 text-primary mb-3" strokeWidth={1.2} />
             <span className="text-sm uppercase tracking-[0.2em] text-muted-foreground font-body mb-2">
               Email
             </span>
-            <span className="text-xs font-body group-hover:text-primary transition-colors break-all">
+            <span className="text-sm font-body group-hover:text-primary transition-colors break-all">
               contact@invinoveritasexperiences.com
             </span>
           </a>
 
-          <div className="flex flex-col items-center text-center p-8 border border-border w-full max-w-[320px]">
+          <div className="flex flex-col items-center text-center p-8 border border-border w-full max-w-[400px]">
             <Phone className="h-5 w-5 text-primary mb-3" strokeWidth={1.2} />
             <span className="text-sm uppercase tracking-[0.2em] text-muted-foreground font-body mb-2">
               Phone / Whatsapp
             </span>
-            <a href="tel:+33766678973" className="text-sm font-body hover:text-primary transition-colors">
+            <a href="tel:+33766678973" className="text-base font-body hover:text-primary transition-colors">
               +33 766678973
             </a>
           </div>
@@ -60,13 +60,13 @@ const Contact = () => {
             href="https://www.instagram.com/invinoveritasexperiences/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex flex-col items-center text-center p-8 border border-border hover:border-primary transition-colors w-full max-w-[320px]"
+            className="group flex flex-col items-center text-center p-8 border border-border hover:border-primary transition-colors w-full max-w-[400px]"
           >
             <Instagram className="h-5 w-5 text-primary mb-3" strokeWidth={1.2} />
             <span className="text-sm uppercase tracking-[0.2em] text-muted-foreground font-body mb-2">
               Instagram
             </span>
-            <span className="text-sm font-body group-hover:text-primary transition-colors">
+            <span className="text-base font-body group-hover:text-primary transition-colors">
               @invinoveritasexperiences
             </span>
           </a>
