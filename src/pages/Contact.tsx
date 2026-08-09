@@ -20,7 +20,7 @@ const Contact = () => {
   <div className="min-h-screen flex flex-col">
     <Navbar />
     <main className="flex-1 pt-32 pb-24">
-      <div className="max-w-3xl mx-auto px-8">
+      <div className="max-w-7xl mx-auto px-8">
         <motion.div {...fadeUp} className="text-center">
           <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-body">
             Get in touch
