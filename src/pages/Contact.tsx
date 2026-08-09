@@ -15,6 +15,7 @@ const fadeUp = {
 const Contact = () => {
   const [bookingOpen, setBookingOpen] = useState(false);
 
+  // Trigger deployment after webhook fix
   return (
   <div className="min-h-screen flex flex-col">
     <Navbar />
