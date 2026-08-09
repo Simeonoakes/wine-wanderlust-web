@@ -36,7 +36,7 @@ const Contact = () => {
         <motion.div {...fadeUp} className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
           <a
             href="mailto:contact@invinoveritasexperiences.com"
-            className="group flex flex-col items-center text-center p-8 border border-border hover:border-primary transition-colors w-full max-w-[3200px]"
+            className="group flex flex-col items-center text-center p-12 border border-border hover:border-primary transition-colors w-full max-w-[3200px]"
           >
             <Mail className="h-5 w-5 text-primary mb-3" strokeWidth={1.2} />
             <span className="text-sm uppercase tracking-[0.2em] text-muted-foreground font-body mb-2">
@@ -47,7 +47,7 @@ const Contact = () => {
             </span>
           </a>
 
-          <div className="flex flex-col items-center text-center p-8 border border-border w-full max-w-[3200px]">
+          <div className="flex flex-col items-center text-center p-12 border border-border w-full max-w-[3200px]">
             <Phone className="h-5 w-5 text-primary mb-3" strokeWidth={1.2} />
             <span className="text-sm uppercase tracking-[0.2em] text-muted-foreground font-body mb-2">
               Phone / Whatsapp
@@ -61,7 +61,7 @@ const Contact = () => {
             href="https://www.instagram.com/invinoveritasexperiences/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex flex-col items-center text-center p-8 border border-border hover:border-primary transition-colors w-full max-w-[3200px]"
+            className="group flex flex-col items-center text-center p-12 border border-border hover:border-primary transition-colors w-full max-w-[3200px]"
           >
             <Instagram className="h-5 w-5 text-primary mb-3" strokeWidth={1.2} />
             <span className="text-sm uppercase tracking-[0.2em] text-muted-foreground font-body mb-2">
