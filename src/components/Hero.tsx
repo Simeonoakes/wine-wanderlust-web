@@ -51,11 +51,16 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-20 flex flex-col items-center text-center pointer-events-none">
-        {/* Logo: fades in over the video */}
+        {/* Logo: fades in over the video, changes color when fading to black */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.97, filter: "blur(8px)" }}
-          animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-          transition={{ duration: 1.5, delay: LOGO_DELAY, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ opacity: 0, scale: 0.97, filter: "blur(8px) grayscale(100%) brightness(0.3)" }}
+          animate={{ opacity: 1, scale: 1, filter: "blur(0px) grayscale(0%) brightness(1)" }}
+          transition={{ 
+            duration: 1.5, 
+            delay: LOGO_DELAY, 
+            ease: [0.16, 1, 0.3, 1],
+            filter: { duration: 2, delay: FADE_TO_BLACK_START }
+          }}
         >
           <img
             src={logoAsset}
