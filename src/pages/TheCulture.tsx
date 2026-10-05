@@ -52,7 +52,7 @@ Occitan, is the living representation of this spirit. Indeed, the language named
           Cuisine here is not a performance, it is a way of life. Recipes are fiercely kept secrets; a heritage handed down from generation to generation. Meals are long, communal and deeply connected to the seasons and the soil. A Sunday lunch can last all afternoon. A barbecue in the vineyards is seasoned with herbs you've just picked from the hillside, the sausage is made by the hunters (truly rustic characters in their own right) with the wild boar they hunted themselves for hours through the garrigue that surrounds you. The wine on the table was made by your neighbour, from grapes grown a hundred metres away.
         </p>
         <p>
-          And beneath it all, there is the warmth: the open doors, the handshake that turns into an aperitif that turns into dinner, the vigneron who insists you try one more barrel because "this one is special", the village fêtes which for centuries have brought people together around food, music and wine and have forged friendships and marriages alike.
+          And beneath it all, there is the warmth: the open doors, the handshake that turns into an aperitif that turns into dinner, the vine grower who insists you try one more barrel because "this one is special", the village fêtes which for centuries have brought people together around food, music and wine and have forged friendships and marriages alike.
         </p>
         <p>
           The Corbières doesn't reveal itself to those who rush through. It opens up to those who sit down, share a glass, and listen to the stories.

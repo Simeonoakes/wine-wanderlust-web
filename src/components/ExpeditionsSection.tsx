@@ -330,7 +330,7 @@ const WeekContent = ({ onBook }: { onBook: () => void }) => (
       ]},
       { day: "Day 3", courses: [
         { course: "Morning", items: [
-          "Vigneron breakfast : do it as the vignerons do: pâté*, saucisson*, fresh bread and, if you're up for it, a glass of red!",
+          "Vine grower breakfast : do it as the vine growers do: pâté*, saucisson*, fresh bread and, if you're up for it, a glass of red!",
           "Guided walk through the garrigue punctuated with botanical, historical and cultural anecdotes."
         ]},
         { course: "Midday", items: [

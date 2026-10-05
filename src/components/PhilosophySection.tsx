@@ -47,7 +47,7 @@ const PhilosophySection = () => {
                 at a boutique winery, I've lived every facet of this world.
               </p>
               <p className="text-xl text-muted-foreground leading-relaxed font-body mt-4">
-                With the helping hand of my retired vine-growing father and my vigneron brother, 
+                With the helping hand of my retired vine-growing father and my vine grower brother, 
                 let me take you on a sensorial journey of discovery here in the wild Corbières.
               </p>
               <p className="mt-8 font-signature text-5xl md:text-6xl text-primary">

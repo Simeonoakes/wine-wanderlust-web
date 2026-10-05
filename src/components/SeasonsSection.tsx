@@ -24,14 +24,14 @@ const seasons = [
     season: "Spring",
     title: "Poppies & Pest Control",
     image: poppiesAsset,
-    text: "Crimson poppies set the fields ablaze and combine with the iridescent yellow and the entrancing scent of Spanish broom and the vibrant green of fresh vine shoots to paint a picture of paradise under the endless blue skies. The vignerons tend the vines with care every day, weeding, ploughing and warding off unwanted visitors. Bud burst gives way to delicate young leaves and the first tiny clusters of flowers, the promise of the year's crop laid bare. In the cellar, last year's wines settle into their final shape, racked, blended and tasted with the close attention reserved for old friends. The mornings are crisp, the afternoons softly warm, and every day brings forth a new burst of life and colour. The unalterable magic begins again.",
+    text: "Crimson poppies set the fields ablaze and combine with the iridescent yellow and the entrancing scent of Spanish broom and the vibrant green of fresh vine shoots to paint a picture of paradise under the endless blue skies. The vine growers tend the vines with care every day, weeding, ploughing and warding off unwanted visitors. Bud burst gives way to delicate young leaves and the first tiny clusters of flowers, the promise of the year's crop laid bare. In the cellar, last year's wines settle into their final shape, racked, blended and tasted with the close attention reserved for old friends. The mornings are crisp, the afternoons softly warm, and every day brings forth a new burst of life and colour. The unalterable magic begins again.",
     cta: "Get a Taste of Spring",
   },
   {
     season: "Summer",
     title: "Cicadas & Bottling",
     image: img4310Asset,
-    text: "The cicadas are deafening, the air shimmers and the vines hang heavy with ripening fruit. The garrigue releases its full perfume under the relentless sun: thyme, rosemary, fennel and pine carried on the warm wind. Days stretch long and golden, evenings linger over pastis on shaded terraces and chilled rosé in the vineyard. For the vignerons, the careful work of trimming, lifting wires, watching the skies and praying for rain takes over. Every leaf, every cluster monitored as veraison begins and the grapes blush from green to pink, to deep purple. Inside the cool of the cellar, last year's wines are being bottled, making way for the new vintage's precious nectar.",
+    text: "The cicadas are deafening, the air shimmers and the vines hang heavy with ripening fruit. The garrigue releases its full perfume under the relentless sun: thyme, rosemary, fennel and pine carried on the warm wind. Days stretch long and golden, evenings linger over pastis on shaded terraces and chilled rosé in the vineyard. For the vine growers, the careful work of trimming, lifting wires, watching the skies and praying for rain takes over. Every leaf, every cluster monitored as veraison begins and the grapes blush from green to pink, to deep purple. Inside the cool of the cellar, last year's wines are being bottled, making way for the new vintage's precious nectar.",
     cta: "Get a Taste of Summer",
   },
   {
