@@ -66,15 +66,23 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.97, filter: "blur(8px)" }}
           animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
           transition={{ duration: 1.5, delay: LOGO_DELAY, ease: [0.16, 1, 0.3, 1] }}
+          className="relative"
         >
           <motion.img
-            src={useBlackLogo ? blackWritingLogo : logoAsset}
+            src={blackWritingLogo}
+            alt="In Vino Veritas logo"
+            className="absolute w-[18rem] h-[18rem] sm:w-[22rem] sm:h-[22rem] md:w-[26rem] md:h-[26rem] lg:w-[30rem] lg:h-[30rem] object-contain drop-shadow-[0_10px_40px_rgba(0,0,0,0.6)]"
+            initial={{ opacity: 1 }}
+            animate={{ opacity: useBlackLogo ? 1 : 0 }}
+            transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
+          />
+          <motion.img
+            src={logoAsset}
             alt="In Vino Veritas logo"
             className="w-[18rem] h-[18rem] sm:w-[22rem] sm:h-[22rem] md:w-[26rem] md:h-[26rem] lg:w-[30rem] lg:h-[30rem] object-contain drop-shadow-[0_10px_40px_rgba(0,0,0,0.6)]"
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            key={useBlackLogo ? 'black' : 'golden'}
+            animate={{ opacity: useBlackLogo ? 0 : 1 }}
+            transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
           />
         </motion.div>
 
