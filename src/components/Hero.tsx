@@ -1,8 +1,8 @@
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { MEDIA } from "@/config/media";
-const logoAsset = "https://res.cloudinary.com/dhnssest7/image/upload/w_1200,h_1200,c_fit/In_VIino_Veritas_8_mxitmk.jpg";
-const blackWritingLogo = "https://res.cloudinary.com/dhnssest7/image/upload/w_1200,h_1200,c_fit/logo_black_writing_jc5ydu.png";
+const logoAsset = "https://res.cloudinary.com/dhnssest7/image/upload/w_1200,h_1200,c_fit,e_make_transparent/In_VIino_Veritas_8_mxitmk.jpg";
+const blackWritingLogo = "https://res.cloudinary.com/dhnssest7/image/upload/w_1200,h_1200,c_fit,e_make_transparent/logo_black_writing_jc5ydu.png";
 
 // Timing: logo fades in over the moving footage, then a short breath,
 // then the handwritten phrase is written letter by letter.
@@ -77,7 +77,7 @@ const Hero = () => {
           <motion.img
             src={blackWritingLogo}
             alt="In Vino Veritas logo"
-            className="absolute w-full h-full object-contain drop-shadow-[0_10px_40px_rgba(0,0,0,0.6)] mix-blend-multiply"
+            className="absolute w-full h-full object-contain drop-shadow-[0_10px_40px_rgba(0,0,0,0.6)]"
             initial={{ opacity: 1 }}
             animate={{ opacity: useBlackLogo ? 1 : 0 }}
             transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
