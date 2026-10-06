@@ -1,7 +1,8 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { MEDIA } from "@/config/media";
 const logoAsset = MEDIA.logo;
+const blackWritingLogo = "https://res.cloudinary.com/dhnssest7/image/upload/v1791294442/logo_black_writing_jc5ydu.png";
 
 // Timing: logo fades in over the moving footage, then a short breath,
 // then the handwritten phrase is written letter by letter.
@@ -16,6 +17,15 @@ const phrase = "Truly Tasting Terroir";
 const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [loopCount, setLoopCount] = useState(0);
+  const [useBlackLogo, setUseBlackLogo] = useState(true);
+
+  useEffect(() => {
+    setUseBlackLogo(true);
+    const timeout = setTimeout(() => {
+      setUseBlackLogo(false);
+    }, FADE_TO_BLACK_START * 1000);
+    return () => clearTimeout(timeout);
+  }, [loopCount]);
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center bg-black overflow-hidden">
@@ -51,21 +61,20 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-20 flex flex-col items-center text-center pointer-events-none">
-        {/* Logo: fades in over the video, changes color when fading to black */}
+        {/* Logo: fades in over the video */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.97, filter: "blur(8px) grayscale(100%) brightness(0.3)" }}
-          animate={{ opacity: 1, scale: 1, filter: "blur(0px) grayscale(0%) brightness(1)" }}
-          transition={{ 
-            duration: 1.5, 
-            delay: LOGO_DELAY, 
-            ease: [0.16, 1, 0.3, 1],
-            filter: { duration: 2, delay: FADE_TO_BLACK_START }
-          }}
+          initial={{ opacity: 0, scale: 0.97, filter: "blur(8px)" }}
+          animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+          transition={{ duration: 1.5, delay: LOGO_DELAY, ease: [0.16, 1, 0.3, 1] }}
         >
-          <img
-            src={logoAsset}
+          <motion.img
+            src={useBlackLogo ? blackWritingLogo : logoAsset}
             alt="In Vino Veritas logo"
             className="w-[18rem] h-[18rem] sm:w-[22rem] sm:h-[22rem] md:w-[26rem] md:h-[26rem] lg:w-[30rem] lg:h-[30rem] object-contain drop-shadow-[0_10px_40px_rgba(0,0,0,0.6)]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            key={useBlackLogo ? 'black' : 'golden'}
           />
         </motion.div>
 
