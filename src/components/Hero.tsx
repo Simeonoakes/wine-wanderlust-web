@@ -77,7 +77,7 @@ const Hero = () => {
           <motion.img
             src={blackWritingLogo}
             alt="In Vino Veritas logo"
-            className="absolute w-full h-full object-contain drop-shadow-[0_10px_40px_rgba(0,0,0,0.6)]"
+            className="absolute w-full h-full object-contain drop-shadow-[0_10px_40px_rgba(0,0,0,0.6)] mix-blend-multiply"
             initial={{ opacity: 1 }}
             animate={{ opacity: useBlackLogo ? 1 : 0 }}
             transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
