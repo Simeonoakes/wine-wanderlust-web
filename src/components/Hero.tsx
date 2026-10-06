@@ -1,8 +1,8 @@
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { MEDIA } from "@/config/media";
-const logoAsset = MEDIA.logo;
-const blackWritingLogo = "https://res.cloudinary.com/dhnssest7/image/upload/v1791294442/logo_black_writing_jc5ydu.png";
+const logoAsset = "https://res.cloudinary.com/dhnssest7/image/upload/w_1200,h_1200,c_fit/In_VIino_Veritas_8_mxitmk.jpg";
+const blackWritingLogo = "https://res.cloudinary.com/dhnssest7/image/upload/w_1200,h_1200,c_fit/logo_black_writing_jc5ydu.png";
 
 // Timing: logo fades in over the moving footage, then a short breath,
 // then the handwritten phrase is written letter by letter.
@@ -72,12 +72,12 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.97, filter: "blur(8px)" }}
           animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
           transition={{ duration: 1.5, delay: LOGO_DELAY, ease: [0.16, 1, 0.3, 1] }}
-          className="relative w-[18rem] h-[18rem] sm:w-[22rem] sm:h-[22rem] md:w-[26rem] md:h-[26rem] lg:w-[30rem] lg:h-[30rem]"
+          className="relative flex items-center justify-center w-[18rem] h-[18rem] sm:w-[22rem] sm:h-[22rem] md:w-[26rem] md:h-[26rem] lg:w-[30rem] lg:h-[30rem]"
         >
           <motion.img
             src={blackWritingLogo}
             alt="In Vino Veritas logo"
-            className="absolute top-0 left-0 w-full h-full object-contain object-center drop-shadow-[0_10px_40px_rgba(0,0,0,0.6)]"
+            className="absolute w-full h-full object-contain drop-shadow-[0_10px_40px_rgba(0,0,0,0.6)]"
             initial={{ opacity: 1 }}
             animate={{ opacity: useBlackLogo ? 1 : 0 }}
             transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
@@ -85,7 +85,7 @@ const Hero = () => {
           <motion.img
             src={logoAsset}
             alt="In Vino Veritas logo"
-            className="absolute top-0 left-0 w-full h-full object-contain object-center drop-shadow-[0_10px_40px_rgba(0,0,0,0.6)]"
+            className="absolute w-full h-full object-contain drop-shadow-[0_10px_40px_rgba(0,0,0,0.6)]"
             initial={{ opacity: 0 }}
             animate={{ opacity: useBlackLogo ? 0 : 1 }}
             transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
