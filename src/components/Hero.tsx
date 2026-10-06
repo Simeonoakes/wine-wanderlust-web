@@ -77,7 +77,7 @@ const Hero = () => {
           <motion.img
             src={blackWritingLogo}
             alt="In Vino Veritas logo"
-            className="absolute inset-0 w-full h-full object-contain drop-shadow-[0_10px_40px_rgba(0,0,0,0.6)]"
+            className="absolute top-0 left-0 w-full h-full object-contain object-center drop-shadow-[0_10px_40px_rgba(0,0,0,0.6)]"
             initial={{ opacity: 1 }}
             animate={{ opacity: useBlackLogo ? 1 : 0 }}
             transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
@@ -85,7 +85,7 @@ const Hero = () => {
           <motion.img
             src={logoAsset}
             alt="In Vino Veritas logo"
-            className="absolute inset-0 w-full h-full object-contain drop-shadow-[0_10px_40px_rgba(0,0,0,0.6)]"
+            className="absolute top-0 left-0 w-full h-full object-contain object-center drop-shadow-[0_10px_40px_rgba(0,0,0,0.6)]"
             initial={{ opacity: 0 }}
             animate={{ opacity: useBlackLogo ? 0 : 1 }}
             transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
