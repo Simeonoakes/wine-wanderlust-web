@@ -1,8 +1,8 @@
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { MEDIA } from "@/config/media";
-const logoAsset = "https://res.cloudinary.com/dhnssest7/image/upload/w_1200,h_1200,c_fit,b_rgb:000000/In_VIino_Veritas_8_mxitmk.jpg";
-const blackWritingLogo = "https://res.cloudinary.com/dhnssest7/image/upload/w_1200,h_1200,c_fit,b_rgb:000000/logo_black_writing_jc5ydu.png";
+const logoAsset = MEDIA.logo;
+const blackWritingLogo = "https://res.cloudinary.com/dhnssest7/image/upload/v1791294442/logo_black_writing_jc5ydu.png";
 
 // Timing: logo fades in over the moving footage, then a short breath,
 // then the handwritten phrase is written letter by letter.
