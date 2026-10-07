@@ -71,8 +71,8 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.97, filter: "blur(8px)" }}
           animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-          transition={{ duration: 1.5, delay: LOGO_DELAY, ease: [0.16, 1, 0.3, 1] }}
-          className="relative flex items-center justify-center w-[18rem] h-[18rem] sm:w-[22rem] sm:h-[22rem] md:w-[26rem] md:h-[26rem] lg:w-[30rem] lg:h-[30rem]"
+          transition={{ duration: 3, delay: LOGO_DELAY, ease: [0.16, 1, 0.3, 1] }}
+          className="relative flex items-center justify-center w-[18rem] h-[18rem] sm:w-[22rem] sm:h-[22rem] md:w-[26rem] md:h-[26rem] lg:w-[30rem] lg:h-[30rem] mt-2"
         >
           <motion.img
             src={blackWritingLogo}
