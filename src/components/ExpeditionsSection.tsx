@@ -169,7 +169,8 @@ const OneDayContent = ({ onBook }: { onBook: () => void }) => (
       courses: [
         { course: "Morning", items: [
           "Start with French breakfast in the vineyards, drink in the stunning views while sipping on coffee and a croissant from the local boulangerie.",
-          "Visit 1 winery including a tasting and a tour of the winery or part of the estate."
+          "Visit 1 winery including a tasting and a tour of the winery or part of the estate.",
+          "Get stuck in: meet a vine grower at work and try your hand at pruning, harvesting, blending or whatever other activity they are undertaking depending on the season (and the weather)."
         ]},
         { course: "Midday", items: [
           "Lunch at a local restaurant."
@@ -241,7 +242,7 @@ const TwoDayContent = ({ onBook }: { onBook: () => void }) => (
       { day: "Day 2", courses: [
         { course: "Morning", items: [
           "Breakfast in the vineyard overlooking the stunning Corbières landscapes. Drink in the views while sipping on coffee and a croissant from the local boulangerie.",
-          "Meet the producer: try your hand at pruning, harvesting or blending depending on the season (and the weather)."
+          "Get stuck in: meet a vine grower at work and try your hand at pruning, harvesting, blending or whatever other activity they are undertaking depending on the season (and the weather)."
         ]},
         { course: "Midday", items: [
           "Visit another winery offering different products in order to showcase the rich palette and variety of wines and winemaking techniques of the area.",
@@ -319,7 +320,7 @@ const WeekContent = ({ onBook }: { onBook: () => void }) => (
       { day: "Day 2", courses: [
         { course: "Morning", items: [
           "Breakfast in the vineyard overlooking the stunning Corbières landscapes. Drink in the views while sipping on coffee and a croissant from the local boulangerie.",
-          "Meet the vigneron: try your hand at pruning, harvesting, ploughing or any other specific job in the vineyards depending on the season."
+          "Get stuck in: meet a vine grower at work and try your hand at pruning, harvesting, blending or whatever other activity they are undertaking depending on the season (and the weather)."
         ]},
         { course: "Midday", items: [
           "Visit another winery offering different products in order to showcase the rich palette and variety of wines and winemaking techniques of the area.",
@@ -353,7 +354,7 @@ const WeekContent = ({ onBook }: { onBook: () => void }) => (
       { day: "Day 5", courses: [
         { course: "Morning", items: [
           "Breakfast in your accommodation.",
-          "Meet a winemaker directly in the winery, who will guide you through a winemaking technique, depending on the season."
+          "Get stuck in: meet a vine grower at work and try your hand at pruning, harvesting, blending or whatever other activity they are undertaking depending on the season (and the weather)."
         ]},
         { course: "Midday", items: ["Lunch in a local restaurant."]},
         { course: "Afternoon", items: ["Visit your final winery, taste more exceptional wines and visit the winery or part of the estate."]},

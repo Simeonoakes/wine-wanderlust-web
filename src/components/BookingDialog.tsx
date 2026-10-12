@@ -173,12 +173,12 @@ const BookingDialog = ({ open, onOpenChange, journeyType }: BookingDialogProps) 
                       type="button"
                       variant="outline"
                       className={cn(
-                        "justify-start text-left font-normal bg-secondary border-border hover:bg-secondary/80",
+                        "justify-start text-left font-normal bg-secondary border-border hover:bg-secondary/80 min-w-[140px]",
                         !dateRange.from && "text-muted-foreground"
                       )}
                     >
                       <CalendarIcon className="mr-2 h-4 w-4" />
-                      {dateRange.from ? format(dateRange.from, "PPP") : <span>From</span>}
+                      {dateRange.from ? format(dateRange.from, "MMM dd, yyyy") : <span>From</span>}
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent className="w-auto p-0 bg-card border-border" align="start">
@@ -198,12 +198,12 @@ const BookingDialog = ({ open, onOpenChange, journeyType }: BookingDialogProps) 
                       type="button"
                       variant="outline"
                       className={cn(
-                        "justify-start text-left font-normal bg-secondary border-border hover:bg-secondary/80",
+                        "justify-start text-left font-normal bg-secondary border-border hover:bg-secondary/80 min-w-[140px]",
                         !dateRange.to && "text-muted-foreground"
                       )}
                     >
                       <CalendarIcon className="mr-2 h-4 w-4" />
-                      {dateRange.to ? format(dateRange.to, "PPP") : <span>To</span>}
+                      {dateRange.to ? format(dateRange.to, "MMM dd, yyyy") : <span>To</span>}
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent className="w-auto p-0 bg-card border-border" align="start">
