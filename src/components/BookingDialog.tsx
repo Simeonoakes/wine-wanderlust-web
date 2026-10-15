@@ -173,7 +173,7 @@ const BookingDialog = ({ open, onOpenChange, journeyType }: BookingDialogProps) 
                       type="button"
                       variant="outline"
                       className={cn(
-                        "justify-start text-left font-normal bg-secondary border-border hover:bg-secondary/80 min-w-[140px]",
+                        "justify-start text-left font-normal bg-secondary border-border hover:bg-secondary/80 text-xs",
                         !dateRange.from && "text-muted-foreground"
                       )}
                     >
@@ -198,7 +198,7 @@ const BookingDialog = ({ open, onOpenChange, journeyType }: BookingDialogProps) 
                       type="button"
                       variant="outline"
                       className={cn(
-                        "justify-start text-left font-normal bg-secondary border-border hover:bg-secondary/80 min-w-[140px]",
+                        "justify-start text-left font-normal bg-secondary border-border hover:bg-secondary/80 text-xs",
                         !dateRange.to && "text-muted-foreground"
                       )}
                     >
