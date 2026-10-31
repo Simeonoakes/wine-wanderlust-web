@@ -177,7 +177,7 @@ const BookingDialog = ({ open, onOpenChange, journeyType }: BookingDialogProps) 
                         !dateRange.from && "text-muted-foreground"
                       )}
                     >
-                      <CalendarIcon className="mr-1 h-4 w-4" />
+                      <CalendarIcon className="mr-0.5 h-4 w-4" />
                       {dateRange.from ? format(dateRange.from, "MMM dd, yyyy") : <span>From</span>}
                     </Button>
                   </PopoverTrigger>
@@ -202,7 +202,7 @@ const BookingDialog = ({ open, onOpenChange, journeyType }: BookingDialogProps) 
                         !dateRange.to && "text-muted-foreground"
                       )}
                     >
-                      <CalendarIcon className="mr-1 h-4 w-4" />
+                      <CalendarIcon className="mr-0.5 h-4 w-4" />
                       {dateRange.to ? format(dateRange.to, "MMM dd, yyyy") : <span>To</span>}
                     </Button>
                   </PopoverTrigger>
